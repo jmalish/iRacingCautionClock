@@ -1,0 +1,8 @@
+StartHidden  // default state, just means nothing is shown on screen
+CautionWaving  // caution flag is flashing on screen
+Caution  // caution flag is solid on screen
+OneLapToGreen  // probably not helpful to me
+Green  // it's the green flag you idiot
+StartGo  // shown for a brief time after Green, looks like Green | StartGo
+		 // changes to Green | StartHidden after about a second
+		 // may not be needed, should be alright with just green
