@@ -30,6 +30,7 @@
         {
             this.lblConnectedToiRacing = new System.Windows.Forms.Label();
             this.lblCurrentFlag = new System.Windows.Forms.Label();
+            this.lblCurrentLap = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblConnectedToiRacing
@@ -46,15 +47,25 @@
             this.lblCurrentFlag.AutoSize = true;
             this.lblCurrentFlag.Location = new System.Drawing.Point(12, 66);
             this.lblCurrentFlag.Name = "lblCurrentFlag";
-            this.lblCurrentFlag.Size = new System.Drawing.Size(70, 13);
+            this.lblCurrentFlag.Size = new System.Drawing.Size(73, 13);
             this.lblCurrentFlag.TabIndex = 0;
-            this.lblCurrentFlag.Text = "Current Flag: ";
+            this.lblCurrentFlag.Text = "Current Flag: -";
+            // 
+            // lblCurrentLap
+            // 
+            this.lblCurrentLap.AutoSize = true;
+            this.lblCurrentLap.Location = new System.Drawing.Point(12, 106);
+            this.lblCurrentLap.Name = "lblCurrentLap";
+            this.lblCurrentLap.Size = new System.Drawing.Size(49, 13);
+            this.lblCurrentLap.TabIndex = 0;
+            this.lblCurrentLap.Text = "Lap - of -";
             // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(468, 283);
+            this.Controls.Add(this.lblCurrentLap);
             this.Controls.Add(this.lblCurrentFlag);
             this.Controls.Add(this.lblConnectedToiRacing);
             this.Name = "mainForm";
@@ -69,6 +80,7 @@
 
         private System.Windows.Forms.Label lblConnectedToiRacing;
         private System.Windows.Forms.Label lblCurrentFlag;
+        private System.Windows.Forms.Label lblCurrentLap;
     }
 }
 
