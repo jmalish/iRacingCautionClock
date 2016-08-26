@@ -40,7 +40,8 @@ namespace iRacing_Caution_Clock
         // do things when Telemetry updates (supposed to be 60 times per second)
         private void OnTelemetryUpdated(object sender, iRacingSdkWrapper.SdkWrapper.TelemetryUpdatedEventArgs telemArgs)
         {
-            Console.WriteLine("telemetry updated");
+            // Console.WriteLine("telemetry updated");
+            // Console.WriteLine(telemArgs.TelemetryInfo.SessionTime.ToString());
 
             currentFlag = telemArgs.TelemetryInfo.SessionFlags.Value.ToString().Split('|')[0]; // gets the current flag state and trims off the unneccessary stuff
 
@@ -65,6 +66,7 @@ namespace iRacing_Caution_Clock
         // do things when session info updates
         private void OnSessionInfoUpdated(object sender, iRacingSdkWrapper.SdkWrapper.SessionInfoUpdatedEventArgs sessionArgs)
         {
+            Console.WriteLine("Session info updated: " + DateTime.Now.ToString());
             if (sessionArgs.SessionInfo.IsValidYaml)
             {
                 Deserializer deserializer = new Deserializer(namingConvention: new PascalCaseNamingConvention(), ignoreUnmatched: true);
@@ -74,26 +76,32 @@ namespace iRacing_Caution_Clock
 
                 foreach (var session in sessionInfo.SessionInfo.Sessions)
                 {
-                    if (session.SessionType == "Race")
+                    if (session.SessionType == "Race") // find the race session
                     {
                         racing = true; // set racing to true, so we know the race session has started
-                        var raceSession = sessionInfo.SessionInfo.Sessions[2];
+                        var raceSession = session;
 
-                        string lapsComplete = (Convert.ToInt32(raceSession.ResultsLapsComplete) + 1).ToString(); // laps are 0 indexed, need to add 1 to get it to display correctly
+                        int lapsComplete = Convert.ToInt32(raceSession.ResultsLapsComplete);
 
-                        lblCurrentLap.Text = string.Format("Lap {0} of {1}", lapsComplete, raceSession.SessionLaps);
-
-                        if ((Convert.ToInt32(session.SessionLaps)) - (Convert.ToInt32(lapsComplete)) <= 20)
+                        if (lapsComplete > 0) // if ResultsLapsComplete is -1, we haven't entered the race yet
                         {
-                            twentyToGo = true; // race is now twenty to go, caution clock needs to be turned off
+                            lapsComplete += 1; // laps are 0 indexed, need to add 1 to get it to display correctly
+
+                            lblCurrentLap.Text = string.Format("Lap {0} of {1}", lapsComplete.ToString(), raceSession.SessionLaps);
+
+                            if ((Convert.ToInt32(session.SessionLaps)) - (Convert.ToInt32(lapsComplete)) <= 20)
+                            {
+                                twentyToGo = true; // race is now twenty to go, caution clock needs to be turned off
+                            }
+                        } else
+                        {
+                            // Console.WriteLine("Not in race session yet");
                         }
                     }
                 }
             } else {
                 Console.WriteLine("Not valid YAML");
             }
-
-            Console.WriteLine("session info updated");
         }
 
         private void mainForm_Leave(object sender, EventArgs e)

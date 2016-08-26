@@ -1,0 +1,1730 @@
+---
+WeekendInfo:
+ TrackName: vegas oval
+ TrackID: 103
+ TrackLength: 2.45 km
+ TrackDisplayName: Las Vegas Motor Speedway
+ TrackDisplayShortName: Las Vegas
+ TrackConfigName: Oval
+ TrackCity: Las Vegas
+ TrackCountry: USA
+ TrackAltitude: 595.86 m
+ TrackLatitude: 36.274494 m
+ TrackLongitude: -115.012602 m
+ TrackNorthOffset: 4.0199 rad
+ TrackNumTurns: 4
+ TrackPitSpeedLimit: 80.47 kph
+ TrackType: medium oval
+ TrackWeatherType: Constant
+ TrackSkies: Clear
+ TrackSurfaceTemp: 44.44 C
+ TrackAirTemp: 29.44 C
+ TrackAirPressure: 27.87 Hg
+ TrackWindVel: 1.34 m/s
+ TrackWindDir: 1.57 rad
+ TrackRelativeHumidity: 22 %
+ TrackFogLevel: 0 %
+ TrackCleanup: 1
+ TrackDynamicTrack: 1
+ SeriesID: 0
+ SeasonID: 0
+ SessionID: 71335325
+ SubSessionID: 17553369
+ LeagueID: 0
+ Official: 0
+ RaceWeek: 0
+ EventType: Race
+ Category: Oval
+ SimMode: full
+ TeamRacing: 0
+ MinDrivers: 0
+ MaxDrivers: 1
+ DCRuleSet: None
+ QualifierMustStartRace: 0
+ NumCarClasses: 1
+ NumCarTypes: 2
+ WeekendOptions:
+  NumStarters: 43
+  StartingGrid: single file
+  QualifyScoring: best lap
+  CourseCautions: full
+  StandingStart: 0
+  Restarts: double file lapped cars behind
+  WeatherType: Constant
+  Skies: Clear
+  WindDirection: E
+  WindSpeed: 4.83 km/h
+  WeatherTemp: 29.44 C
+  RelativeHumidity: 22 %
+  FogLevel: 0 %
+  TimeOfDay: 10-00 am
+  Unofficial: 1
+  CommercialMode: consumer
+  NightMode: 0
+  IsFixedSetup: 0
+  StrictLapsChecking: default
+  HasOpenRegistration: 1
+  HardcoreLevel: 0
+  IncidentLimit: unlimited
+ TelemetryOptions:
+  TelemetryDiskFile: ""
+
+SessionInfo:
+ Sessions:
+ - SessionNum: 0
+   SessionLaps: unlimited
+   SessionTime: 2400.0000 sec
+   SessionNumLapsToAvg: 0
+   SessionType: Practice
+   SessionTrackRubberState: moderately low usage
+   ResultsPositions:
+   - Position: 1
+     ClassPosition: 0
+     CarIdx: 15
+     Lap: 27
+     Time: 38.0583
+     FastestLap: 27
+     FastestTime: 38.0583
+     LastTime: 39.0501
+     LapsLed: 0
+     LapsComplete: 31
+     LapsDriven: 33.681
+     Incidents: 8
+     ReasonOutId: 0
+     ReasonOutStr: Running
+   - Position: 2
+     ClassPosition: 1
+     CarIdx: 5
+     Lap: 23
+     Time: 38.0852
+     FastestLap: 23
+     FastestTime: 38.0852
+     LastTime: 38.7601
+     LapsLed: 0
+     LapsComplete: 35
+     LapsDriven: 38.404
+     Incidents: 8
+     ReasonOutId: 0
+     ReasonOutStr: Running
+   - Position: 3
+     ClassPosition: 2
+     CarIdx: 1
+     Lap: 26
+     Time: 38.1001
+     FastestLap: 26
+     FastestTime: 38.1001
+     LastTime: 62.6863
+     LapsLed: 0
+     LapsComplete: 44
+     LapsDriven: 45.612
+     Incidents: 8
+     ReasonOutId: 0
+     ReasonOutStr: Running
+   ResultsFastestLap:
+   - CarIdx: 15
+     FastestLap: 27
+     FastestTime: 38.0583
+   ResultsAverageLapTime: -1.0000
+   ResultsNumCautionFlags: 0
+   ResultsNumCautionLaps: 0
+   ResultsNumLeadChanges: 0
+   ResultsLapsComplete: -1
+   ResultsOfficial: 1
+ 
+
+
+ - SessionNum: 1
+   SessionLaps: 2
+   SessionTime: 300.0000 sec
+   SessionNumLapsToAvg: 0
+   SessionType: Lone Qualify
+   SessionTrackRubberState: carry over
+   ResultsPositions:
+   - Position: 1
+     ClassPosition: 0
+     CarIdx: 7
+     Lap: 2
+     Time: 38.6295
+     FastestLap: 2
+     FastestTime: 38.6295
+     LastTime: 38.6295
+     LapsLed: 0
+     LapsComplete: 2
+     LapsDriven: 0.000
+     Incidents: 0
+     ReasonOutId: 0
+     ReasonOutStr: Running
+   - Position: 2
+     ClassPosition: 1
+     CarIdx: 30
+     Lap: 2
+     Time: 38.6432
+     FastestLap: 2
+     FastestTime: 38.6432
+     LastTime: 38.6432
+     LapsLed: 0
+     LapsComplete: 2
+     LapsDriven: 0.000
+     Incidents: 0
+     ReasonOutId: 0
+     ReasonOutStr: Running
+   ResultsFastestLap:
+   - CarIdx: 7
+     FastestLap: 2
+     FastestTime: 38.6295
+   ResultsAverageLapTime: -1.0000
+   ResultsNumCautionFlags: 0
+   ResultsNumCautionLaps: 0
+   ResultsNumLeadChanges: 0
+   ResultsLapsComplete: -1
+   ResultsOfficial: 0
+ 
+
+
+ - SessionNum: 2
+   SessionLaps: 65
+   SessionTime: 4500.0000 sec
+   SessionNumLapsToAvg: 0
+   SessionType: Race
+   SessionTrackRubberState: carry over
+   ResultsPositions:
+   ResultsFastestLap:
+   - CarIdx: 255
+     FastestLap: 0
+     FastestTime: -1.0000
+   ResultsAverageLapTime: -1.0000
+   ResultsNumCautionFlags: 0
+   ResultsNumCautionLaps: 0
+   ResultsNumLeadChanges: 0
+   ResultsLapsComplete: -1
+   ResultsOfficial: 0
+
+CameraInfo:
+ Groups:
+ - GroupNum: 1
+   GroupName: Nose
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamNose
+ - GroupNum: 2
+   GroupName: Gearbox
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamGearbox
+ - GroupNum: 3
+   GroupName: Roll Bar
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamRoll Bar
+ - GroupNum: 4
+   GroupName: LF Susp
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamLF Susp
+ - GroupNum: 5
+   GroupName: LR Susp
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamLR Susp
+ - GroupNum: 6
+   GroupName: Gyro
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamGyro
+ - GroupNum: 7
+   GroupName: RF Susp
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamRF Susp
+ - GroupNum: 8
+   GroupName: RR Susp
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamRR Susp
+ - GroupNum: 9
+   GroupName: Cockpit
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamCockpit
+ - GroupNum: 10
+   GroupName: Scenic
+   IsScenic: true
+   Cameras:
+   - CameraNum: 1
+     CameraName: Scenic_00
+   - CameraNum: 2
+     CameraName: Scenic_01
+   - CameraNum: 3
+     CameraName: Scenic_02
+   - CameraNum: 4
+     CameraName: Scenic_08
+   - CameraNum: 5
+     CameraName: Scenic_09
+ - GroupNum: 11
+   GroupName: TV1
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamTV1_00
+   - CameraNum: 2
+     CameraName: CamTV1_01
+   - CameraNum: 3
+     CameraName: CamTV1_02
+   - CameraNum: 4
+     CameraName: CamTV1_03
+   - CameraNum: 5
+     CameraName: CamTV1_04
+   - CameraNum: 6
+     CameraName: CamTV1_05
+ - GroupNum: 12
+   GroupName: TV2
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamTV2_00
+   - CameraNum: 2
+     CameraName: CamTV2_01
+   - CameraNum: 3
+     CameraName: CamTV2_02
+   - CameraNum: 4
+     CameraName: CamTV2_03
+   - CameraNum: 5
+     CameraName: CamTV2_04
+ - GroupNum: 13
+   GroupName: TV3
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamTV3_00
+   - CameraNum: 2
+     CameraName: CamTV3_01
+   - CameraNum: 3
+     CameraName: CamTV3_02
+   - CameraNum: 4
+     CameraName: CamTV3_03
+   - CameraNum: 5
+     CameraName: CamTV3_04
+ - GroupNum: 14
+   GroupName: Pit Lane
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamPit Lane
+ - GroupNum: 15
+   GroupName: Pit Lane 2
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamPit Lane 2
+ - GroupNum: 16
+   GroupName: Chopper
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamChopper
+ - GroupNum: 17
+   GroupName: Blimp
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamBlimp
+ - GroupNum: 18
+   GroupName: Chase
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamChase
+ - GroupNum: 19
+   GroupName: Far Chase
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamFar Chase
+ - GroupNum: 20
+   GroupName: Rear Chase
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamRear Chase
+
+RadioInfo:
+ SelectedRadioNum: 0
+ Radios:
+ - RadioNum: 0
+   HopCount: 1
+   NumFrequencies: 5
+   TunedToFrequencyNum: 0
+   ScanningIsOn: 1
+   Frequencies:
+   - FrequencyNum: 0
+     FrequencyName: "@SPECTATORS"
+     Priority: 0
+     CarIdx: -1
+     EntryIdx: -1
+     ClubID: 0
+     CanScan: 1
+     CanSquawk: 1
+     Muted: 0
+     IsMutable: 1
+     IsDeletable: 0
+   - FrequencyNum: 1
+     FrequencyName: "@DRIVERS"
+     Priority: 15
+     CarIdx: -1
+     EntryIdx: -1
+     ClubID: 0
+     CanScan: 1
+     CanSquawk: 0
+     Muted: 0
+     IsMutable: 1
+     IsDeletable: 0
+   - FrequencyNum: 2
+     FrequencyName: "@ALLTEAMS"
+     Priority: 12
+     CarIdx: -1
+     EntryIdx: -1
+     ClubID: 0
+     CanScan: 1
+     CanSquawk: 0
+     Muted: 0
+     IsMutable: 1
+     IsDeletable: 0
+   - FrequencyNum: 3
+     FrequencyName: "@RACECONTROL"
+     Priority: 80
+     CarIdx: -1
+     EntryIdx: -1
+     ClubID: 0
+     CanScan: 1
+     CanSquawk: 0
+     Muted: 0
+     IsMutable: 0
+     IsDeletable: 0
+   - FrequencyNum: 4
+     FrequencyName: "@PRIVATE"
+     Priority: 70
+     CarIdx: -1
+     EntryIdx: 34
+     ClubID: 0
+     CanScan: 1
+     CanSquawk: 1
+     Muted: 0
+     IsMutable: 0
+     IsDeletable: 0
+
+DriverInfo:
+ DriverCarIdx: 63
+ PaceCarIdx: 0
+ DriverHeadPosX: -0.626
+ DriverHeadPosY: 0.376
+ DriverHeadPosZ: 0.643
+ DriverCarIdleRPM: 800.000
+ DriverCarRedLine: 7200.000
+ DriverCarFuelKgPerLtr: 0.750
+ DriverCarFuelMaxLtr: 83.239
+ DriverCarMaxFuelPct: 0.400
+ DriverCarSLFirstRPM: 5500.000
+ DriverCarSLShiftRPM: 6500.000
+ DriverCarSLLastRPM: 6500.000
+ DriverCarSLBlinkRPM: 7200.000
+ DriverPitTrkPct: 0.100864
+ DriverCarEstLapTime: 38.3243
+ DriverSetupName: baseline.sto
+ DriverSetupIsModified: 0
+ DriverSetupLoadTypeName: baseline
+ DriverSetupPassedTech: 1
+ Drivers:
+ - CarIdx: 0
+   UserName: Pace Car
+   AbbrevName: Car, P
+   Initials: PC
+   UserID: -1
+   TeamID: 0
+   TeamName: Pace Car
+   CarNumber: "0"
+   CarNumberRaw: 0
+   CarPath: safety pcfr500s
+   CarClassID: 11
+   CarID: 32
+   CarIsPaceCar: 1
+   CarIsAI: 0
+   CarScreenName: safety pcfr500s
+   CarScreenNameShort: safety pcfr500s
+   CarClassShortName: 
+   CarClassRelSpeed: 0
+   CarClassLicenseLevel: 0
+   CarClassMaxFuelPct: 1.000 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 0
+   LicLevel: 1
+   LicSubLevel: 0
+   LicString: R 0.00
+   LicColor: 0xffffff
+   IsSpectator: 0
+   CarDesignStr: 0,ffffff,ffffff,ffffff
+   HelmetDesignStr: 0,ffffff,ffffff,ffffff
+   SuitDesignStr: 0,ffffff,ffffff,ffffff
+   CarNumberDesignStr: 0,0,ffffff,ffffff,ffffff
+   CarSponsor_1: 0
+   CarSponsor_2: 0
+   ClubName: -none-
+   DivisionName: Division 1
+ - CarIdx: 1
+   UserName: Tyler Sontag
+   AbbrevName: Sontag, T
+   Initials: TS
+   UserID: 196519
+   TeamID: 0
+   TeamName: Tyler Sontag
+   CarNumber: "91"
+   CarNumberRaw: 91
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 1181
+   LicLevel: 14
+   LicSubLevel: 217
+   LicString: B 2.17
+   LicColor: 0x00c702
+   IsSpectator: 0
+   CarDesignStr: 14,000000,004bff,d9ff22;004bff
+   HelmetDesignStr: 18,d9ff22,004bff,040101
+   SuitDesignStr: 29,d9ff22,000000,004bff
+   CarNumberDesignStr: 53,2,000000,d9ff22,004bff
+   CarSponsor_1: 130
+   CarSponsor_2: 49
+   ClubName: Florida
+   DivisionName: Division 1
+ - CarIdx: 2
+   UserName: Chuck Smith
+   AbbrevName: Smith, C
+   Initials: CS
+   UserID: 131694
+   TeamID: 0
+   TeamName: Chuck Smith
+   CarNumber: "71"
+   CarNumberRaw: 71
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 1331
+   LicLevel: 14
+   LicSubLevel: 231
+   LicString: B 2.31
+   LicColor: 0x00c702
+   IsSpectator: 0
+   CarDesignStr: 1,f2f2f3,030202,fd150d;0a0a0a
+   HelmetDesignStr: 57,050505,f20202,020203
+   SuitDesignStr: 0,080808,050505,000000
+   CarNumberDesignStr: 35,1,e7cd05,050505,fafafa
+   CarSponsor_1: 129
+   CarSponsor_2: 1
+   ClubName: New England
+   DivisionName: Division 1
+ - CarIdx: 3
+   UserName: Matthew Molnar
+   AbbrevName: Molnar, M
+   Initials: MM
+   UserID: 216420
+   TeamID: 0
+   TeamName: Matthew Molnar
+   CarNumber: "88"
+   CarNumberRaw: 88
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 1617
+   LicLevel: 13
+   LicSubLevel: 164
+   LicString: B 1.64
+   LicColor: 0x00c702
+   IsSpectator: 0
+   CarDesignStr: 1,ffffff,ed2129,2a3795
+   HelmetDesignStr: 18,da2f2f,1232a1,000000
+   SuitDesignStr: 1,ea1a1a,ffffff,0a0000
+   CarNumberDesignStr: 30,0,ffffff,ed2129,000000
+   CarSponsor_1: 0
+   CarSponsor_2: 0
+   ClubName: Canada
+   DivisionName: Division 1
+ - CarIdx: 4
+   UserName: Gerald Wheeler
+   AbbrevName: Wheeler, G
+   Initials: GW
+   UserID: 178395
+   TeamID: 0
+   TeamName: Gerald Wheeler
+   CarNumber: "999"
+   CarNumberRaw: 999
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 1145
+   LicLevel: 7
+   LicSubLevel: 356
+   LicString: D 3.56
+   LicColor: 0xfc8a27
+   IsSpectator: 0
+   CarDesignStr: 15,ed8a12,f5ea7f,f24042,d6e718
+   HelmetDesignStr: 19,ea0b0b,fcfe34,2513c3
+   SuitDesignStr: 9,f9f443,f52929,666666
+   CarNumberDesignStr: 39,0,d6e718,000000,000000
+   CarSponsor_1: 4
+   CarSponsor_2: 83
+   ClubName: New England
+   DivisionName: Division 1
+ - CarIdx: 5
+   UserName: Troy Lent
+   AbbrevName: Lent, T
+   Initials: TL
+   UserID: 188661
+   TeamID: 0
+   TeamName: Troy Lent
+   CarNumber: "023"
+   CarNumberRaw: 3023
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 1881
+   LicLevel: 19
+   LicSubLevel: 366
+   LicString: A 3.66
+   LicColor: 0x0153db
+   IsSpectator: 0
+   CarDesignStr: 19,6d6e71,2a3795,ed2129;ffffff
+   HelmetDesignStr: 61,6d6e71,f55cb2,2a3795
+   SuitDesignStr: 18,ed2129,4c3ff8,6d6e71
+   CarNumberDesignStr: 25,1,ffffff,ed2129,2a3795
+   CarSponsor_1: 0
+   CarSponsor_2: 0
+   ClubName: Northwest
+   DivisionName: Division 1
+ - CarIdx: 6
+   UserName: Jason D Barnett
+   AbbrevName: Barnett, J
+   Initials: JB
+   UserID: 148982
+   TeamID: 0
+   TeamName: Jason D Barnett
+   CarNumber: "777"
+   CarNumberRaw: 777
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 2715
+   LicLevel: 14
+   LicSubLevel: 252
+   LicString: B 2.52
+   LicColor: 0x00c702
+   IsSpectator: 0
+   CarDesignStr: 11,f6060a,3118ee,cc0009,c00008
+   HelmetDesignStr: 57,ffffff,000000,ffffff
+   SuitDesignStr: 15,03050c,b35323,f43138
+   CarNumberDesignStr: 53,0,1c1919,fdfcfc,c00008
+   CarSponsor_1: 0
+   CarSponsor_2: 0
+   ClubName: West
+   DivisionName: Division 1
+ - CarIdx: 7
+   UserName: Scott Oleson
+   AbbrevName: Oleson, S
+   Initials: SO
+   UserID: 66489
+   TeamID: 0
+   TeamName: Scott Oleson
+   CarNumber: "39"
+   CarNumberRaw: 39
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 2253
+   LicLevel: 14
+   LicSubLevel: 220
+   LicString: B 2.20
+   LicColor: 0x00c702
+   IsSpectator: 0
+   CarDesignStr: 2,0e00eb,ffffff,d40f02;c7c7c7
+   HelmetDesignStr: 36,000000,0025ad,00bd7d
+   SuitDesignStr: 3,000000,0086c2,009955
+   CarNumberDesignStr: 38,0,ffffff,000000,000000
+   CarSponsor_1: 0
+   CarSponsor_2: 0
+   ClubName: Midwest
+   DivisionName: Division 1
+ - CarIdx: 8
+   UserName: William Tahran
+   AbbrevName: Tahran, W
+   Initials: WT
+   UserID: 150793
+   TeamID: 0
+   TeamName: William Tahran
+   CarNumber: "96"
+   CarNumberRaw: 96
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 2292
+   LicLevel: 19
+   LicSubLevel: 333
+   LicString: A 3.33
+   LicColor: 0x0153db
+   IsSpectator: 0
+   CarDesignStr: 0,e90f0c,ffffff,000000,000000
+   HelmetDesignStr: 19,4b40ed,3c2eff,ed2129
+   SuitDesignStr: 0,f60404,3f0ce9,faea29
+   CarNumberDesignStr: 53,3,ffffff,000000,050505
+   CarSponsor_1: 0
+   CarSponsor_2: 40
+   ClubName: California
+   DivisionName: Division 1
+ - CarIdx: 9
+   UserName: Brayden Habermehl
+   AbbrevName: Habermehl, B
+   Initials: BH
+   UserID: 200267
+   TeamID: 0
+   TeamName: Brayden Habermehl
+   CarNumber: "26"
+   CarNumberRaw: 26
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 2651
+   LicLevel: 14
+   LicSubLevel: 281
+   LicString: B 2.81
+   LicColor: 0x00c702
+   IsSpectator: 0
+   CarDesignStr: 5,ffffff,0944ff,f40a00;ffffff
+   HelmetDesignStr: 28,ff900e,0012c8,6600d8
+   SuitDesignStr: 27,ffffff,ff1f0f,000000
+   CarNumberDesignStr: 7,4,ffffff,224ab4,e61500
+   CarSponsor_1: 1
+   CarSponsor_2: 129
+   ClubName: Ohio
+   DivisionName: Division 1
+ - CarIdx: 10
+   UserName: James Scioly
+   AbbrevName: Scioly, J
+   Initials: JS
+   UserID: 205688
+   TeamID: 0
+   TeamName: James Scioly
+   CarNumber: "23"
+   CarNumberRaw: 23
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 1952
+   LicLevel: 18
+   LicSubLevel: 282
+   LicString: A 2.82
+   LicColor: 0x0153db
+   IsSpectator: 0
+   CarDesignStr: 16,2a3795,ed2129,606060,595959
+   HelmetDesignStr: 3,ffffff,000000,000000
+   SuitDesignStr: 26,000000,000000,bababa
+   CarNumberDesignStr: 43,0,f8fcf5,000000,fefefc
+   CarSponsor_1: 129
+   CarSponsor_2: 129
+   ClubName: Northwest
+   DivisionName: Division 1
+ - CarIdx: 11
+   UserName: Matt Wirick Sr
+   AbbrevName: Wirick, M Sr
+   Initials: MW
+   UserID: 153577
+   TeamID: 0
+   TeamName: Matt Wirick Sr
+   CarNumber: "2"
+   CarNumberRaw: 2
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 1721
+   LicLevel: 10
+   LicSubLevel: 245
+   LicString: C 2.45
+   LicColor: 0xfeec04
+   IsSpectator: 0
+   CarDesignStr: 0,f3f83a,120d0d,f91310;f6f4f4
+   HelmetDesignStr: 17,faf538,312826,322b2a
+   SuitDesignStr: 2,fdeb12,272720,2f2423
+   CarNumberDesignStr: 0,0,121111,0f100e,f6ff05
+   CarSponsor_1: 0
+   CarSponsor_2: 0
+   ClubName: Ohio
+   DivisionName: Division 1
+ - CarIdx: 12
+   UserName: Michael Couture
+   AbbrevName: Couture, M
+   Initials: MC
+   UserID: 215746
+   TeamID: 0
+   TeamName: Michael Couture
+   CarNumber: "27"
+   CarNumberRaw: 27
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 1935
+   LicLevel: 14
+   LicSubLevel: 240
+   LicString: B 2.40
+   LicColor: 0x00c702
+   IsSpectator: 0
+   CarDesignStr: 0,f35012,ed2129,2a3795;eb7137
+   HelmetDesignStr: 19,110d0d,f35012,e49e44
+   SuitDesignStr: 4,f35012,1724de,110d0d
+   CarNumberDesignStr: 45,1,2c170c,ffffff,000000
+   CarSponsor_1: 49
+   CarSponsor_2: 1
+   ClubName: Florida
+   DivisionName: Division 1
+ - CarIdx: 13
+   UserName: Robert Victory
+   AbbrevName: Victory, R
+   Initials: RV
+   UserID: 147653
+   TeamID: 0
+   TeamName: Robert Victory
+   CarNumber: "7"
+   CarNumberRaw: 7
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 1153
+   LicLevel: 18
+   LicSubLevel: 270
+   LicString: A 2.70
+   LicColor: 0x0153db
+   IsSpectator: 0
+   CarDesignStr: 10,0d0d0c,e70d17,0f100f;a0620d
+   HelmetDesignStr: 35,10100f,e89c17,ffffff
+   SuitDesignStr: 23,11100e,f1b327,fcf8f8
+   CarNumberDesignStr: 16,0,faf5f5,0c0c0e,f29521
+   CarSponsor_1: 0
+   CarSponsor_2: 0
+   ClubName: Mid-South
+   DivisionName: Division 1
+ - CarIdx: 14
+   UserName: Richard Tillman
+   AbbrevName: Tillman, R
+   Initials: RT
+   UserID: 139762
+   TeamID: 0
+   TeamName: Richard Tillman
+   CarNumber: "14"
+   CarNumberRaw: 14
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 1825
+   LicLevel: 14
+   LicSubLevel: 230
+   LicString: B 2.30
+   LicColor: 0x00c702
+   IsSpectator: 0
+   CarDesignStr: 11,000a00,dcf835,dbf547
+   HelmetDesignStr: 46,000000,2a3795,000000
+   SuitDesignStr: 13,1ed32f,2a3795,000000
+   CarNumberDesignStr: 11,0,ffffff,777777,000000
+   CarSponsor_1: 130
+   CarSponsor_2: 123
+   ClubName: California
+   DivisionName: Division 1
+ - CarIdx: 15
+   UserName: Angel Ledesma
+   AbbrevName: Ledesma, A
+   Initials: AL
+   UserID: 152666
+   TeamID: 0
+   TeamName: Angel Ledesma
+   CarNumber: "62"
+   CarNumberRaw: 62
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 3155
+   LicLevel: 8
+   LicSubLevel: 435
+   LicString: D 4.35
+   LicColor: 0xfc8a27
+   IsSpectator: 0
+   CarDesignStr: 18,000000,7a0000,b4975b;b4975b
+   HelmetDesignStr: 7,5c0000,000000,030f00
+   SuitDesignStr: 2,000000,d67d00,1f0300
+   CarNumberDesignStr: 40,0,b4965b,030303,030303
+   CarSponsor_1: 38
+   CarSponsor_2: 1
+   ClubName: Atlantic
+   DivisionName: Division 1
+ - CarIdx: 16
+   UserName: Robert Rielly
+   AbbrevName: Rielly, R
+   Initials: RR
+   UserID: 174156
+   TeamID: 0
+   TeamName: Robert Rielly
+   CarNumber: "66"
+   CarNumberRaw: 66
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 2266
+   LicLevel: 18
+   LicSubLevel: 216
+   LicString: A 2.16
+   LicColor: 0x0153db
+   IsSpectator: 0
+   CarDesignStr: 19,ad1c19,ffffff,ad1c19;ad1c19
+   HelmetDesignStr: 17,000000,000000,000000
+   SuitDesignStr: 14,12e2d3,ffffff,1a1a1f
+   CarNumberDesignStr: 1,0,ad1c19,ffffff,ad1c19
+   CarSponsor_1: 106
+   CarSponsor_2: 0
+   ClubName: Virginias
+   DivisionName: Division 1
+ - CarIdx: 17
+   UserName: Steve Dootz
+   AbbrevName: Dootz, S
+   Initials: SD
+   UserID: 204918
+   TeamID: 0
+   TeamName: Steve Dootz
+   CarNumber: "99"
+   CarNumberRaw: 99
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 846
+   LicLevel: 6
+   LicSubLevel: 202
+   LicString: D 2.02
+   LicColor: 0xfc8a27
+   IsSpectator: 0
+   CarDesignStr: 1,aff056,6aff24,666666
+   HelmetDesignStr: 1,ffffff,cccccc,666666
+   SuitDesignStr: 1,ffffff,cccccc,666666
+   CarNumberDesignStr: 0,0,397317,ffffff,777777
+   CarSponsor_1: 130
+   CarSponsor_2: 97
+   ClubName: Michigan
+   DivisionName: Division 1
+ - CarIdx: 18
+   UserName: Larry Andresen
+   AbbrevName: Andresen, L
+   Initials: LA
+   UserID: 16124
+   TeamID: 0
+   TeamName: Larry Andresen
+   CarNumber: "04"
+   CarNumberRaw: 2004
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 2517
+   LicLevel: 18
+   LicSubLevel: 277
+   LicString: A 2.77
+   LicColor: 0x0153db
+   IsSpectator: 0
+   CarDesignStr: 5,031adc,ffffff,cccccc;007fff
+   HelmetDesignStr: 39,0921f5,aaaaaa,fc0706
+   SuitDesignStr: 14,aaaaaa,fe2725,0921f5
+   CarNumberDesignStr: 40,3,08389f,777777,231f20
+   CarSponsor_1: 72
+   CarSponsor_2: 73
+   ClubName: Northwest
+   DivisionName: Division 1
+ - CarIdx: 19
+   UserName: Travis wilson2
+   AbbrevName: wilson2, T
+   Initials: Tw
+   UserID: 159357
+   TeamID: 0
+   TeamName: Travis wilson2
+   CarNumber: "82"
+   CarNumberRaw: 82
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 521
+   LicLevel: 10
+   LicSubLevel: 237
+   LicString: C 2.37
+   LicColor: 0xfeec04
+   IsSpectator: 0
+   CarDesignStr: 0,274edd,274edd,274edd,c0a739
+   HelmetDesignStr: 62,c41212,ffffff,2a3795
+   SuitDesignStr: 2,274edd,ffffff,274edd
+   CarNumberDesignStr: 43,0,ffffff,f2f2f2,000000
+   CarSponsor_1: 98
+   CarSponsor_2: 69
+   ClubName: Mid-South
+   DivisionName: Division 1
+ - CarIdx: 20
+   UserName: Kris Mulhall
+   AbbrevName: Mulhall, K
+   Initials: KM
+   UserID: 172357
+   TeamID: 0
+   TeamName: Kris Mulhall
+   CarNumber: "11"
+   CarNumberRaw: 11
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 1577
+   LicLevel: 18
+   LicSubLevel: 215
+   LicString: A 2.15
+   LicColor: 0x0153db
+   IsSpectator: 0
+   CarDesignStr: 0,ffffff,000000,000000,000000
+   HelmetDesignStr: 0,ffffff,ffffff,ffffff
+   SuitDesignStr: 5,707070,000000,000000
+   CarNumberDesignStr: 11,0,949494,000000,000000
+   CarSponsor_1: 0
+   CarSponsor_2: 0
+   ClubName: Mid-South
+   DivisionName: Division 1
+ - CarIdx: 21
+   UserName: Wesley Johnson3
+   AbbrevName: Johnson3, W
+   Initials: WJ
+   UserID: 242714
+   TeamID: 0
+   TeamName: Wesley Johnson3
+   CarNumber: "18"
+   CarNumberRaw: 18
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 1385
+   LicLevel: 5
+   LicSubLevel: 153
+   LicString: D 1.53
+   LicColor: 0xfc8a27
+   IsSpectator: 0
+   CarDesignStr: 15,000000,eb0000,ebde00,e60000
+   HelmetDesignStr: 56,000000,001ce6,ffffff
+   SuitDesignStr: 16,000000,0f39ff,ffffff
+   CarNumberDesignStr: 0,0,ffffff,000000,ffffff
+   CarSponsor_1: 48
+   CarSponsor_2: 98
+   ClubName: Indiana
+   DivisionName: Division 1
+ - CarIdx: 22
+   UserName: Colin Detrick
+   AbbrevName: Detrick, C
+   Initials: CD
+   UserID: 84144
+   TeamID: 0
+   TeamName: Colin Detrick
+   CarNumber: "22"
+   CarNumberRaw: 22
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 718
+   LicLevel: 18
+   LicSubLevel: 238
+   LicString: A 2.38
+   LicColor: 0x0153db
+   IsSpectator: 0
+   CarDesignStr: 11,0b0a0a,100f0f,080707,fafafa
+   HelmetDesignStr: 13,bfa50d,3603ce,4510e0
+   SuitDesignStr: 28,b98e09,4409be,370acd
+   CarNumberDesignStr: 9,3,f6f8f7,147bfa,0165f4
+   CarSponsor_1: 0
+   CarSponsor_2: 0
+   ClubName: Virginias
+   DivisionName: Division 1
+ - CarIdx: 23
+   UserName: Gary Corbett
+   AbbrevName: Corbett, G
+   Initials: GC
+   UserID: 180785
+   TeamID: 0
+   TeamName: Gary Corbett
+   CarNumber: "24"
+   CarNumberRaw: 24
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 1588
+   LicLevel: 20
+   LicSubLevel: 437
+   LicString: A 4.37
+   LicColor: 0x0153db
+   IsSpectator: 0
+   CarDesignStr: 17,ffffff,ed2129,09090c,ffffff
+   HelmetDesignStr: 13,2a3795,1c0f24,21ed38
+   SuitDesignStr: 15,190943,0a00cc,3ff532
+   CarNumberDesignStr: 14,2,ffffff,f80d1f,000000
+   CarSponsor_1: 129
+   CarSponsor_2: 133
+   ClubName: Mid-South
+   DivisionName: Division 1
+ - CarIdx: 24
+   UserName: Collin Fern
+   AbbrevName: Fern, C
+   Initials: CF
+   UserID: 90649
+   TeamID: 0
+   TeamName: Collin Fern
+   CarNumber: "53"
+   CarNumberRaw: 53
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 3480
+   LicLevel: 14
+   LicSubLevel: 262
+   LicString: B 2.62
+   LicColor: 0x00c702
+   IsSpectator: 0
+   CarDesignStr: 5,050505,da0c0e,f4f5f5
+   HelmetDesignStr: 14,2328f6,030203,ffffff
+   SuitDesignStr: 2,050505,ffffff,1317f1
+   CarNumberDesignStr: 0,1,fdfdfd,f31b1b,e2e1e1
+   CarSponsor_1: 0
+   CarSponsor_2: 130
+   ClubName: New York
+   DivisionName: Division 1
+ - CarIdx: 25
+   UserName: Rodney German
+   AbbrevName: German, R
+   Initials: RG
+   UserID: 111289
+   TeamID: 0
+   TeamName: Rodney German
+   CarNumber: "69"
+   CarNumberRaw: 69
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 2540
+   LicLevel: 19
+   LicSubLevel: 322
+   LicString: A 3.22
+   LicColor: 0x0153db
+   IsSpectator: 0
+   CarDesignStr: 15,110314,6f2fc1,8a4fc4
+   HelmetDesignStr: 3,5e0e67,320836,730512
+   SuitDesignStr: 18,7d1787,320836,320836
+   CarNumberDesignStr: 52,0,110314,777777,000000
+   CarSponsor_1: 107
+   CarSponsor_2: 106
+   ClubName: Mid-South
+   DivisionName: Division 1
+ - CarIdx: 26
+   UserName: Dan Janjanin
+   AbbrevName: Janjanin, D
+   Initials: DJ
+   UserID: 112666
+   TeamID: 0
+   TeamName: Dan Janjanin
+   CarNumber: "28"
+   CarNumberRaw: 28
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 2428
+   LicLevel: 18
+   LicSubLevel: 267
+   LicString: A 2.67
+   LicColor: 0x0153db
+   IsSpectator: 0
+   CarDesignStr: 14,10100f,29f71d,0ba225;c4c4c4
+   HelmetDesignStr: 57,eeeeee,000000,fcf3ec
+   SuitDesignStr: 1,ffffff,cccccc,666666
+   CarNumberDesignStr: 54,2,fafaf9,070807,90908e
+   CarSponsor_1: 0
+   CarSponsor_2: 0
+   ClubName: Illinois
+   DivisionName: Division 1
+ - CarIdx: 27
+   UserName: Bryan Beech
+   AbbrevName: Beech, B
+   Initials: BB
+   UserID: 225596
+   TeamID: 0
+   TeamName: Bryan Beech
+   CarNumber: "29"
+   CarNumberRaw: 29
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 1756
+   LicLevel: 11
+   LicSubLevel: 328
+   LicString: C 3.28
+   LicColor: 0xfeec04
+   IsSpectator: 0
+   CarDesignStr: 15,45ff2e,00faef,fb260e,fef920
+   HelmetDesignStr: 18,31c9c5,2feeaa,1b9b08
+   SuitDesignStr: 18,275cd3,f9f81a,14f026
+   CarNumberDesignStr: 16,0,fff433,ffc11f,2e4dff
+   CarSponsor_1: 56
+   CarSponsor_2: 51
+   ClubName: Northwest
+   DivisionName: Division 1
+ - CarIdx: 28
+   UserName: Derek McAlister
+   AbbrevName: McAlister, D
+   Initials: DM
+   UserID: 111327
+   TeamID: 0
+   TeamName: Derek McAlister
+   CarNumber: "87"
+   CarNumberRaw: 87
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 3560
+   LicLevel: 14
+   LicSubLevel: 257
+   LicString: B 2.57
+   LicColor: 0x00c702
+   IsSpectator: 0
+   CarDesignStr: 16,161d16,121212,f31618
+   HelmetDesignStr: 1,ffffff,cccccc,666666
+   SuitDesignStr: 4,031adc,000000,ffef26
+   CarNumberDesignStr: 10,0,ffffff,000000,ffffff
+   CarSponsor_1: 97
+   CarSponsor_2: 1
+   ClubName: California
+   DivisionName: Division 1
+ - CarIdx: 29
+   UserName: Dustin German
+   AbbrevName: German, D
+   Initials: DG
+   UserID: 223717
+   TeamID: 0
+   TeamName: Dustin German
+   CarNumber: "3"
+   CarNumberRaw: 3
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 2361
+   LicLevel: 15
+   LicSubLevel: 385
+   LicString: B 3.85
+   LicColor: 0x00c702
+   IsSpectator: 0
+   CarDesignStr: 1,ffffff,cccccc,666666;000000
+   HelmetDesignStr: 59,00118a,000000,00f017
+   SuitDesignStr: 1,8aff1a,000000,100094
+   CarNumberDesignStr: 40,4,ffffff,000000,f40118
+   CarSponsor_1: 0
+   CarSponsor_2: 0
+   ClubName: Carolina
+   DivisionName: Division 1
+ - CarIdx: 30
+   UserName: Harry Murchison
+   AbbrevName: Murchison, H
+   Initials: HM
+   UserID: 198472
+   TeamID: 0
+   TeamName: Harry Murchison
+   CarNumber: "30"
+   CarNumberRaw: 30
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 1580
+   LicLevel: 14
+   LicSubLevel: 260
+   LicString: B 2.60
+   LicColor: 0x00c702
+   IsSpectator: 0
+   CarDesignStr: 10,2a3795,ffffff,2a3795,000000
+   HelmetDesignStr: 55,ffffff,2a3795,000000
+   SuitDesignStr: 23,000000,ffffff,000000
+   CarNumberDesignStr: 0,0,000000,ffffff,000000
+   CarSponsor_1: 54
+   CarSponsor_2: 0
+   ClubName: Florida
+   DivisionName: Division 1
+ - CarIdx: 31
+   UserName: Jorge Bustos
+   AbbrevName: Bustos, J
+   Initials: JB
+   UserID: 93199
+   TeamID: 0
+   TeamName: Jorge Bustos
+   CarNumber: "78"
+   CarNumberRaw: 78
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 1977
+   LicLevel: 14
+   LicSubLevel: 220
+   LicString: B 2.20
+   LicColor: 0x00c702
+   IsSpectator: 0
+   CarDesignStr: 10,000000,ebebeb,f90b0b;000000
+   HelmetDesignStr: 19,303030,000000,e62419
+   SuitDesignStr: 4,f2f2f2,6d6e71,000000
+   CarNumberDesignStr: 13,0,000000,000000,b80a0a
+   CarSponsor_1: 81
+   CarSponsor_2: 1
+   ClubName: Atlantic
+   DivisionName: Division 1
+ - CarIdx: 32
+   UserName: Scott Clark2
+   AbbrevName: Clark2, S
+   Initials: SC
+   UserID: 58011
+   TeamID: 0
+   TeamName: Scott Clark2
+   CarNumber: "152"
+   CarNumberRaw: 152
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 2962
+   LicLevel: 11
+   LicSubLevel: 342
+   LicString: C 3.42
+   LicColor: 0xfeec04
+   IsSpectator: 0
+   CarDesignStr: 0,000000,000000,000000,ffffff
+   HelmetDesignStr: 57,99fd3a,040101,030302
+   SuitDesignStr: 3,ada9a9,000000,000000
+   CarNumberDesignStr: 40,0,ffffff,c2f31b,c2f31b
+   CarSponsor_1: 92
+   CarSponsor_2: 51
+   ClubName: California
+   DivisionName: Division 1
+ - CarIdx: 33
+   UserName: Herman Reynolds
+   AbbrevName: Reynolds, H
+   Initials: HR
+   UserID: 134757
+   TeamID: 0
+   TeamName: Herman Reynolds
+   CarNumber: "9"
+   CarNumberRaw: 9
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 2574
+   LicLevel: 19
+   LicSubLevel: 365
+   LicString: A 3.65
+   LicColor: 0x0153db
+   IsSpectator: 0
+   CarDesignStr: 18,0c22d7,f8efef,f51717;fbf1f4
+   HelmetDesignStr: 19,e47006,ebeab7,668ef9
+   SuitDesignStr: 15,f8a93a,eeeea0,3458f9
+   CarNumberDesignStr: 0,0,31e0f4,777777,000000
+   CarSponsor_1: 0
+   CarSponsor_2: 0
+   ClubName: Mid-South
+   DivisionName: Division 1
+ - CarIdx: 34
+   UserName: Jimmy Alagna
+   AbbrevName: Alagna, J
+   Initials: JA
+   UserID: 179911
+   TeamID: 0
+   TeamName: Jimmy Alagna
+   CarNumber: "13"
+   CarNumberRaw: 13
+   CarPath: streetstock
+   CarClassID: 0
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 2436
+   LicLevel: 17
+   LicSubLevel: 176
+   LicString: A 1.76
+   LicColor: 0x0153db
+   IsSpectator: 0
+   CarDesignStr: 13,ffffff,000000,000bb3;52d9ff
+   HelmetDesignStr: 65,ffffff,000000,f50000
+   SuitDesignStr: 6,000000,ad0000,ffffff
+   CarNumberDesignStr: 48,4,0f54ff,ffffff,000000
+   CarSponsor_1: 97
+   CarSponsor_2: 0
+   ClubName: New Jersey
+   DivisionName: Division 1
+ - CarIdx: 63
+   UserName: Jordan Malish
+   AbbrevName: 
+   Initials: 
+   UserID: 90201
+   TeamID: 0
+   TeamName: Jordan Malish
+   CarNumber: "94"
+   CarNumberRaw: 94
+   CarPath: streetstock
+   CarClassID: 34
+   CarID: 36
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Street Stock
+   CarScreenNameShort: Street Stock
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 0.400 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 2419
+   LicLevel: 20
+   LicSubLevel: 460
+   LicString: A 4.60
+   LicColor: 0x0153db
+   IsSpectator: 1
+   CarDesignStr: 1,b80000,000000,ffffff
+   HelmetDesignStr: 1,ad0800,000000,ffffff
+   SuitDesignStr: 30,860000,000000,ffffff
+   CarNumberDesignStr: 45,0,ffffff,777777,000000
+   CarSponsor_1: 107
+   CarSponsor_2: 59
+   ClubName: Virginias
+   DivisionName: Division 1
+
+SplitTimeInfo:
+ Sectors:
+ - SectorNum: 0
+   SectorStartPct: 0.000000
+ - SectorNum: 1
+   SectorStartPct: 0.500000
+
