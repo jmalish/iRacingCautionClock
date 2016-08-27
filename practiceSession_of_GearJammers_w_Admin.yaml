@@ -1,0 +1,922 @@
+---
+WeekendInfo:
+ TrackName: michigan
+ TrackID: 124
+ TrackLength: 3.22 km
+ TrackDisplayName: Michigan International Speedway
+ TrackDisplayShortName: Michigan
+ TrackConfigName: 
+ TrackCity: Brooklyn
+ TrackCountry: USA
+ TrackAltitude: 308.45 m
+ TrackLatitude: 42.067648 m
+ TrackLongitude: -84.244768 m
+ TrackNorthOffset: 3.3856 rad
+ TrackNumTurns: 4
+ TrackPitSpeedLimit: 88.51 kph
+ TrackType: long oval
+ TrackWeatherType: Realistic
+ TrackSkies: Clear
+ TrackSurfaceTemp: 39.27 C
+ TrackAirTemp: 24.27 C
+ TrackAirPressure: 28.84 Hg
+ TrackWindVel: 3.07 m/s
+ TrackWindDir: 5.90 rad
+ TrackRelativeHumidity: 45 %
+ TrackFogLevel: 0 %
+ TrackCleanup: 0
+ TrackDynamicTrack: 1
+ SeriesID: 0
+ SeasonID: 0
+ SessionID: 71368532
+ SubSessionID: 17560538
+ LeagueID: 1514
+ Official: 0
+ RaceWeek: 0
+ EventType: Race
+ Category: Oval
+ SimMode: full
+ TeamRacing: 0
+ MinDrivers: 0
+ MaxDrivers: 1
+ DCRuleSet: None
+ QualifierMustStartRace: 0
+ NumCarClasses: 1
+ NumCarTypes: 3
+ WeekendOptions:
+  NumStarters: 43
+  StartingGrid: single file
+  QualifyScoring: best lap
+  CourseCautions: full
+  StandingStart: 0
+  Restarts: double file lapped cars behind
+  WeatherType: Realistic
+  Skies: Partly Cloudy
+  WindDirection: N
+  WindSpeed: 3.22 km/h
+  WeatherTemp: 25.56 C
+  RelativeHumidity: 55 %
+  FogLevel: 0 %
+  TimeOfDay: 2-00 pm
+  Unofficial: 1
+  CommercialMode: consumer
+  NightMode: 0
+  IsFixedSetup: 1
+  StrictLapsChecking: default
+  HasOpenRegistration: 1
+  HardcoreLevel: 1
+  IncidentLimit: unlimited
+ TelemetryOptions:
+  TelemetryDiskFile: ""
+
+SessionInfo:
+ Sessions:
+ - SessionNum: 0
+   SessionLaps: unlimited
+   SessionTime: 1800.0000 sec
+   SessionNumLapsToAvg: 0
+   SessionType: Practice
+   SessionTrackRubberState: clean
+   ResultsPositions:
+   - Position: 1
+     ClassPosition: 0
+     CarIdx: 6
+     Lap: 4
+     Time: 40.3181
+     FastestLap: 4
+     FastestTime: 40.3181
+     LastTime: 43.4902
+     LapsLed: 0
+     LapsComplete: 6
+     LapsDriven: 0.000
+     Incidents: 0
+     ReasonOutId: 0
+     ReasonOutStr: Running
+   - Position: 2
+     ClassPosition: 1
+     CarIdx: 3
+     Lap: 7
+     Time: 40.3576
+     FastestLap: 7
+     FastestTime: 40.3576
+     LastTime: 40.3576
+     LapsLed: 0
+     LapsComplete: 7
+     LapsDriven: 0.000
+     Incidents: 0
+     ReasonOutId: 0
+     ReasonOutStr: Running
+   - Position: 3
+     ClassPosition: 2
+     CarIdx: 10
+     Lap: 2
+     Time: 40.5147
+     FastestLap: 2
+     FastestTime: 40.5147
+     LastTime: 40.9662
+     LapsLed: 0
+     LapsComplete: 4
+     LapsDriven: 0.000
+     Incidents: 0
+     ReasonOutId: 0
+     ReasonOutStr: Running
+   - Position: 4
+     ClassPosition: 3
+     CarIdx: 4
+     Lap: 1
+     Time: 40.8136
+     FastestLap: 1
+     FastestTime: 40.8136
+     LastTime: 41.1145
+     LapsLed: 0
+     LapsComplete: 2
+     LapsDriven: 0.000
+     Incidents: 0
+     ReasonOutId: 0
+     ReasonOutStr: Running
+   - Position: 5
+     ClassPosition: 4
+     CarIdx: 5
+     Lap: 2
+     Time: 40.9055
+     FastestLap: 2
+     FastestTime: 40.9055
+     LastTime: 41.0252
+     LapsLed: 0
+     LapsComplete: 3
+     LapsDriven: 0.000
+     Incidents: 0
+     ReasonOutId: 0
+     ReasonOutStr: Running
+   - Position: 6
+     ClassPosition: 5
+     CarIdx: 2
+     Lap: 8
+     Time: 41.0994
+     FastestLap: 8
+     FastestTime: 41.0994
+     LastTime: 41.8829
+     LapsLed: 0
+     LapsComplete: 9
+     LapsDriven: 0.000
+     Incidents: 0
+     ReasonOutId: 0
+     ReasonOutStr: Running
+   - Position: 7
+     ClassPosition: 6
+     CarIdx: 8
+     Lap: 1
+     Time: 41.6021
+     FastestLap: 1
+     FastestTime: 41.6021
+     LastTime: 41.6021
+     LapsLed: 0
+     LapsComplete: 1
+     LapsDriven: 0.000
+     Incidents: 0
+     ReasonOutId: 0
+     ReasonOutStr: Running
+   - Position: 8
+     ClassPosition: 7
+     CarIdx: 11
+     Lap: 1
+     Time: 42.2281
+     FastestLap: 1
+     FastestTime: 42.2281
+     LastTime: 42.2281
+     LapsLed: 0
+     LapsComplete: 1
+     LapsDriven: 0.000
+     Incidents: 0
+     ReasonOutId: 0
+     ReasonOutStr: Running
+   ResultsFastestLap:
+   - CarIdx: 6
+     FastestLap: 4
+     FastestTime: 40.3181
+   ResultsAverageLapTime: -1.0000
+   ResultsNumCautionFlags: 0
+   ResultsNumCautionLaps: 0
+   ResultsNumLeadChanges: 0
+   ResultsLapsComplete: -1
+   ResultsOfficial: 0
+ - SessionNum: 1
+   SessionLaps: unlimited
+   SessionTime: 300.0000 sec
+   SessionNumLapsToAvg: 0
+   SessionType: Open Qualify
+   SessionTrackRubberState: carry over
+   ResultsPositions:
+   ResultsFastestLap:
+   - CarIdx: 255
+     FastestLap: 0
+     FastestTime: -1.0000
+   ResultsAverageLapTime: -1.0000
+   ResultsNumCautionFlags: 0
+   ResultsNumCautionLaps: 0
+   ResultsNumLeadChanges: 0
+   ResultsLapsComplete: -1
+   ResultsOfficial: 0
+ - SessionNum: 2
+   SessionLaps: 100
+   SessionTime: 12300.0000 sec
+   SessionNumLapsToAvg: 0
+   SessionType: Race
+   SessionTrackRubberState: carry over
+   ResultsPositions:
+   ResultsFastestLap:
+   - CarIdx: 255
+     FastestLap: 0
+     FastestTime: -1.0000
+   ResultsAverageLapTime: -1.0000
+   ResultsNumCautionFlags: 0
+   ResultsNumCautionLaps: 0
+   ResultsNumLeadChanges: 0
+   ResultsLapsComplete: -1
+   ResultsOfficial: 0
+
+CameraInfo:
+ Groups:
+ - GroupNum: 1
+   GroupName: Nose
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamNose
+ - GroupNum: 2
+   GroupName: Gearbox
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamGearbox
+ - GroupNum: 3
+   GroupName: Roll Bar
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamRoll Bar
+ - GroupNum: 4
+   GroupName: LF Susp
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamLF Susp
+ - GroupNum: 5
+   GroupName: LR Susp
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamLR Susp
+ - GroupNum: 6
+   GroupName: Gyro
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamGyro
+ - GroupNum: 7
+   GroupName: RF Susp
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamRF Susp
+ - GroupNum: 8
+   GroupName: RR Susp
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamRR Susp
+ - GroupNum: 9
+   GroupName: Cockpit
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamCockpit
+ - GroupNum: 10
+   GroupName: Scenic
+   IsScenic: true
+   Cameras:
+   - CameraNum: 1
+     CameraName: Scenic_00
+   - CameraNum: 2
+     CameraName: Scenic_01
+   - CameraNum: 3
+     CameraName: Scenic_02
+   - CameraNum: 4
+     CameraName: Scenic_03
+   - CameraNum: 5
+     CameraName: Scenic_04
+   - CameraNum: 6
+     CameraName: Scenic_05
+ - GroupNum: 11
+   GroupName: TV1
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamTV1_00
+   - CameraNum: 2
+     CameraName: CamTV1_01
+   - CameraNum: 3
+     CameraName: CamTV1_02
+   - CameraNum: 4
+     CameraName: CamTV1_03
+   - CameraNum: 5
+     CameraName: CamTV1_04
+ - GroupNum: 12
+   GroupName: TV2
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamTV2_00
+   - CameraNum: 2
+     CameraName: CamTV2_01
+   - CameraNum: 3
+     CameraName: CamTV2_02
+   - CameraNum: 4
+     CameraName: CamTV2_03
+   - CameraNum: 5
+     CameraName: CamTV2_04
+ - GroupNum: 13
+   GroupName: TV3
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamTV3_00
+   - CameraNum: 2
+     CameraName: CamTV3_01
+   - CameraNum: 3
+     CameraName: CamTV3_02
+   - CameraNum: 4
+     CameraName: CamTV3_03
+ - GroupNum: 14
+   GroupName: Pit Lane
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamPit Lane
+ - GroupNum: 15
+   GroupName: Pit Lane 2
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamPit Lane 2
+ - GroupNum: 16
+   GroupName: Chopper
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamChopper
+ - GroupNum: 17
+   GroupName: Blimp
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamBlimp
+ - GroupNum: 18
+   GroupName: Chase
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamChase
+ - GroupNum: 19
+   GroupName: Far Chase
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamFar Chase
+ - GroupNum: 20
+   GroupName: Rear Chase
+   Cameras:
+   - CameraNum: 1
+     CameraName: CamRear Chase
+
+RadioInfo:
+ SelectedRadioNum: 0
+ Radios:
+ - RadioNum: 0
+   HopCount: 1
+   NumFrequencies: 7
+   TunedToFrequencyNum: 0
+   ScanningIsOn: 1
+   Frequencies:
+   - FrequencyNum: 0
+     FrequencyName: "@ALLTEAMS"
+     Priority: 12
+     CarIdx: -1
+     EntryIdx: -1
+     ClubID: 0
+     CanScan: 1
+     CanSquawk: 1
+     Muted: 0
+     IsMutable: 1
+     IsDeletable: 0
+   - FrequencyNum: 1
+     FrequencyName: "@DRIVERS"
+     Priority: 15
+     CarIdx: -1
+     EntryIdx: -1
+     ClubID: 0
+     CanScan: 1
+     CanSquawk: 1
+     Muted: 0
+     IsMutable: 1
+     IsDeletable: 0
+   - FrequencyNum: 2
+     FrequencyName: "@TEAM"
+     Priority: 60
+     CarIdx: 6
+     EntryIdx: -1
+     ClubID: 0
+     CanScan: 1
+     CanSquawk: 1
+     Muted: 0
+     IsMutable: 0
+     IsDeletable: 0
+   - FrequencyNum: 3
+     FrequencyName: "@CLUB"
+     Priority: 20
+     CarIdx: -1
+     EntryIdx: -1
+     ClubID: 17
+     CanScan: 1
+     CanSquawk: 1
+     Muted: 0
+     IsMutable: 1
+     IsDeletable: 0
+   - FrequencyNum: 4
+     FrequencyName: "@ADMIN"
+     Priority: 90
+     CarIdx: -1
+     EntryIdx: -1
+     ClubID: 0
+     CanScan: 1
+     CanSquawk: 1
+     Muted: 0
+     IsMutable: 0
+     IsDeletable: 0
+   - FrequencyNum: 5
+     FrequencyName: "@RACECONTROL"
+     Priority: 80
+     CarIdx: -1
+     EntryIdx: -1
+     ClubID: 0
+     CanScan: 1
+     CanSquawk: 1
+     Muted: 0
+     IsMutable: 0
+     IsDeletable: 0
+   - FrequencyNum: 6
+     FrequencyName: "@PRIVATE"
+     Priority: 70
+     CarIdx: -1
+     EntryIdx: 6
+     ClubID: 0
+     CanScan: 1
+     CanSquawk: 1
+     Muted: 0
+     IsMutable: 0
+     IsDeletable: 0
+
+DriverInfo:
+ DriverCarIdx: 6
+ PaceCarIdx: 0
+ DriverHeadPosX: -0.065
+ DriverHeadPosY: 0.403
+ DriverHeadPosZ: 0.620
+ DriverCarIdleRPM: 1200.000
+ DriverCarRedLine: 9000.000
+ DriverCarFuelKgPerLtr: 0.750
+ DriverCarFuelMaxLtr: 70.753
+ DriverCarMaxFuelPct: 1.000
+ DriverCarSLFirstRPM: 7600.000
+ DriverCarSLShiftRPM: 8600.000
+ DriverCarSLLastRPM: 8600.000
+ DriverCarSLBlinkRPM: 9000.000
+ DriverPitTrkPct: 0.061763
+ DriverCarEstLapTime: 39.7110
+ DriverSetupName: michigan.sto
+ DriverSetupIsModified: 1
+ DriverSetupLoadTypeName: fixed
+ DriverSetupPassedTech: 1
+ Drivers:
+ - CarIdx: 0
+   UserName: Pace Car
+   AbbrevName: Car, P
+   Initials: PC
+   UserID: -1
+   TeamID: 0
+   TeamName: Pace Car
+   CarNumber: "0"
+   CarNumberRaw: 0
+   CarPath: safety pcfr500s
+   CarClassID: 11
+   CarID: 32
+   CarIsPaceCar: 1
+   CarIsAI: 0
+   CarScreenName: safety pcfr500s
+   CarScreenNameShort: safety pcfr500s
+   CarClassShortName: 
+   CarClassRelSpeed: 0
+   CarClassLicenseLevel: 0
+   CarClassMaxFuelPct: 1.000 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 0
+   LicLevel: 1
+   LicSubLevel: 0
+   LicString: R 0.00
+   LicColor: 0xffffff
+   IsSpectator: 0
+   CarDesignStr: 0,ffffff,ffffff,ffffff
+   HelmetDesignStr: 0,ffffff,ffffff,ffffff
+   SuitDesignStr: 0,ffffff,ffffff,ffffff
+   CarNumberDesignStr: 0,0,ffffff,ffffff,ffffff
+   CarSponsor_1: 0
+   CarSponsor_2: 0
+   ClubName: -none-
+   DivisionName: Division 1
+ - CarIdx: 1
+   UserName: Scotty Channer
+   AbbrevName: Channer, S
+   Initials: SC
+   UserID: 211982
+   TeamID: 0
+   TeamName: Scotty Channer
+   CarNumber: "007"
+   CarNumberRaw: 3007
+   CarPath: trucks tundra2015
+   CarClassID: 0
+   CarID: 62
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Toyota Tundra
+   CarScreenNameShort: Toyota Tundra
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 1.000 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 799
+   LicLevel: 18
+   LicSubLevel: 263
+   LicString: A 2.63
+   LicColor: 0x0153db
+   IsSpectator: 0
+   CarDesignStr: 16,d13333,3b2b2b,111346,cbd2cb
+   HelmetDesignStr: 1,ffffff,cccccc,666666
+   SuitDesignStr: 1,ffffff,cccccc,666666
+   CarNumberDesignStr: 0,0,ffffff,777777,000000
+   CarSponsor_1: 0
+   CarSponsor_2: 0
+   ClubName: Northwest
+   DivisionName: Division 1
+ - CarIdx: 2
+   UserName: John Huntington
+   AbbrevName: Huntington, J
+   Initials: JH
+   UserID: 69269
+   TeamID: 0
+   TeamName: John Huntington
+   CarNumber: "38"
+   CarNumberRaw: 38
+   CarPath: trucks tundra2015
+   CarClassID: 0
+   CarID: 62
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Toyota Tundra
+   CarScreenNameShort: Toyota Tundra
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 1.000 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 2728
+   LicLevel: 20
+   LicSubLevel: 499
+   LicString: A 4.99
+   LicColor: 0x0153db
+   IsSpectator: 0
+   CarDesignStr: 2,a71b21,ffffff,666666,000000
+   HelmetDesignStr: 1,e8111a,ffffff,ffffff
+   SuitDesignStr: 2,e20100,fefced,a30100
+   CarNumberDesignStr: 0,0,777777,ffffff,000000
+   CarSponsor_1: 0
+   CarSponsor_2: 0
+   ClubName: Canada
+   DivisionName: Division 1
+ - CarIdx: 3
+   UserName: Bryan Dehn
+   AbbrevName: Dehn, B
+   Initials: BD
+   UserID: 114727
+   TeamID: 0
+   TeamName: Bryan Dehn
+   CarNumber: "23"
+   CarNumberRaw: 23
+   CarPath: trucks silverado2015
+   CarClassID: 0
+   CarID: 63
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Chevrolet Silverado
+   CarScreenNameShort: Chevrolet Silverado
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 1.000 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 1952
+   LicLevel: 18
+   LicSubLevel: 258
+   LicString: A 2.58
+   LicColor: 0x0153db
+   IsSpectator: 0
+   CarDesignStr: 19,ffffff,000000,e4a001,000000
+   HelmetDesignStr: 61,ffffff,a59a00,000000
+   SuitDesignStr: 14,ffffff,000000,a59a00
+   CarNumberDesignStr: 7,0,000000,ffffff,000000
+   CarSponsor_1: 0
+   CarSponsor_2: 0
+   ClubName: Midwest
+   DivisionName: Division 1
+ - CarIdx: 4
+   UserName: Brent Rogers
+   AbbrevName: Rogers, B
+   Initials: BR
+   UserID: 152561
+   TeamID: 0
+   TeamName: Brent Rogers
+   CarNumber: "3"
+   CarNumberRaw: 3
+   CarPath: trucks silverado2015
+   CarClassID: 0
+   CarID: 63
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Chevrolet Silverado
+   CarScreenNameShort: Chevrolet Silverado
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 1.000 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 1532
+   LicLevel: 15
+   LicSubLevel: 392
+   LicString: B 3.92
+   LicColor: 0x00c702
+   IsSpectator: 0
+   CarDesignStr: 0,ffffff,cccccc,666666
+   HelmetDesignStr: 35,0f0f15,cccccc,666666
+   SuitDesignStr: 3,0d0c12,f8f7f7,666666
+   CarNumberDesignStr: 48,3,ffffff,777777,000000
+   CarSponsor_1: 0
+   CarSponsor_2: 0
+   ClubName: California
+   DivisionName: Division 1
+ - CarIdx: 5
+   UserName: Gloria Quintanilla
+   AbbrevName: Quintanilla, G
+   Initials: GQ
+   UserID: 202534
+   TeamID: 0
+   TeamName: Gloria Quintanilla
+   CarNumber: "48"
+   CarNumberRaw: 48
+   CarPath: trucks silverado2015
+   CarClassID: 0
+   CarID: 63
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Chevrolet Silverado
+   CarScreenNameShort: Chevrolet Silverado
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 1.000 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 2391
+   LicLevel: 17
+   LicSubLevel: 151
+   LicString: A 1.51
+   LicColor: 0x0153db
+   IsSpectator: 0
+   CarDesignStr: 0,a7a6a0,d2d378,666666
+   HelmetDesignStr: 1,d00101,f63c37,666666
+   SuitDesignStr: 1,ffffff,cccccc,666666
+   CarNumberDesignStr: 44,0,f6fb41,6f65ec,2a3795
+   CarSponsor_1: 129
+   CarSponsor_2: 129
+   ClubName: New England
+   DivisionName: Division 1
+ - CarIdx: 6
+   UserName: Jordan Malish
+   AbbrevName: Malish, J
+   Initials: JM
+   UserID: 90201
+   TeamID: 0
+   TeamName: Jordan Malish
+   CarNumber: "94"
+   CarNumberRaw: 94
+   CarPath: trucks silverado2015
+   CarClassID: 0
+   CarID: 63
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Chevrolet Silverado
+   CarScreenNameShort: Chevrolet Silverado
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 1.000 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 2419
+   LicLevel: 20
+   LicSubLevel: 460
+   LicString: A 4.60
+   LicColor: 0x0153db
+   IsSpectator: 0
+   CarDesignStr: 21,ffffff,b80000,000000
+   HelmetDesignStr: 1,ad0800,000000,ffffff
+   SuitDesignStr: 30,860000,000000,ffffff
+   CarNumberDesignStr: 0,0,ffffff,777777,000000
+   CarSponsor_1: 59
+   CarSponsor_2: 5
+   ClubName: Virginias
+   DivisionName: Division 1
+ - CarIdx: 7
+   UserName: Riley Sherman
+   AbbrevName: Sherman, R
+   Initials: RS
+   UserID: 163731
+   TeamID: 0
+   TeamName: Riley Sherman
+   CarNumber: "97"
+   CarNumberRaw: 97
+   CarPath: trucks silverado2015
+   CarClassID: 0
+   CarID: 63
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Chevrolet Silverado
+   CarScreenNameShort: Chevrolet Silverado
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 1.000 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 1329
+   LicLevel: 19
+   LicSubLevel: 350
+   LicString: A 3.50
+   LicColor: 0x0153db
+   IsSpectator: 0
+   CarDesignStr: 14,000000,efcb1f,e00800,efcb1f
+   HelmetDesignStr: 42,000000,f0c300,ffffff
+   SuitDesignStr: 2,000000,f0b000,ffffff
+   CarNumberDesignStr: 40,0,ffffff,efcb1f,000000
+   CarSponsor_1: 0
+   CarSponsor_2: 0
+   ClubName: Carolina
+   DivisionName: Division 1
+ - CarIdx: 8
+   UserName: Andy Moore
+   AbbrevName: Moore, A
+   Initials: AM
+   UserID: 149726
+   TeamID: 0
+   TeamName: Andy Moore
+   CarNumber: "45"
+   CarNumberRaw: 45
+   CarPath: trucks silverado2015
+   CarClassID: 0
+   CarID: 63
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Chevrolet Silverado
+   CarScreenNameShort: Chevrolet Silverado
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 1.000 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 2096
+   LicLevel: 19
+   LicSubLevel: 378
+   LicString: A 3.78
+   LicColor: 0x0153db
+   IsSpectator: 0
+   CarDesignStr: 1,000000,ffffff,b88c36,000000
+   HelmetDesignStr: 37,6d6e71,00529b,ffffff
+   SuitDesignStr: 1,ffffff,6d6e71,00529b
+   CarNumberDesignStr: 11,4,ffffff,b88c36,000000
+   CarSponsor_1: 0
+   CarSponsor_2: 0
+   ClubName: Virginias
+   DivisionName: Division 1
+ - CarIdx: 10
+   UserName: James Willms
+   AbbrevName: Willms, J
+   Initials: JW
+   UserID: 99598
+   TeamID: 0
+   TeamName: James Willms
+   CarNumber: "12"
+   CarNumberRaw: 12
+   CarPath: trucks tundra2015
+   CarClassID: 0
+   CarID: 62
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Toyota Tundra
+   CarScreenNameShort: Toyota Tundra
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 1.000 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 2166
+   LicLevel: 18
+   LicSubLevel: 264
+   LicString: A 2.64
+   LicColor: 0x0153db
+   IsSpectator: 0
+   CarDesignStr: 2,d36317,0a0000,fbef04,c45503
+   HelmetDesignStr: 65,fd7704,000000,feec04
+   SuitDesignStr: 18,fd7704,000000,feec04
+   CarNumberDesignStr: 0,0,c5b207,f58829,000000
+   CarSponsor_1: 41
+   CarSponsor_2: 1
+   ClubName: Midwest
+   DivisionName: Division 1
+ - CarIdx: 11
+   UserName: Nicolas Lalande Church
+   AbbrevName: Church, N
+   Initials: NC
+   UserID: 158431
+   TeamID: 0
+   TeamName: Nicolas Lalande Church
+   CarNumber: "450"
+   CarNumberRaw: 450
+   CarPath: trucks tundra2015
+   CarClassID: 0
+   CarID: 62
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Toyota Tundra
+   CarScreenNameShort: Toyota Tundra
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 1.000 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 2207
+   LicLevel: 19
+   LicSubLevel: 374
+   LicString: A 3.74
+   LicColor: 0x0153db
+   IsSpectator: 0
+   CarDesignStr: 3,ffffff,6d6e71,6d6e71,000000
+   HelmetDesignStr: 28,39c328,ffffff,000000
+   SuitDesignStr: 17,2236ce,0b0909,af2323
+   CarNumberDesignStr: 4,0,ed2129,000000,000000
+   CarSponsor_1: 80
+   CarSponsor_2: 1
+   ClubName: Canada
+   DivisionName: Division 1
+ - CarIdx: 13
+   UserName: Cody Fowler
+   AbbrevName: Fowler, C
+   Initials: CF
+   UserID: 128945
+   TeamID: 0
+   TeamName: Cody Fowler
+   CarNumber: "24"
+   CarNumberRaw: 24
+   CarPath: trucks silverado2015
+   CarClassID: 0
+   CarID: 63
+   CarIsPaceCar: 0
+   CarIsAI: 0
+   CarScreenName: Chevrolet Silverado
+   CarScreenNameShort: Chevrolet Silverado
+   CarClassShortName: Hosted All Cars
+   CarClassRelSpeed: 100
+   CarClassLicenseLevel: 1
+   CarClassMaxFuelPct: 1.000 %
+   CarClassWeightPenalty: 0.000 kg
+   CarClassColor: 0xffffff
+   IRating: 3317
+   LicLevel: 18
+   LicSubLevel: 255
+   LicString: A 2.55
+   LicColor: 0x0153db
+   IsSpectator: 0
+   CarDesignStr: 7,ffffff,ed2129,eced12
+   HelmetDesignStr: 62,000000,e2182c,ffdf00
+   SuitDesignStr: 29,e61414,000000,ffffff
+   CarNumberDesignStr: 11,0,ffffff,000000,2a3795
+   CarSponsor_1: 40
+   CarSponsor_2: 6
+   ClubName: Carolina
+   DivisionName: Division 1
+
+SplitTimeInfo:
+ Sectors:
+ - SectorNum: 0
+   SectorStartPct: 0.000000
+ - SectorNum: 1
+   SectorStartPct: 0.500000
+
