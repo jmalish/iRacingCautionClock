@@ -57,8 +57,6 @@ namespace iRacing_Caution_Clock
                 #region Flag stuff
                 string newFlag = telemArgs.TelemetryInfo.SessionFlags.Value.ToString().Split(' ')[0];  // get the actual current flag according to the session, splits because it normally shows two states
 
-                lblActualFlag.Text = newFlag;
-
                 if (currentFlag != newFlag)  // flag changed in the last update
                 {
                     if (!newFlag.Contains("StartHidden"))  // don't want to show this flag to users, better to just tell them it's still green
@@ -73,10 +71,7 @@ namespace iRacing_Caution_Clock
                         {
                             cautionClockActive = true; // turn on the caution clock
                             cautionClockTime = sessionTime + cautionClockTimeLength; // set time for caution clock to expire
-
-                            lblCautionClockExpires.Text = (cautionClockTime - sessionTime).ToString();
                         }
-
                     }
 
                     CheckCautionClock();
@@ -92,10 +87,19 @@ namespace iRacing_Caution_Clock
                                                                                                     // splitting at decimal because we don't need to know the exact milisecond
                 sessionTime = Convert.ToInt32(currentTime);  // convert it to int so we can use it as a number
 
-
                 lblTime.Text = "Time: " + sessionTime.ToString();  // update time label
+
+                if (cautionClockActive)
+                {
+                    string time = sessionTime.ToString().Split('.')[0];  // session time minus milliseconds
+
+                    double expireTime = cautionClockTime - Convert.ToDouble(time);  // calculate how much longer we have until caution clock expires
+
+                    TimeSpan timeTilExpire = TimeSpan.FromSeconds(expireTime);  // convert it into a timespan object
+                    lblCautionClockExpires.Text = String.Format("Clock expires in: { 0}:{ 1}", timeTilExpire.Minutes, timeTilExpire.Seconds.ToString("00"));  // update label
+                }
                 #endregion
-                
+
                 if (wrapper.IsConnected) // check if wrapper has connected yet
                 {
                     lblConnectedToiRacing.Text = "Connected to iRacing!";  // let user know we've connected to the wrapper
@@ -165,10 +169,16 @@ namespace iRacing_Caution_Clock
         {
             if (cautionClockActive)  // first make sure caution clock is even active
             {
-                lblCautionClockStatus.Text = "Caution Clock: ACTIVE";
-            } else
+                lblCautionClockStatus.Text = "Caution Clock: ACTIVE"; // update label
+
+                if (sessionTime >= cautionClockTime)
+                {
+                    // throw a caution
+                }
+            } else // if not
             {
-                lblCautionClockStatus.Text = "Caution Clock: OFF";
+                lblCautionClockStatus.Text = "Caution Clock: OFF";  // update label
+                lblCautionClockExpires.Text = String.Format("Clock expires in: -");
             }
 
             return;
