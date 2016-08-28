@@ -18,15 +18,19 @@ namespace iRacing_Caution_Clock
     public partial class mainForm : Form
     {
         #region Variables
+        // general variables
         private readonly iRacingSdkWrapper.SdkWrapper wrapper;  // create sdk wrapper, used to connect to iRacing
-
         private string currentFlag = "-";  // what the flag currently is (eg. green, caution, etc)
         private bool userIsAdmin = false;  // is the user is admin or not, only admins can throw cautions
         private int sessionTime = 0;  // what time it is in the session
         private bool cautionClockActive = false;  // if the caution clock is running
         private int cautionClockTime = 0;  // what time to throw the caution clock, uses the sessionTime
-        private int cautionClockTimeLength = 1200;  // how long between cautions, in seconds. Default is 1200
 
+        // veriables that the user can edit
+        private int cautionClockTimeLength = 1200;  // how long between cautions, in seconds. Default is 1200
+        private decimal cautionShortcutKey = Properties.Settings.Default.CautionShortcutKey;  // which macro is set to send the command to throw the caution, default is 14
+
+        // other variables
         private bool closing = false;  // form was acting weird when closed, I think because of stuff trying to update after wrapper closed
         #endregion
 
@@ -35,18 +39,72 @@ namespace iRacing_Caution_Clock
         {
             InitializeComponent();  // initialize the component, you know, that component
 
+            chkStreamerFriendlyCounter.Checked = Properties.Settings.Default.LargeCounterStreamerFriendly;  // set large counter to users settings
+            numericUpDown1.Value = Properties.Settings.Default.CautionShortcutKey;  // set shortcut key to users settings
+            lblLargeCounter.ForeColor = Properties.Settings.Default.LargeCounterNumberColor;
+            if (Properties.Settings.Default.LargeCounterStreamerFriendly)  // set background of large counter to users settings
+            {
+                tabControl1.TabPages[1].BackColor = Color.LawnGreen;
+            } else
+            {
+                tabControl1.TabPages[1].BackColor = Color.Transparent;
+            }
+
             wrapper = new iRacingSdkWrapper.SdkWrapper();  // create wrapper instance
 
             wrapper.TelemetryUpdated += OnTelemetryUpdated;  // listen to telemetry events
             wrapper.SessionInfoUpdated += OnSessionInfoUpdated;  // listen to session events
 
             wrapper.Start();  // start wrapper
-        }
+        }  // basic form stuff
+
+        private void btnChangeLblColor_Click(object sender, EventArgs e)
+        {
+            ColorDialog clrDialogue = new ColorDialog();  // create a color dialogue
+            clrDialogue.AllowFullOpen = false;  // disable it from being able to go full screen
+            clrDialogue.ShowHelp = true;  // turn on the help dialogue
+            clrDialogue.Color = lblLargeCounter.ForeColor;  // get the current color of the label
+
+            if (clrDialogue.ShowDialog() == DialogResult.OK)  // if the user clicks OK
+            {
+                lblLargeCounter.ForeColor = clrDialogue.Color;  // set the labels color to the new chosen color
+                Properties.Settings.Default.LargeCounterNumberColor = clrDialogue.Color;  // update user settings
+                Properties.Settings.Default.Save(); // and save
+            }
+        } // user has clicked button to change number color
 
         private void mainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             wrapper.Stop();  // stop the wrapper since the form is being closed, otherwise we have a wild wrapper running free TODO: make a joke about debris cautions here
+        }  // user has closed form
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)  // when user changes the key for caution, we need to update it so they don't have to kee making the change every restart
+        {
+            Properties.Settings.Default.CautionShortcutKey = numericUpDown1.Value;  // update settings
+            Properties.Settings.Default.Save();  // save the new key to settings
         }
+
+        private void chkStreamerFriendlyCounter_CheckedChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.LargeCounterStreamerFriendly = chkStreamerFriendlyCounter.Checked;  // user has changed whether or not to have green screen backing
+            Properties.Settings.Default.Save();  // save settings
+
+            if (chkStreamerFriendlyCounter.Checked) // if the value is now true
+            {
+                tabControl1.TabPages[1].BackColor = Color.LawnGreen;  // set background to bright green
+            } else // if the value is false
+            {
+                tabControl1.TabPages[1].BackColor = Color.Transparent;  // set background to transparent
+            }
+        }  // user has changed how to display large counter
+
+        private void linkLblCautionShortcutHelp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show(String.Format("{0}\n\n{1}\n\n{2}",
+                "The \"Caution Shortcut\" setting is the shortcut you \nhave selected to throw a caution in iRacing.",
+                "The setting '1' is the very first shortcut at the top.",
+                "I suggest testing in a practice with the \"Manual Caution\" \nbutton in the top right to see if you have the correct setting"));
+        }  // user has clicked the ? button next to caution shortcut
         #endregion
 
         #region SDK Wrapper Stuff
@@ -87,8 +145,6 @@ namespace iRacing_Caution_Clock
                                                                                                     // splitting at decimal because we don't need to know the exact milisecond
                 sessionTime = Convert.ToInt32(currentTime);  // convert it to int so we can use it as a number
 
-                lblTime.Text = "Time: " + sessionTime.ToString();  // update time label
-
                 if (cautionClockActive)
                 {
                     string time = sessionTime.ToString().Split('.')[0];  // session time minus milliseconds
@@ -97,6 +153,7 @@ namespace iRacing_Caution_Clock
 
                     TimeSpan timeTilExpire = TimeSpan.FromSeconds(expireTime);  // convert it into a timespan object
                     lblCautionClockExpires.Text = String.Format("Clock expires in: { 0}:{ 1}", timeTilExpire.Minutes, timeTilExpire.Seconds.ToString("00"));  // update label
+                    lblLargeCounter.Text = String.Format("Clock expires in: { 0}:{ 1}", timeTilExpire.Minutes, timeTilExpire.Seconds.ToString("00"));  // update label
                 }
                 #endregion
 
@@ -133,7 +190,7 @@ namespace iRacing_Caution_Clock
 
                                 if ((Convert.ToInt32(session.SessionLaps)) - (Convert.ToInt32(lapsComplete)) <= 20)  // check if we're less than 20 to go in the race
                                 {
-                                    // cautionClockActive = false;  // turn off caution clock
+                                    cautionClockActive = false;  // turn off caution clock
                                 }
                             }
                         }
@@ -150,6 +207,10 @@ namespace iRacing_Caution_Clock
                                 if (freq.FrequencyName.Contains("ADMIN"))  // check to see if there's a radio named ADMIN
                                 {
                                     userIsAdmin = true;  // if so, user is admin, so we know they can control cautions
+                                    lblUserIsAdmin.Text = "Admin: True";
+                                } else
+                                {
+                                    lblUserIsAdmin.Text = "Admin: False";
                                 }
                             }
                         }
@@ -173,12 +234,14 @@ namespace iRacing_Caution_Clock
 
                 if (sessionTime >= cautionClockTime)
                 {
-                    // throw a caution
+                    wrapper.Chat.SendMacro(Convert.ToInt32(cautionShortcutKey));  // throw caution
+                    
                 }
             } else // if not
             {
-                lblCautionClockStatus.Text = "Caution Clock: OFF";  // update label
+                lblCautionClockStatus.Text = "Caution Clock: Not Active";  // update label
                 lblCautionClockExpires.Text = String.Format("Clock expires in: -");
+                lblLargeCounter.Text = "";
             }
 
             return;
