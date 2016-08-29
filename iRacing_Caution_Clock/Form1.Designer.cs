@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.lblConnectedToiRacing = new System.Windows.Forms.Label();
             this.lblCurrentFlag = new System.Windows.Forms.Label();
             this.lblCurrentLap = new System.Windows.Forms.Label();
@@ -35,6 +36,7 @@
             this.lblCautionClockExpires = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPgQuickInfo = new System.Windows.Forms.TabPage();
+            this.linkLblCautionShortcutHelp = new System.Windows.Forms.LinkLabel();
             this.lblCautionShortcutKey = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.btnManualCaution = new System.Windows.Forms.Button();
@@ -43,7 +45,6 @@
             this.chkStreamerFriendlyCounter = new System.Windows.Forms.CheckBox();
             this.btnChangeLblColor = new System.Windows.Forms.Button();
             this.lblLargeCounter = new System.Windows.Forms.Label();
-            this.linkLblCautionShortcutHelp = new System.Windows.Forms.LinkLabel();
             this.tabControl1.SuspendLayout();
             this.tabPgQuickInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -62,7 +63,7 @@
             // lblCurrentFlag
             // 
             this.lblCurrentFlag.AutoSize = true;
-            this.lblCurrentFlag.Location = new System.Drawing.Point(15, 65);
+            this.lblCurrentFlag.Location = new System.Drawing.Point(15, 69);
             this.lblCurrentFlag.Name = "lblCurrentFlag";
             this.lblCurrentFlag.Size = new System.Drawing.Size(73, 13);
             this.lblCurrentFlag.TabIndex = 0;
@@ -71,7 +72,7 @@
             // lblCurrentLap
             // 
             this.lblCurrentLap.AutoSize = true;
-            this.lblCurrentLap.Location = new System.Drawing.Point(15, 90);
+            this.lblCurrentLap.Location = new System.Drawing.Point(15, 96);
             this.lblCurrentLap.Name = "lblCurrentLap";
             this.lblCurrentLap.Size = new System.Drawing.Size(49, 13);
             this.lblCurrentLap.TabIndex = 0;
@@ -80,7 +81,7 @@
             // lblCautionClockStatus
             // 
             this.lblCautionClockStatus.AutoSize = true;
-            this.lblCautionClockStatus.Location = new System.Drawing.Point(15, 140);
+            this.lblCautionClockStatus.Location = new System.Drawing.Point(15, 150);
             this.lblCautionClockStatus.Name = "lblCautionClockStatus";
             this.lblCautionClockStatus.Size = new System.Drawing.Size(129, 13);
             this.lblCautionClockStatus.TabIndex = 0;
@@ -89,7 +90,7 @@
             // lblCautionClockExpires
             // 
             this.lblCautionClockExpires.AutoSize = true;
-            this.lblCautionClockExpires.Location = new System.Drawing.Point(15, 115);
+            this.lblCautionClockExpires.Location = new System.Drawing.Point(15, 123);
             this.lblCautionClockExpires.Name = "lblCautionClockExpires";
             this.lblCautionClockExpires.Size = new System.Drawing.Size(90, 13);
             this.lblCautionClockExpires.TabIndex = 0;
@@ -126,10 +127,23 @@
             this.tabPgQuickInfo.Text = "Quick Info";
             this.tabPgQuickInfo.UseVisualStyleBackColor = true;
             // 
+            // linkLblCautionShortcutHelp
+            // 
+            this.linkLblCautionShortcutHelp.AutoSize = true;
+            this.linkLblCautionShortcutHelp.LinkColor = System.Drawing.Color.Blue;
+            this.linkLblCautionShortcutHelp.Location = new System.Drawing.Point(380, 142);
+            this.linkLblCautionShortcutHelp.Name = "linkLblCautionShortcutHelp";
+            this.linkLblCautionShortcutHelp.Size = new System.Drawing.Size(13, 13);
+            this.linkLblCautionShortcutHelp.TabIndex = 4;
+            this.linkLblCautionShortcutHelp.TabStop = true;
+            this.linkLblCautionShortcutHelp.Text = "?";
+            this.linkLblCautionShortcutHelp.VisitedLinkColor = System.Drawing.Color.Blue;
+            this.linkLblCautionShortcutHelp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLblCautionShortcutHelp_LinkClicked);
+            // 
             // lblCautionShortcutKey
             // 
             this.lblCautionShortcutKey.AutoSize = true;
-            this.lblCautionShortcutKey.Location = new System.Drawing.Point(293, 115);
+            this.lblCautionShortcutKey.Location = new System.Drawing.Point(297, 142);
             this.lblCautionShortcutKey.Name = "lblCautionShortcutKey";
             this.lblCautionShortcutKey.Size = new System.Drawing.Size(89, 13);
             this.lblCautionShortcutKey.TabIndex = 3;
@@ -137,7 +151,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(311, 133);
+            this.numericUpDown1.Location = new System.Drawing.Point(315, 160);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             15,
             0,
@@ -170,7 +184,7 @@
             // lblUserIsAdmin
             // 
             this.lblUserIsAdmin.AutoSize = true;
-            this.lblUserIsAdmin.Location = new System.Drawing.Point(15, 40);
+            this.lblUserIsAdmin.Location = new System.Drawing.Point(15, 42);
             this.lblUserIsAdmin.Name = "lblUserIsAdmin";
             this.lblUserIsAdmin.Size = new System.Drawing.Size(45, 13);
             this.lblUserIsAdmin.TabIndex = 0;
@@ -224,25 +238,17 @@
             this.lblLargeCounter.TabIndex = 0;
             this.lblLargeCounter.Text = "00:00";
             // 
-            // linkLblCautionShortcutHelp
-            // 
-            this.linkLblCautionShortcutHelp.AutoSize = true;
-            this.linkLblCautionShortcutHelp.LinkColor = System.Drawing.Color.Blue;
-            this.linkLblCautionShortcutHelp.Location = new System.Drawing.Point(376, 115);
-            this.linkLblCautionShortcutHelp.Name = "linkLblCautionShortcutHelp";
-            this.linkLblCautionShortcutHelp.Size = new System.Drawing.Size(13, 13);
-            this.linkLblCautionShortcutHelp.TabIndex = 4;
-            this.linkLblCautionShortcutHelp.TabStop = true;
-            this.linkLblCautionShortcutHelp.Text = "?";
-            this.linkLblCautionShortcutHelp.VisitedLinkColor = System.Drawing.Color.Blue;
-            this.linkLblCautionShortcutHelp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLblCautionShortcutHelp_LinkClicked);
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(409, 214);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(425, 253);
+            this.MinimumSize = new System.Drawing.Size(425, 253);
             this.Name = "mainForm";
             this.Text = "iRacing Caution Clock";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainForm_FormClosing);

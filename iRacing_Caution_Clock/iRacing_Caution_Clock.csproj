@@ -48,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>yellow_flag.ico</ApplicationIcon>
+    <ApplicationIcon>iracing_logo_yellow_new.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -110,6 +110,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="iracing_logo_yellow.ico" />
+    <Content Include="iracing_logo_yellow_new.ico" />
     <Content Include="yellow_flag.ico" />
   </ItemGroup>
   <ItemGroup>
