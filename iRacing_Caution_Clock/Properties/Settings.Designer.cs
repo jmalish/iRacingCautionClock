@@ -25,7 +25,7 @@ namespace iRacing_Caution_Clock.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
         public decimal CautionShortcutKey {
             get {
                 return ((decimal)(this["CautionShortcutKey"]));
@@ -37,7 +37,7 @@ namespace iRacing_Caution_Clock.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool LargeCounterStreamerFriendly {
             get {
                 return ((bool)(this["LargeCounterStreamerFriendly"]));
