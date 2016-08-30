@@ -234,13 +234,13 @@ namespace iRacing_Caution_Clock
 
                 if (sessionTime >= cautionClockTime)
                 {
-                    wrapper.Chat.SendMacro(Convert.ToInt32(cautionShortcutKey));  // throw caution
-                    
+                    wrapper.Chat.SendMacro(Convert.ToInt32(cautionShortcutKey));  // throw caution                    
                 }
             } else // if not
             {
-                lblCautionClockStatus.Text = "Caution Clock: Not Active";  // update label
-                lblCautionClockExpires.Text = String.Format("Clock expires in: -");
+                // update all relevant labels
+                lblCautionClockStatus.Text = "Caution Clock: Not Active";
+                lblCautionClockExpires.Text = "Clock expires in: -";
                 lblLargeCounter.Text = "";
             }
 
