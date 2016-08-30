@@ -47,10 +47,16 @@
             this.btnChangeLblColor = new System.Windows.Forms.Button();
             this.lblLargeCounter = new System.Windows.Forms.Label();
             this.linkLblControlCautionsHelp = new System.Windows.Forms.LinkLabel();
+            this.tabPgDebug = new System.Windows.Forms.TabPage();
+            this.numUDTimeBetween = new System.Windows.Forms.NumericUpDown();
+            this.lblCautionClockLength = new System.Windows.Forms.Label();
+            this.lblCurrentTimerLength = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPgQuickInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tabPgLargeCountdown.SuspendLayout();
+            this.tabPgDebug.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUDTimeBetween)).BeginInit();
             this.SuspendLayout();
             // 
             // lblConnectedToiRacing
@@ -102,6 +108,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPgQuickInfo);
             this.tabControl1.Controls.Add(this.tabPgLargeCountdown);
+            this.tabControl1.Controls.Add(this.tabPgDebug);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -267,6 +274,49 @@
             this.linkLblControlCautionsHelp.VisitedLinkColor = System.Drawing.Color.Blue;
             this.linkLblControlCautionsHelp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLblControlCautionsHelp_LinkClicked);
             // 
+            // tabPgDebug
+            // 
+            this.tabPgDebug.Controls.Add(this.lblCurrentTimerLength);
+            this.tabPgDebug.Controls.Add(this.lblCautionClockLength);
+            this.tabPgDebug.Controls.Add(this.numUDTimeBetween);
+            this.tabPgDebug.Location = new System.Drawing.Point(4, 22);
+            this.tabPgDebug.Name = "tabPgDebug";
+            this.tabPgDebug.Size = new System.Drawing.Size(401, 188);
+            this.tabPgDebug.TabIndex = 2;
+            this.tabPgDebug.Text = "Debug junk";
+            this.tabPgDebug.UseVisualStyleBackColor = true;
+            // 
+            // numUDTimeBetween
+            // 
+            this.numUDTimeBetween.Location = new System.Drawing.Point(11, 26);
+            this.numUDTimeBetween.Name = "numUDTimeBetween";
+            this.numUDTimeBetween.Size = new System.Drawing.Size(120, 20);
+            this.numUDTimeBetween.TabIndex = 0;
+            this.numUDTimeBetween.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.numUDTimeBetween.ValueChanged += new System.EventHandler(this.numUDTimeBetween_ValueChanged);
+            // 
+            // lblCautionClockLength
+            // 
+            this.lblCautionClockLength.AutoSize = true;
+            this.lblCautionClockLength.Location = new System.Drawing.Point(8, 10);
+            this.lblCautionClockLength.Name = "lblCautionClockLength";
+            this.lblCautionClockLength.Size = new System.Drawing.Size(237, 13);
+            this.lblCautionClockLength.TabIndex = 1;
+            this.lblCautionClockLength.Text = "Time Between Cautions in minutes (Default is 20)";
+            // 
+            // lblCurrentTimerLength
+            // 
+            this.lblCurrentTimerLength.AutoSize = true;
+            this.lblCurrentTimerLength.Location = new System.Drawing.Point(8, 49);
+            this.lblCurrentTimerLength.Name = "lblCurrentTimerLength";
+            this.lblCurrentTimerLength.Size = new System.Drawing.Size(181, 13);
+            this.lblCurrentTimerLength.TabIndex = 2;
+            this.lblCurrentTimerLength.Text = "change the counter above to update";
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,6 +337,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.tabPgLargeCountdown.ResumeLayout(false);
             this.tabPgLargeCountdown.PerformLayout();
+            this.tabPgDebug.ResumeLayout(false);
+            this.tabPgDebug.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUDTimeBetween)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -311,6 +364,10 @@
         private System.Windows.Forms.LinkLabel linkLblCautionShortcutHelp;
         private System.Windows.Forms.CheckBox chkControlsCautions;
         private System.Windows.Forms.LinkLabel linkLblControlCautionsHelp;
+        private System.Windows.Forms.TabPage tabPgDebug;
+        private System.Windows.Forms.Label lblCautionClockLength;
+        private System.Windows.Forms.NumericUpDown numUDTimeBetween;
+        private System.Windows.Forms.Label lblCurrentTimerLength;
     }
 }
 

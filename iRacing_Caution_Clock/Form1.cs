@@ -313,5 +313,14 @@ namespace iRacing_Caution_Clock
             public string CanSquawk { get; set; }
         }
         #endregion
+
+
+        #region DEBUG STUFF | REMOVE BEFORE RELEASE
+        private void numUDTimeBetween_ValueChanged(object sender, EventArgs e)
+        {
+            cautionClockTimeLength = Convert.ToInt32(numUDTimeBetween.Value) * 60;
+            lblCurrentTimerLength.Text = string.Format("Timer now set to {0} minutes, which is {1} seconds", numUDTimeBetween.Value, cautionClockTimeLength);
+        }
+        #endregion
     }
 }
