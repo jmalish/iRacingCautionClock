@@ -12,3 +12,6 @@ E:\My Projects\iRacing_Caution_Clock\References\irsdkSharp\bin\Debug\iRSDKSharp.
 E:\My Projects\iRacing_Caution_Clock\References\irsdkSharp\obj\Debug\iRSDKSharp.csprojResolveAssemblyReference.cache
 E:\My Projects\iRacing_Caution_Clock\References\irsdkSharp\obj\Debug\iRSDKSharp.dll
 E:\My Projects\iRacing_Caution_Clock\References\irsdkSharp\obj\Debug\iRSDKSharp.pdb
+E:\My Projects\iRacing_Caution_Clock\References\irsdkSharp\bin\Debug\YamlDotNet.dll
+E:\My Projects\iRacing_Caution_Clock\References\irsdkSharp\bin\Debug\YamlDotNet.pdb
+E:\My Projects\iRacing_Caution_Clock\References\irsdkSharp\bin\Debug\YamlDotNet.xml

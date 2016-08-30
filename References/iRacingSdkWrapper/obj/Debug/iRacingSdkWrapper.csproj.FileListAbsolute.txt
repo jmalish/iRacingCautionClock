@@ -22,3 +22,6 @@ E:\My Projects\iRacing_Caution_Clock\References\iRacingSdkWrapper\bin\Debug\iRSD
 E:\My Projects\iRacing_Caution_Clock\References\iRacingSdkWrapper\obj\Debug\iRacingSdkWrapper.csprojResolveAssemblyReference.cache
 E:\My Projects\iRacing_Caution_Clock\References\iRacingSdkWrapper\obj\Debug\iRacingSdkWrapper.dll
 E:\My Projects\iRacing_Caution_Clock\References\iRacingSdkWrapper\obj\Debug\iRacingSdkWrapper.pdb
+E:\My Projects\iRacing_Caution_Clock\References\iRacingSdkWrapper\bin\Debug\YamlDotNet.dll
+E:\My Projects\iRacing_Caution_Clock\References\iRacingSdkWrapper\bin\Debug\YamlDotNet.pdb
+E:\My Projects\iRacing_Caution_Clock\References\iRacingSdkWrapper\bin\Debug\YamlDotNet.xml

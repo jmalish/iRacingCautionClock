@@ -2,12 +2,7 @@
 
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
 using YamlDotNet.Serialization;
@@ -28,7 +23,8 @@ namespace iRacing_Caution_Clock
 
         // veriables that the user can edit
         private int cautionClockTimeLength = 1200;  // how long between cautions, in seconds. Default is 1200
-        private decimal cautionShortcutKey = Properties.Settings.Default.CautionShortcutKey;  // which macro is set to send the command to throw the caution, default is 14
+        private decimal cautionShortcutKey = Properties.Settings.Default.CautionShortcutKey;  // which macro is set to send the command to throw the caution
+        private bool controlsCautions = false;
 
         // other variables
         private bool closing = false;  // form was acting weird when closed, I think because of stuff trying to update after wrapper closed
@@ -41,7 +37,7 @@ namespace iRacing_Caution_Clock
 
             chkStreamerFriendlyCounter.Checked = Properties.Settings.Default.LargeCounterStreamerFriendly;  // set large counter to users settings
             numericUpDown1.Value = Properties.Settings.Default.CautionShortcutKey;  // set shortcut key to users settings
-            lblLargeCounter.ForeColor = Properties.Settings.Default.LargeCounterNumberColor;
+            lblLargeCounter.ForeColor = Properties.Settings.Default.LargeCounterNumberColor; // set color for large counter text
             if (Properties.Settings.Default.LargeCounterStreamerFriendly)  // set background of large counter to users settings
             {
                 tabControl1.TabPages[1].BackColor = Color.LawnGreen;
@@ -50,12 +46,14 @@ namespace iRacing_Caution_Clock
                 tabControl1.TabPages[1].BackColor = Color.Transparent;
             }
 
+            #region wrapper stuff
             wrapper = new iRacingSdkWrapper.SdkWrapper();  // create wrapper instance
 
             wrapper.TelemetryUpdated += OnTelemetryUpdated;  // listen to telemetry events
             wrapper.SessionInfoUpdated += OnSessionInfoUpdated;  // listen to session events
 
             wrapper.Start();  // start wrapper
+            #endregion
         }  // basic form stuff
 
         private void btnChangeLblColor_Click(object sender, EventArgs e)
@@ -98,13 +96,43 @@ namespace iRacing_Caution_Clock
             }
         }  // user has changed how to display large counter
 
-        private void linkLblCautionShortcutHelp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linkLblCautionShortcutHelp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)  // user has clicked the ? button next to caution shortcut
         {
-            MessageBox.Show(String.Format("{0}\n\n{1}\n\n{2}",
-                "The \"Caution Shortcut\" setting is the shortcut you \nhave selected to throw a caution in iRacing.",
+            MessageBox.Show(String.Format("{0}\n\n{1}\n\n{2}\n\n{3}",
+                "The \"Caution Shortcut\" setting is the shortcut you have selected to throw a caution in iRacing.",
                 "The setting '1' is the very first shortcut at the top.",
-                "I suggest testing in a practice with the \"Manual Caution\" \nbutton in the top right to see if you have the correct setting"));
-        }  // user has clicked the ? button next to caution shortcut
+                "It's suggested to test this in a practice with the \"Manual Caution\" button in the top right to see if you have the correct setting",
+                "You MUST be admin for this portion to work."));
+        }
+
+        private void linkLblControlCautionsHelp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)  // user has clicked the ? button next to Control Caution
+        {
+            MessageBox.Show(String.Format("{0}\n\n{1}",
+                "The \"Control Cautions\" setting tells the program that YOU are the one controlling cautions.",
+                "It's very important that only one person in the race has this checked or iRacing might get confused and think you want extra laps during the caution since multiple people are sending the \"!yellow\" chat command multiple times."));
+        }
+
+        private void chkControlsCautions_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkControlsCautions.Checked)
+            {
+                var msgBoxResult = MessageBox.Show(string.Format("{0}\n\n{1}\n\n{2}", 
+                        "Only one admin in the session should have this set, otherwise multiple people will be sending commands to iRacing to throw cautions.",
+                        "Also you have to be admin, or else this does nothing",
+                        "Click OK to contine, or Cancel to... well... cancel..."),
+                    "", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+
+                if (msgBoxResult == DialogResult.OK)
+                {
+                    chkControlsCautions.Checked = true;
+                    controlsCautions = true;
+                } else
+                {
+                    chkControlsCautions.Checked = false;
+                    controlsCautions = false;
+                }
+            }
+        }
         #endregion
 
         #region SDK Wrapper Stuff
@@ -197,21 +225,20 @@ namespace iRacing_Caution_Clock
                     }
                     #endregion
 
-                    #region Radio Info
-                    if (userIsAdmin)  // if this is true, we already know user is admin, no reason to keep checking every few seconds
+                    #region Radio Info / Admin check
+                    foreach (var radio in sessionInfo.RadioInfo.Radios)  // look through all the radios (normally only 1)
                     {
-                        foreach (var radio in sessionInfo.RadioInfo.Radios)  // look through all the radios (normally only 1)
+                        foreach (var freq in radio.Frequencies)  // look through all the frequencies
                         {
-                            foreach (var freq in radio.Frequencies)  // look through all the frequencies
+                            if (freq.FrequencyName.Contains("@ADMIN"))  // check to see if there's a radio named ADMIN
                             {
-                                if (freq.FrequencyName.Contains("ADMIN"))  // check to see if there's a radio named ADMIN
-                                {
-                                    userIsAdmin = true;  // if so, user is admin, so we know they can control cautions
-                                    lblUserIsAdmin.Text = "Admin: True";
-                                } else
-                                {
-                                    lblUserIsAdmin.Text = "Admin: False";
-                                }
+                                userIsAdmin = true;  // if so, user is admin, so we know they can control cautions
+                                lblUserIsAdmin.Text = "Admin: True";
+                                btnManualCaution.Enabled = true;
+                            } else
+                            {
+                                lblUserIsAdmin.Text = "Admin: False";
+                                btnManualCaution.Enabled = false;
                             }
                         }
                     }
@@ -232,9 +259,12 @@ namespace iRacing_Caution_Clock
             {
                 lblCautionClockStatus.Text = "Caution Clock: ACTIVE"; // update label
 
-                if (sessionTime >= cautionClockTime)
+                if (userIsAdmin && controlsCautions)  // make sure user is admin and wants to control cautions
                 {
-                    wrapper.Chat.SendMacro(Convert.ToInt32(cautionShortcutKey));  // throw caution                    
+                    if (sessionTime >= cautionClockTime)  // check if it's time to throw the caution
+                    {
+                        wrapper.Chat.SendMacro(Convert.ToInt32(cautionShortcutKey));  // throw caution
+                    }
                 }
             } else // if not
             {

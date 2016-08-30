@@ -36,6 +36,7 @@
             this.lblCautionClockExpires = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPgQuickInfo = new System.Windows.Forms.TabPage();
+            this.chkControlsCautions = new System.Windows.Forms.CheckBox();
             this.linkLblCautionShortcutHelp = new System.Windows.Forms.LinkLabel();
             this.lblCautionShortcutKey = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -45,6 +46,7 @@
             this.chkStreamerFriendlyCounter = new System.Windows.Forms.CheckBox();
             this.btnChangeLblColor = new System.Windows.Forms.Button();
             this.lblLargeCounter = new System.Windows.Forms.Label();
+            this.linkLblControlCautionsHelp = new System.Windows.Forms.LinkLabel();
             this.tabControl1.SuspendLayout();
             this.tabPgQuickInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -109,6 +111,8 @@
             // 
             // tabPgQuickInfo
             // 
+            this.tabPgQuickInfo.Controls.Add(this.linkLblControlCautionsHelp);
+            this.tabPgQuickInfo.Controls.Add(this.chkControlsCautions);
             this.tabPgQuickInfo.Controls.Add(this.linkLblCautionShortcutHelp);
             this.tabPgQuickInfo.Controls.Add(this.lblCautionShortcutKey);
             this.tabPgQuickInfo.Controls.Add(this.numericUpDown1);
@@ -126,6 +130,17 @@
             this.tabPgQuickInfo.TabIndex = 0;
             this.tabPgQuickInfo.Text = "Quick Info";
             this.tabPgQuickInfo.UseVisualStyleBackColor = true;
+            // 
+            // chkControlsCautions
+            // 
+            this.chkControlsCautions.AutoSize = true;
+            this.chkControlsCautions.Location = new System.Drawing.Point(280, 41);
+            this.chkControlsCautions.Name = "chkControlsCautions";
+            this.chkControlsCautions.Size = new System.Drawing.Size(103, 17);
+            this.chkControlsCautions.TabIndex = 5;
+            this.chkControlsCautions.Text = "Control Cautions";
+            this.chkControlsCautions.UseVisualStyleBackColor = true;
+            this.chkControlsCautions.CheckedChanged += new System.EventHandler(this.chkControlsCautions_CheckedChanged);
             // 
             // linkLblCautionShortcutHelp
             // 
@@ -174,6 +189,7 @@
             // 
             // btnManualCaution
             // 
+            this.btnManualCaution.Enabled = false;
             this.btnManualCaution.Location = new System.Drawing.Point(292, 15);
             this.btnManualCaution.Name = "btnManualCaution";
             this.btnManualCaution.Size = new System.Drawing.Size(97, 23);
@@ -238,6 +254,19 @@
             this.lblLargeCounter.TabIndex = 0;
             this.lblLargeCounter.Text = "00:00";
             // 
+            // linkLblControlCautionsHelp
+            // 
+            this.linkLblControlCautionsHelp.AutoSize = true;
+            this.linkLblControlCautionsHelp.LinkColor = System.Drawing.Color.Blue;
+            this.linkLblControlCautionsHelp.Location = new System.Drawing.Point(376, 42);
+            this.linkLblControlCautionsHelp.Name = "linkLblControlCautionsHelp";
+            this.linkLblControlCautionsHelp.Size = new System.Drawing.Size(13, 13);
+            this.linkLblControlCautionsHelp.TabIndex = 6;
+            this.linkLblControlCautionsHelp.TabStop = true;
+            this.linkLblControlCautionsHelp.Text = "?";
+            this.linkLblControlCautionsHelp.VisitedLinkColor = System.Drawing.Color.Blue;
+            this.linkLblControlCautionsHelp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLblControlCautionsHelp_LinkClicked);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,6 +309,8 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.CheckBox chkStreamerFriendlyCounter;
         private System.Windows.Forms.LinkLabel linkLblCautionShortcutHelp;
+        private System.Windows.Forms.CheckBox chkControlsCautions;
+        private System.Windows.Forms.LinkLabel linkLblControlCautionsHelp;
     }
 }
 
