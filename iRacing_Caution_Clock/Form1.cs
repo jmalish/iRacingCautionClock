@@ -23,7 +23,7 @@ namespace iRacing_Caution_Clock
 
         // veriables that the user can edit
         private int cautionClockTimeLength = 1200;  // how long between cautions, in seconds. Default is 1200
-        private decimal cautionShortcutKey = Properties.Settings.Default.CautionShortcutKey;  // which macro is set to send the command to throw the caution
+        private decimal cautionShortcutKey = Properties.Settings.Default.CautionShortcutKey - 1;  // which macro is set to send the command to throw the caution
         private bool controlsCautions = false;
 
         // other variables
