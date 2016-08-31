@@ -1,2 +1,3 @@
 Todo:
 - add option for caution clock cutoff (maybe use track name to autoset)
+- set numbers on large counter to match background when timer reaches 00:00
