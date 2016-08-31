@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iRSDKSharp", "References\ir
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iRacingSdkWrapper", "References\iRacingSdkWrapper\iRacingSdkWrapper.csproj", "{D6DB568B-35B3-49EB-8CB3-E4E5F1424247}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "iRacingCautionClockSetup", "iRacingCautionClockSetup\iRacingCautionClockSetup.vdproj", "{58A3DE89-E3EA-45DD-8893-3348B48E7DEA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,8 @@ Global
 		{D6DB568B-35B3-49EB-8CB3-E4E5F1424247}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6DB568B-35B3-49EB-8CB3-E4E5F1424247}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6DB568B-35B3-49EB-8CB3-E4E5F1424247}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58A3DE89-E3EA-45DD-8893-3348B48E7DEA}.Debug|Any CPU.ActiveCfg = Debug
+		{58A3DE89-E3EA-45DD-8893-3348B48E7DEA}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
