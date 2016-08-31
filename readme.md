@@ -1,3 +1,5 @@
+##Download: [v0.9](https://github.com/jmalish/iRacingCautionClock/raw/master/iRacing%20Caution%20Clock%20Installer.zip)
+
 #iRacing Caution Clock
 
 This is a caution clock for iRacing. It is meant to emulate the NASCAR Camping World Truck Series' "new" rules regarding cautions.
