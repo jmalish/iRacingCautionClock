@@ -1,0 +1,2 @@
+Todo:
+- add option for caution clock cutoff (maybe use track name to autoset)
