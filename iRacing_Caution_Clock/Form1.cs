@@ -26,7 +26,7 @@ namespace iRacing_Caution_Clock
         private int cautionClockTime = 0;  // what time to throw the caution clock, uses the sessionTime
         private int cautionClockCutoffLap = 20;  // what lap the caution clock is turned off, default is 20
         private int cautionClockTimeLength = 1200;  // how long between cautions, in seconds. Default is 1200
-        private decimal cautionShortcutKey = Properties.Settings.Default.CautionShortcutKey - 1;  // which macro is set to send the command to throw the caution
+        // private decimal cautionShortcutKey = Properties.Settings.Default.CautionShortcutKey - 1;  // which macro is set to send the command to throw the caution
         private bool controlsCautions = false;
 
         // other variables
@@ -83,6 +83,8 @@ namespace iRacing_Caution_Clock
         {
             Properties.Settings.Default.CautionShortcutKey = numericUpDown1.Value;  // update settings
             Properties.Settings.Default.Save();  // save the new key to settings
+            lblCautionShortcutUpdated.Visible = true;
+            lblCautionShortcutUpdated.Text = String.Format("Setting changed to {0}", Properties.Settings.Default.CautionShortcutKey);
         }
 
         private void chkStreamerFriendlyCounter_CheckedChanged(object sender, EventArgs e)
@@ -140,6 +142,8 @@ namespace iRacing_Caution_Clock
         private void numUDLapCutoff_ValueChanged(object sender, EventArgs e)  // lets the user change the caution clock cut off lap
         {
             cautionClockCutoffLap = Convert.ToInt32(numUDLapCutoff.Value);  // change the caution clock lap cut off
+            lblCautionClockCutoffUpdate.Visible = true;
+            lblCautionClockCutoffUpdate.Text = String.Format("Cutoff is now {0} laps", cautionClockCutoffLap);
         }
         #endregion
 
@@ -258,23 +262,27 @@ namespace iRacing_Caution_Clock
                     #endregion
 
                     #region Radio Info / Admin check
-                    foreach (var radio in sessionInfo.RadioInfo.Radios)  // look through all the radios (normally only 1)
+                    if (!userIsAdmin)  // if user is admin, no need to keep running this block, people being removed from admin is so rare I'm not worried about dealing with that
                     {
-                        foreach (var freq in radio.Frequencies)  // look through all the frequencies
+                        foreach (var radio in sessionInfo.RadioInfo.Radios)  // look through all the radios (normally only 1)
                         {
-                            userIsAdmin = true;
-                            lblUserIsAdmin.Text = "yes";
-                            btnManualCaution.Enabled = true;
-                            //if (freq.FrequencyName.Contains("ADMIN"))  // check to see if there's a radio named ADMIN
-                            //{
-                            //    userIsAdmin = true;  // if so, user is admin, so we know they can control cautions
-                            //    lblUserIsAdmin.Text = "Admin: True";
-                            //    btnManualCaution.Enabled = true;
-                            //} else
-                            //{
-                            //    lblUserIsAdmin.Text = "Admin: False";
-                            //    btnManualCaution.Enabled = false;
-                            //}
+                            foreach (var freq in radio.Frequencies)  // look through all the frequencies
+                            {
+                                if (freq.FrequencyName == "@ADMIN")  // check to see if there's a radio named ADMIN
+                                {
+                                    userIsAdmin = true;  // if so, user is admin, so we know they can control cautions
+                                    lblUserIsAdmin.Text = "Admin: True";
+                                    btnManualCaution.Enabled = true;
+                                }
+                                else
+                                {
+                                    if (!userIsAdmin) // this shouldn't even be reached if user is admin, but just in case
+                                    {
+                                        lblUserIsAdmin.Text = "Admin: False";
+                                        btnManualCaution.Enabled = false;
+                                    }
+                                }
+                            }
                         }
                     }
                     #endregion
@@ -298,7 +306,7 @@ namespace iRacing_Caution_Clock
                 {
                     if (sessionTime >= cautionClockTime)  // check if it's time to throw the caution
                     {
-                        wrapper.Chat.SendMacro(Convert.ToInt32(cautionShortcutKey));  // throw caution
+                        wrapper.Chat.SendMacro(Convert.ToInt32(Properties.Settings.Default.CautionShortcutKey - 1));  // throw caution
                         Console.WriteLine("~~~~~~~~~~~~~~~\nThrowing Caution!\n~~~~~~~~~~~~");
                     }
                     Console.Write("");
@@ -368,7 +376,7 @@ namespace iRacing_Caution_Clock
 
         private void btnManualCaution_Click(object sender, EventArgs e)
         {
-            wrapper.Chat.SendMacro(Convert.ToInt32(cautionShortcutKey));
+            wrapper.Chat.SendMacro(Convert.ToInt32(Properties.Settings.Default.CautionShortcutKey - 1));
         }
 
         private void btnSetGreen_Click(object sender, EventArgs e)
