@@ -1,4 +1,4 @@
-##Download: [v0.9](https://github.com/jmalish/iRacingCautionClock/raw/master/iRacing%20Caution%20Clock%20Installer.zip)
+##[Download](https://github.com/jmalish/iRacingCautionClock/releases/latest)
 
 #iRacing Caution Clock
 
