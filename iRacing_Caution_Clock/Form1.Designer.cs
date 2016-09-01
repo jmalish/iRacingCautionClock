@@ -145,6 +145,7 @@
             this.btnManualCaution.TabIndex = 1;
             this.btnManualCaution.Text = "Manual Caution";
             this.btnManualCaution.UseVisualStyleBackColor = true;
+            this.btnManualCaution.Click += new System.EventHandler(this.btnManualCaution_Click);
             // 
             // lblUserIsAdmin
             // 
