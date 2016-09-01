@@ -1,4 +1,4 @@
-[##Download](https://github.com/jmalish/iRacingCautionClock/releases/latest)
+##[Download](https://github.com/jmalish/iRacingCautionClock/releases/latest)
 
 #iRacing Caution Clock
 
