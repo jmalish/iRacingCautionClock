@@ -53,6 +53,7 @@
             this.lblCautionShortcutKey = new System.Windows.Forms.Label();
             this.chkControlsCautions = new System.Windows.Forms.CheckBox();
             this.numUDTimeBetween = new System.Windows.Forms.NumericUpDown();
+            this.btnSetGreen = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPgQuickInfo.SuspendLayout();
             this.tabPgLargeCountdown.SuspendLayout();
@@ -121,6 +122,7 @@
             // 
             // tabPgQuickInfo
             // 
+            this.tabPgQuickInfo.Controls.Add(this.btnSetGreen);
             this.tabPgQuickInfo.Controls.Add(this.btnManualCaution);
             this.tabPgQuickInfo.Controls.Add(this.lblConnectedToiRacing);
             this.tabPgQuickInfo.Controls.Add(this.lblCautionClockExpires);
@@ -345,6 +347,16 @@
             0});
             this.numUDTimeBetween.ValueChanged += new System.EventHandler(this.numUDTimeBetween_ValueChanged);
             // 
+            // btnSetGreen
+            // 
+            this.btnSetGreen.Location = new System.Drawing.Point(292, 96);
+            this.btnSetGreen.Name = "btnSetGreen";
+            this.btnSetGreen.Size = new System.Drawing.Size(75, 23);
+            this.btnSetGreen.TabIndex = 2;
+            this.btnSetGreen.Text = "set green flag";
+            this.btnSetGreen.UseVisualStyleBackColor = true;
+            this.btnSetGreen.Click += new System.EventHandler(this.btnSetGreen_Click);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -399,6 +411,7 @@
         private System.Windows.Forms.CheckBox chkControlsCautions;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numUDLapCutoff;
+        private System.Windows.Forms.Button btnSetGreen;
     }
 }
 

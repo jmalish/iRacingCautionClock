@@ -1,0 +1,4 @@
+Xcheck to make sure we're in race session
+something wrong with admin check
+label on options for laps (bottom one)
+caution shortcut setting not updating

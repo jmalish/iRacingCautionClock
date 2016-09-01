@@ -20,7 +20,7 @@ namespace iRacing_Caution_Clock
         private int sessionTime = 0;  // what time it is in the session
         private bool cautionClockActive = false;  // if the caution clock is running
         private string currentTrack;  // the track that we're at
-        private bool isRaceSession = false; // whether we're in a race session (as opposed to practice or qual)
+        private bool isRaceSession = false; // whether we're in a race session (as opposed to practice or qual) -
 
         // veriables that the user can edit
         private int cautionClockTime = 0;  // what time to throw the caution clock, uses the sessionTime
@@ -155,7 +155,7 @@ namespace iRacing_Caution_Clock
 
                     if (currentFlag != newFlag)  // flag changed in the last update
                     {
-                        if (!newFlag.Contains("StartHidden"))  // don't want to show this flag to users, better to just tell them it's still green
+                        if (!newFlag.Contains("StartHidden") && (!newFlag.Contains("Serviceable")))  // don't want to show this flag to users, better to just tell them it's still green
                         {
                             currentFlag = newFlag;  // set current flag variable to the new flag
 
@@ -169,8 +169,6 @@ namespace iRacing_Caution_Clock
                                 cautionClockTime = sessionTime + cautionClockTimeLength; // set time for caution clock to expire
                             }
                         }
-
-                        CheckCautionClock();
                     }
 
                     // currentFlag = telemArgs.TelemetryInfo.SessionFlags.Value.ToString().Split('|')[0]; // gets the current flag state and trims off the unneccessary stuff
@@ -192,7 +190,7 @@ namespace iRacing_Caution_Clock
 
                     TimeSpan timeTilExpire = TimeSpan.FromSeconds(expireTime);  // convert it into a timespan object
                     lblCautionClockExpires.Text = String.Format("Clock expires in: {0}:{1}", timeTilExpire.Minutes, timeTilExpire.Seconds.ToString("00"));  // update label
-                    lblLargeCounter.Text = String.Format("Clock expires in: {0}:{1}", timeTilExpire.Minutes, timeTilExpire.Seconds.ToString("00"));  // update label
+                    lblLargeCounter.Text = String.Format("{0}:{1}", timeTilExpire.Minutes, timeTilExpire.Seconds.ToString("00"));  // update label
                 }
                 #endregion
 
@@ -252,6 +250,8 @@ namespace iRacing_Caution_Clock
                                 {
                                     cautionClockActive = false;  // turn off caution clock
                                 }
+
+                                CheckCautionClock();
                             }
                         }
                     }
@@ -299,7 +299,9 @@ namespace iRacing_Caution_Clock
                     if (sessionTime >= cautionClockTime)  // check if it's time to throw the caution
                     {
                         wrapper.Chat.SendMacro(Convert.ToInt32(cautionShortcutKey));  // throw caution
+                        Console.WriteLine("~~~~~~~~~~~~~~~\nThrowing Caution!\n~~~~~~~~~~~~");
                     }
+                    Console.Write("");
                 }
             } else // if not
             {
@@ -367,6 +369,11 @@ namespace iRacing_Caution_Clock
         private void btnManualCaution_Click(object sender, EventArgs e)
         {
             wrapper.Chat.SendMacro(Convert.ToInt32(cautionShortcutKey));
+        }
+
+        private void btnSetGreen_Click(object sender, EventArgs e)
+        {
+            currentFlag = "Green";
         }
     }
 }
