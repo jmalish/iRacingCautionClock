@@ -57,8 +57,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_51EA0221ADC9F5AF896D614812DDA866"
+        "MsmKey" = "8:_E4132F3CEB144C0DBB252F86534EC807"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -85,6 +85,12 @@
         "OwnerKey" = "8:_8D659974550AD92F7266B89802689979"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_51EA0221ADC9F5AF896D614812DDA866"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -103,6 +109,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -119,6 +141,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -270,6 +308,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E4132F3CEB144C0DBB252F86534EC807"
+            {
+            "SourcePath" = "8:..\\iRacing_Caution_Clock\\iracing_caution_clock_logo.ico"
+            "TargetName" = "8:iracing_caution_clock_logo.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_F5FBC001431548E0907BA66B89B0058D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
         }
@@ -462,7 +520,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_729561ED7767461E9872392BBA49C602"
             {
-            "Name" = "8:iRacing Caution Clock (Active)"
+            "Name" = "8:iRacing Caution Clock"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -471,12 +529,12 @@
             "Target" = "8:_9B1D50ADC8A148C98F2A790A1156CD28"
             "Folder" = "8:_BFBB0993FD954B2EBFCD2F8294D227BB"
             "WorkingFolder" = "8:_F5FBC001431548E0907BA66B89B0058D"
-            "Icon" = "8:"
+            "Icon" = "8:_E4132F3CEB144C0DBB252F86534EC807"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_DEA23ECC0BC7449E84C4EFC2D3261975"
             {
-            "Name" = "8:iRacing Caution Clock (Active)"
+            "Name" = "8:iRacing Caution Clock"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -485,7 +543,7 @@
             "Target" = "8:_9B1D50ADC8A148C98F2A790A1156CD28"
             "Folder" = "8:_234CA5389B73483C938C00D11D93378B"
             "WorkingFolder" = "8:_F5FBC001431548E0907BA66B89B0058D"
-            "Icon" = "8:"
+            "Icon" = "8:_E4132F3CEB144C0DBB252F86534EC807"
             "Feature" = "8:"
             }
         }

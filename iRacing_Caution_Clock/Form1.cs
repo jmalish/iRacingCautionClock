@@ -19,9 +19,11 @@ namespace iRacing_Caution_Clock
         private bool userIsAdmin = false;  // is the user is admin or not, only admins can throw cautions
         private int sessionTime = 0;  // what time it is in the session
         private bool cautionClockActive = false;  // if the caution clock is running
-        private int cautionClockTime = 0;  // what time to throw the caution clock, uses the sessionTime
+        private string currentTrack;  // the track that we're at
 
         // veriables that the user can edit
+        private int cautionClockTime = 0;  // what time to throw the caution clock, uses the sessionTime
+        private int cautionClockCutoffLap = 20;  // what lap the caution clock is turned off, default is 20
         private int cautionClockTimeLength = 1200;  // how long between cautions, in seconds. Default is 1200
         private decimal cautionShortcutKey = Properties.Settings.Default.CautionShortcutKey - 1;  // which macro is set to send the command to throw the caution
         private bool controlsCautions = false;
@@ -133,6 +135,11 @@ namespace iRacing_Caution_Clock
                 }
             }
         }
+
+        private void numUDLapCutoff_ValueChanged(object sender, EventArgs e)  // lets the user change the caution clock cut off lap
+        {
+            cautionClockCutoffLap = Convert.ToInt32(numUDLapCutoff.Value);  // change the caution clock lap cut off
+        }
         #endregion
 
         #region SDK Wrapper Stuff
@@ -203,6 +210,26 @@ namespace iRacing_Caution_Clock
                     var input = new StringReader(sessionArgs.SessionInfo.Yaml);  // read the yaml
                     var sessionInfo = deserializer.Deserialize<SDKReturn>(input);  // deserialize the yaml
 
+                    #region Track info
+                    var track = sessionInfo.WeekendInfo.TrackDisplayName;
+                    if (track != currentTrack)
+                    {
+                        currentTrack = track;  // currently, in the real CWTS, nascar stops the cautoin clock at 10 laps to go, so we need to see if we're at one of those tracks
+                        
+                        if (currentTrack == "Canadian Tire Motorsport Park" || currentTrack == "Pocono Raceway")  // if we're at one of the two tracks
+                        {
+                            // let the user know about the IRL rules
+                            var msgBoxResult = MessageBox.Show("It looks like you're either at Canadian Tire or Pocono. \nThese tracks have the caution clock turn off at 10 laps to go in the real CWTS. \nClick OK to set the caution clock to turn off at 10 laps, or cancel to leave it at 20.","",MessageBoxButtons.OKCancel);
+
+                            if (msgBoxResult == DialogResult.OK)
+                            {
+                                cautionClockCutoffLap = 10;
+                                numUDLapCutoff.Value = 10;
+                            }
+                        }                        
+                    }
+                    #endregion
+
                     #region Session Info
                     foreach (var session in sessionInfo.SessionInfo.Sessions)  // look through all the sessions (normally they're Practice, Qualifying, and Race)
                     {
@@ -216,7 +243,7 @@ namespace iRacing_Caution_Clock
                                 lapsComplete += 1; // laps are 0 indexed, need to add 1 to get it to display correctly
                                 lblCurrentLap.Text = string.Format("Lap {0} of {1}", lapsComplete.ToString(), raceSession.SessionLaps);  // set label on form to show what lap we're on
 
-                                if ((Convert.ToInt32(session.SessionLaps)) - (Convert.ToInt32(lapsComplete)) <= 20)  // check if we're less than 20 to go in the race
+                                if ((Convert.ToInt32(session.SessionLaps)) - (Convert.ToInt32(lapsComplete)) <= cautionClockCutoffLap)  // check if we're less than 20 to go in the race
                                 {
                                     cautionClockActive = false;  // turn off caution clock
                                 }
@@ -283,6 +310,7 @@ namespace iRacing_Caution_Clock
         {
             public SessionInfo SessionInfo { get; set; }
             public RadioInfo RadioInfo { get; set; }
+            public WeekendInfo WeekendInfo { get; set; }
         }
 
         public class SessionInfo
@@ -311,6 +339,11 @@ namespace iRacing_Caution_Clock
         {
             public string FrequencyName { get; set; }
             public string CanSquawk { get; set; }
+        }
+
+        public class WeekendInfo
+        {
+            public string TrackDisplayName { get; set; }
         }
         #endregion
 

@@ -36,26 +36,29 @@
             this.lblCautionClockExpires = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPgQuickInfo = new System.Windows.Forms.TabPage();
-            this.chkControlsCautions = new System.Windows.Forms.CheckBox();
-            this.linkLblCautionShortcutHelp = new System.Windows.Forms.LinkLabel();
-            this.lblCautionShortcutKey = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.btnManualCaution = new System.Windows.Forms.Button();
             this.lblUserIsAdmin = new System.Windows.Forms.Label();
             this.tabPgLargeCountdown = new System.Windows.Forms.TabPage();
             this.chkStreamerFriendlyCounter = new System.Windows.Forms.CheckBox();
             this.btnChangeLblColor = new System.Windows.Forms.Button();
             this.lblLargeCounter = new System.Windows.Forms.Label();
+            this.tabPgOptions = new System.Windows.Forms.TabPage();
+            this.numUDLapCutoff = new System.Windows.Forms.NumericUpDown();
             this.linkLblControlCautionsHelp = new System.Windows.Forms.LinkLabel();
-            this.tabPgDebug = new System.Windows.Forms.TabPage();
-            this.numUDTimeBetween = new System.Windows.Forms.NumericUpDown();
-            this.lblCautionClockLength = new System.Windows.Forms.Label();
+            this.linkLblCautionShortcutHelp = new System.Windows.Forms.LinkLabel();
             this.lblCurrentTimerLength = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblCautionClockLength = new System.Windows.Forms.Label();
+            this.lblCautionShortcutKey = new System.Windows.Forms.Label();
+            this.chkControlsCautions = new System.Windows.Forms.CheckBox();
+            this.numUDTimeBetween = new System.Windows.Forms.NumericUpDown();
             this.tabControl1.SuspendLayout();
             this.tabPgQuickInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tabPgLargeCountdown.SuspendLayout();
-            this.tabPgDebug.SuspendLayout();
+            this.tabPgOptions.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUDLapCutoff)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUDTimeBetween)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,7 +111,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPgQuickInfo);
             this.tabControl1.Controls.Add(this.tabPgLargeCountdown);
-            this.tabControl1.Controls.Add(this.tabPgDebug);
+            this.tabControl1.Controls.Add(this.tabPgOptions);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -118,11 +121,6 @@
             // 
             // tabPgQuickInfo
             // 
-            this.tabPgQuickInfo.Controls.Add(this.linkLblControlCautionsHelp);
-            this.tabPgQuickInfo.Controls.Add(this.chkControlsCautions);
-            this.tabPgQuickInfo.Controls.Add(this.linkLblCautionShortcutHelp);
-            this.tabPgQuickInfo.Controls.Add(this.lblCautionShortcutKey);
-            this.tabPgQuickInfo.Controls.Add(this.numericUpDown1);
             this.tabPgQuickInfo.Controls.Add(this.btnManualCaution);
             this.tabPgQuickInfo.Controls.Add(this.lblConnectedToiRacing);
             this.tabPgQuickInfo.Controls.Add(this.lblCautionClockExpires);
@@ -137,62 +135,6 @@
             this.tabPgQuickInfo.TabIndex = 0;
             this.tabPgQuickInfo.Text = "Quick Info";
             this.tabPgQuickInfo.UseVisualStyleBackColor = true;
-            // 
-            // chkControlsCautions
-            // 
-            this.chkControlsCautions.AutoSize = true;
-            this.chkControlsCautions.Location = new System.Drawing.Point(280, 41);
-            this.chkControlsCautions.Name = "chkControlsCautions";
-            this.chkControlsCautions.Size = new System.Drawing.Size(103, 17);
-            this.chkControlsCautions.TabIndex = 5;
-            this.chkControlsCautions.Text = "Control Cautions";
-            this.chkControlsCautions.UseVisualStyleBackColor = true;
-            this.chkControlsCautions.CheckedChanged += new System.EventHandler(this.chkControlsCautions_CheckedChanged);
-            // 
-            // linkLblCautionShortcutHelp
-            // 
-            this.linkLblCautionShortcutHelp.AutoSize = true;
-            this.linkLblCautionShortcutHelp.LinkColor = System.Drawing.Color.Blue;
-            this.linkLblCautionShortcutHelp.Location = new System.Drawing.Point(380, 142);
-            this.linkLblCautionShortcutHelp.Name = "linkLblCautionShortcutHelp";
-            this.linkLblCautionShortcutHelp.Size = new System.Drawing.Size(13, 13);
-            this.linkLblCautionShortcutHelp.TabIndex = 4;
-            this.linkLblCautionShortcutHelp.TabStop = true;
-            this.linkLblCautionShortcutHelp.Text = "?";
-            this.linkLblCautionShortcutHelp.VisitedLinkColor = System.Drawing.Color.Blue;
-            this.linkLblCautionShortcutHelp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLblCautionShortcutHelp_LinkClicked);
-            // 
-            // lblCautionShortcutKey
-            // 
-            this.lblCautionShortcutKey.AutoSize = true;
-            this.lblCautionShortcutKey.Location = new System.Drawing.Point(297, 142);
-            this.lblCautionShortcutKey.Name = "lblCautionShortcutKey";
-            this.lblCautionShortcutKey.Size = new System.Drawing.Size(89, 13);
-            this.lblCautionShortcutKey.TabIndex = 3;
-            this.lblCautionShortcutKey.Text = "Caution Shortcut:";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(315, 160);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            15,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(78, 20);
-            this.numericUpDown1.TabIndex = 2;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // btnManualCaution
             // 
@@ -261,11 +203,43 @@
             this.lblLargeCounter.TabIndex = 0;
             this.lblLargeCounter.Text = "00:00";
             // 
+            // tabPgOptions
+            // 
+            this.tabPgOptions.Controls.Add(this.numUDLapCutoff);
+            this.tabPgOptions.Controls.Add(this.linkLblControlCautionsHelp);
+            this.tabPgOptions.Controls.Add(this.linkLblCautionShortcutHelp);
+            this.tabPgOptions.Controls.Add(this.lblCurrentTimerLength);
+            this.tabPgOptions.Controls.Add(this.numericUpDown1);
+            this.tabPgOptions.Controls.Add(this.label1);
+            this.tabPgOptions.Controls.Add(this.lblCautionClockLength);
+            this.tabPgOptions.Controls.Add(this.lblCautionShortcutKey);
+            this.tabPgOptions.Controls.Add(this.chkControlsCautions);
+            this.tabPgOptions.Controls.Add(this.numUDTimeBetween);
+            this.tabPgOptions.Location = new System.Drawing.Point(4, 22);
+            this.tabPgOptions.Name = "tabPgOptions";
+            this.tabPgOptions.Size = new System.Drawing.Size(401, 188);
+            this.tabPgOptions.TabIndex = 2;
+            this.tabPgOptions.Text = "Options";
+            this.tabPgOptions.UseVisualStyleBackColor = true;
+            // 
+            // numUDLapCutoff
+            // 
+            this.numUDLapCutoff.Location = new System.Drawing.Point(249, 94);
+            this.numUDLapCutoff.Name = "numUDLapCutoff";
+            this.numUDLapCutoff.Size = new System.Drawing.Size(120, 20);
+            this.numUDLapCutoff.TabIndex = 7;
+            this.numUDLapCutoff.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.numUDLapCutoff.ValueChanged += new System.EventHandler(this.numUDLapCutoff_ValueChanged);
+            // 
             // linkLblControlCautionsHelp
             // 
             this.linkLblControlCautionsHelp.AutoSize = true;
             this.linkLblControlCautionsHelp.LinkColor = System.Drawing.Color.Blue;
-            this.linkLblControlCautionsHelp.Location = new System.Drawing.Point(376, 42);
+            this.linkLblControlCautionsHelp.Location = new System.Drawing.Point(107, 61);
             this.linkLblControlCautionsHelp.Name = "linkLblControlCautionsHelp";
             this.linkLblControlCautionsHelp.Size = new System.Drawing.Size(13, 13);
             this.linkLblControlCautionsHelp.TabIndex = 6;
@@ -274,30 +248,59 @@
             this.linkLblControlCautionsHelp.VisitedLinkColor = System.Drawing.Color.Blue;
             this.linkLblControlCautionsHelp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLblControlCautionsHelp_LinkClicked);
             // 
-            // tabPgDebug
+            // linkLblCautionShortcutHelp
             // 
-            this.tabPgDebug.Controls.Add(this.lblCurrentTimerLength);
-            this.tabPgDebug.Controls.Add(this.lblCautionClockLength);
-            this.tabPgDebug.Controls.Add(this.numUDTimeBetween);
-            this.tabPgDebug.Location = new System.Drawing.Point(4, 22);
-            this.tabPgDebug.Name = "tabPgDebug";
-            this.tabPgDebug.Size = new System.Drawing.Size(401, 188);
-            this.tabPgDebug.TabIndex = 2;
-            this.tabPgDebug.Text = "Debug junk";
-            this.tabPgDebug.UseVisualStyleBackColor = true;
+            this.linkLblCautionShortcutHelp.AutoSize = true;
+            this.linkLblCautionShortcutHelp.LinkColor = System.Drawing.Color.Blue;
+            this.linkLblCautionShortcutHelp.Location = new System.Drawing.Point(272, 61);
+            this.linkLblCautionShortcutHelp.Name = "linkLblCautionShortcutHelp";
+            this.linkLblCautionShortcutHelp.Size = new System.Drawing.Size(13, 13);
+            this.linkLblCautionShortcutHelp.TabIndex = 4;
+            this.linkLblCautionShortcutHelp.TabStop = true;
+            this.linkLblCautionShortcutHelp.Text = "?";
+            this.linkLblCautionShortcutHelp.VisitedLinkColor = System.Drawing.Color.Blue;
+            this.linkLblCautionShortcutHelp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLblCautionShortcutHelp_LinkClicked);
             // 
-            // numUDTimeBetween
+            // lblCurrentTimerLength
             // 
-            this.numUDTimeBetween.Location = new System.Drawing.Point(11, 26);
-            this.numUDTimeBetween.Name = "numUDTimeBetween";
-            this.numUDTimeBetween.Size = new System.Drawing.Size(120, 20);
-            this.numUDTimeBetween.TabIndex = 0;
-            this.numUDTimeBetween.Value = new decimal(new int[] {
-            20,
+            this.lblCurrentTimerLength.AutoSize = true;
+            this.lblCurrentTimerLength.Location = new System.Drawing.Point(107, 31);
+            this.lblCurrentTimerLength.Name = "lblCurrentTimerLength";
+            this.lblCurrentTimerLength.Size = new System.Drawing.Size(181, 13);
+            this.lblCurrentTimerLength.TabIndex = 2;
+            this.lblCurrentTimerLength.Text = "change the counter above to update";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(291, 59);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            15,
             0,
             0,
             0});
-            this.numUDTimeBetween.ValueChanged += new System.EventHandler(this.numUDTimeBetween_ValueChanged);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(78, 20);
+            this.numericUpDown1.TabIndex = 2;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 96);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(237, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Time Between Cautions in minutes (Default is 20)";
             // 
             // lblCautionClockLength
             // 
@@ -308,14 +311,38 @@
             this.lblCautionClockLength.TabIndex = 1;
             this.lblCautionClockLength.Text = "Time Between Cautions in minutes (Default is 20)";
             // 
-            // lblCurrentTimerLength
+            // lblCautionShortcutKey
             // 
-            this.lblCurrentTimerLength.AutoSize = true;
-            this.lblCurrentTimerLength.Location = new System.Drawing.Point(8, 49);
-            this.lblCurrentTimerLength.Name = "lblCurrentTimerLength";
-            this.lblCurrentTimerLength.Size = new System.Drawing.Size(181, 13);
-            this.lblCurrentTimerLength.TabIndex = 2;
-            this.lblCurrentTimerLength.Text = "change the counter above to update";
+            this.lblCautionShortcutKey.AutoSize = true;
+            this.lblCautionShortcutKey.Location = new System.Drawing.Point(189, 61);
+            this.lblCautionShortcutKey.Name = "lblCautionShortcutKey";
+            this.lblCautionShortcutKey.Size = new System.Drawing.Size(89, 13);
+            this.lblCautionShortcutKey.TabIndex = 3;
+            this.lblCautionShortcutKey.Text = "Caution Shortcut:";
+            // 
+            // chkControlsCautions
+            // 
+            this.chkControlsCautions.AutoSize = true;
+            this.chkControlsCautions.Location = new System.Drawing.Point(11, 60);
+            this.chkControlsCautions.Name = "chkControlsCautions";
+            this.chkControlsCautions.Size = new System.Drawing.Size(103, 17);
+            this.chkControlsCautions.TabIndex = 5;
+            this.chkControlsCautions.Text = "Control Cautions";
+            this.chkControlsCautions.UseVisualStyleBackColor = true;
+            this.chkControlsCautions.CheckedChanged += new System.EventHandler(this.chkControlsCautions_CheckedChanged);
+            // 
+            // numUDTimeBetween
+            // 
+            this.numUDTimeBetween.Location = new System.Drawing.Point(249, 8);
+            this.numUDTimeBetween.Name = "numUDTimeBetween";
+            this.numUDTimeBetween.Size = new System.Drawing.Size(120, 20);
+            this.numUDTimeBetween.TabIndex = 0;
+            this.numUDTimeBetween.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.numUDTimeBetween.ValueChanged += new System.EventHandler(this.numUDTimeBetween_ValueChanged);
             // 
             // mainForm
             // 
@@ -334,11 +361,12 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPgQuickInfo.ResumeLayout(false);
             this.tabPgQuickInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.tabPgLargeCountdown.ResumeLayout(false);
             this.tabPgLargeCountdown.PerformLayout();
-            this.tabPgDebug.ResumeLayout(false);
-            this.tabPgDebug.PerformLayout();
+            this.tabPgOptions.ResumeLayout(false);
+            this.tabPgOptions.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUDLapCutoff)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUDTimeBetween)).EndInit();
             this.ResumeLayout(false);
 
@@ -358,16 +386,18 @@
         private System.Windows.Forms.Button btnChangeLblColor;
         private System.Windows.Forms.Button btnManualCaution;
         private System.Windows.Forms.Label lblUserIsAdmin;
-        private System.Windows.Forms.Label lblCautionShortcutKey;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.CheckBox chkStreamerFriendlyCounter;
-        private System.Windows.Forms.LinkLabel linkLblCautionShortcutHelp;
-        private System.Windows.Forms.CheckBox chkControlsCautions;
-        private System.Windows.Forms.LinkLabel linkLblControlCautionsHelp;
-        private System.Windows.Forms.TabPage tabPgDebug;
+        private System.Windows.Forms.TabPage tabPgOptions;
         private System.Windows.Forms.Label lblCautionClockLength;
         private System.Windows.Forms.NumericUpDown numUDTimeBetween;
         private System.Windows.Forms.Label lblCurrentTimerLength;
+        private System.Windows.Forms.LinkLabel linkLblControlCautionsHelp;
+        private System.Windows.Forms.LinkLabel linkLblCautionShortcutHelp;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label lblCautionShortcutKey;
+        private System.Windows.Forms.CheckBox chkControlsCautions;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown numUDLapCutoff;
     }
 }
 
