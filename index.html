@@ -17,6 +17,8 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
+          <a id="forkme_banner" href="https://github.com/jmalish/iRacingCautionClock">View on GitHub</a>
+
           <h1 id="project_title">iRacing Caution Clock</h1>
         </header>
     </div>
@@ -28,7 +30,7 @@
         <p>The main goal of this page is to explain what the settings do in the program, as well as outline how to use the program. As this program is still a work in progress, some things might change from what is shown on this page. I will try to keep it updated if I make any huge changes, but for the most part, I don't see any major changes to how the layout currently is.</p>
 
         <h2><a href="#installing"># </a><a id="installing" class="anchor" href="#installing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Downloading and Installing the Program</h2>
-        <p>The best way to download the program is to go to <a href="https://github.com/jmalish/iRacingCautionClockPublic/releases">the latest releases</a> page and download the .zip file from the top most version.<br>
+        <p>The best way to download the program is to go to <a href="https://github.com/jmalish/iRacingCautionClock/releases">the latest releases</a> page and download the .zip file from the top most version.<br>
         The version number will likely be different, but this images shows which link to download:<br>
         <img src="./images/download.png" align="Download" title="Download" width="300px"><br>
         After unzipping the downloaded file, run the .msi file and follow the instructions to install it like any other program.<br>
@@ -38,7 +40,7 @@
         </p>
 
         <h2><a href="#quick_info"># </a><a id="quick_info" class="anchor" href="#quick_info" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The Quick Info Tab</h2>
-        <p><img src="./images/quick_info_disconnected.PNG" alt="The quick info tab" title="The quick info tab"><br>
+        <p><img src="./images/quick_info_disconnected.PNG." alt="The quick info tab" title="The quick info tab"><br>
         The quick info tab is the main page you see when you launch the program. Working from top to bottom on the image above (note that some of these will not change until the race has started, so some of them will remain blank during practice and qualifying):
         <ul>
           <li><strong>Connecting to iRacing</strong>: This says whether or not the program has connected to the iRacing sim. It will change to "Connected to iRacing!" when connected.</li>
@@ -47,8 +49,8 @@
           <li><strong>Lap - of -</strong>: During the race, this shows what lap the leaders are on.</li>
           <li><strong>Clock expires in</strong>: Shows how long until the caution clock expires and a yellow is thrown.</li>
           <li><strong>Caution Clock</strong>: Shows whether the caution clock is active or not.</li>
-          <li><strong>Manual Caution / Test Button</strong>: Pushing this button will let you test your <a href="#caution_shortcut">Caution Shortcut</a> button. It also doubles as a way to manually throw a caution quickly if needed.</li>
-          <li><strong>Control Cautions</strong>: When this checkbox is checked, you are the one controlling cautions for the sessions. It is very important that only one admin in the session has this checked, otherwise iRacing will think you want to extend the caution, causing more caution laps than normal.</li>
+          <li><strong>Manual Caution / Test Button</strong>: Pushing this button will let you test your <a href="#caution_hotkey">Caution Hotkey</a> button. It also doubles as a way to manually throw a caution quickly if needed.</li>
+          <li><strong>Control Cautions</strong>: When this checkbox is checked, you are the controlling cautions for the sessions. It's ok if more than one person has this set.</li>
         </ul>
         </p>
 
@@ -66,24 +68,16 @@
         <ul>
           <li><strong>Time between cautions...</strong>: This setting probably won't ever be used unless you're doing fun races or want to try something different. It changes the time that the caution clock counts down from. The default (which is what the real series runs) is 20 minutes.</li>
           <li><strong>Caution Clock Lap Cut off</strong>: This setting determines what lap the caution clock is turned off permanently. At pretty much every track, the cutoff is twenty to go. However at Canadian Tire and Pocono, the caution clock turns off at 10 laps to go. If the program determines that you are at one of these two tracks, it will notify you of the rule difference and automatically change the setting for you.</li>
-          <li><strong><a href="#caution_shortcut" id="caution_shortcut" class="anchor"></a>Caution Shortcut</strong>: This setting needs to correspond with whatever auto text chat you have selected in iRacing options. See the image below for more explanation.<br>
+          <li><strong><a href="#caution_hotkey" id="caution_hotkey" class="anchor"></a>Caution Hotkey</strong>: This setting needs to correspond with whatever auto text chat you have selected in iRacing options. See the image below for more explanation.<br>
         <img src="./images/iracing_options_numbered.png">
         </li>
         </ul>
-        As you can see, I have "!yellow$" in slot 15, so I need to set my caution shortcut to be number 15. In my example, setting the caution shortcut setting to 1 will send "Pitting In$" into the iRacing text chat.<br>
+        As you can see, I have "!yellow$" in slot 15, so I need to set my caution hotkey to be number 15. In my example, setting the caution hotkey setting to 1 will send "Pitting In$" into the iRacing text chat.<br>
         You must have the dollar sign ($) at the end of the !yellow$ command, it tells iRacing that you want to send the command to throw the caution immediately.
         </p>
 
         <h2><a href="#closing"># </a><a id="closing" class="anchor" href="#closing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Closing</h2>
-        <p>
-	<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-	<input type="hidden" name="cmd" value="_s-xclick" />
-	<input type="hidden" name="hosted_button_id" value="VRM4XXPPXTRU6" />
-	<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate" />
-	<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" /><br>
-	If you like what's happening here, and want to support me, a donation would be greatly appreciated. Nothing is expected, but anything helps. 
-	</form>
-        I think that's everything. If you have any questions, feel free to <a href="mailto:jordanmalish@gmail.com?Subject=iRacing%20Caution%20Clock%20Help">send me an email</a>.</p>
+        <p>I think that's everything. If you have any questions, feel free to <a href="mailto:jordanmalish@gmail.com?Subject=iRacing%20Caution%20Clock%20Help">send me an email</a>.
 
       </section>
     </div>
