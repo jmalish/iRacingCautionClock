@@ -26,7 +26,6 @@ namespace iRacing_Caution_Clock
         private int cautionClockTime = 0;  // what time to throw the caution clock, uses the sessionTime
         private int cautionClockCutoffLap = 20;  // what lap the caution clock is turned off, default is 20
         private int cautionClockTimeLength = 1200;  // how long between cautions, in seconds. Default is 1200
-        // private decimal cautionShortcutKey = Properties.Settings.Default.CautionShortcutKey - 1;  // which macro is set to send the command to throw the caution
         private bool controlsCautions = false;
 
         // other variables
@@ -48,6 +47,8 @@ namespace iRacing_Caution_Clock
             {
                 tabControl1.TabPages[1].BackColor = Color.Transparent;
             }
+            chkControlsCautions.Checked = false;
+            chkControlsCautions.Enabled = false;
 
             #region wrapper stuff
             wrapper = new iRacingSdkWrapper.SdkWrapper();  // create wrapper instance
@@ -104,9 +105,9 @@ namespace iRacing_Caution_Clock
         private void linkLblCautionShortcutHelp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)  // user has clicked the ? button next to caution shortcut
         {
             MessageBox.Show(String.Format("{0}\n\n{1}\n\n{2}\n\n{3}",
-                "The \"Caution Shortcut\" setting is the shortcut you have selected to throw a caution in iRacing.",
-                "The setting '1' is the very first shortcut at the top.",
-                "It's suggested to test this in a practice with the \"Manual Caution\" button in the top right to see if you have the correct setting",
+                "The \"Caution Hotkey\" setting is the hotkey you have selected to throw a caution in iRacing.",
+                "The setting '1' is the very first hotkey at the top of the Auto Text Chat section of the options menu in iRacing.",
+                "It's suggested to test this in a practice with the \"Manual Caution\" button in the top right to see if you have the correct setting.",
                 "You MUST be admin for this portion to work."));
         }
 
@@ -119,23 +120,30 @@ namespace iRacing_Caution_Clock
 
         private void chkControlsCautions_CheckedChanged(object sender, EventArgs e)
         {
+            //if (chkControlsCautions.Checked)
+            //{
+            //    var msgBoxResult = MessageBox.Show(string.Format("{0}\n\n{1}\n\n{2}", 
+            //            "Only one admin in the session should have this set, otherwise multiple people will be sending commands to iRacing to throw cautions.",
+            //            "Also you have to be admin, or else this does nothing",
+            //            "Click OK to contine, or Cancel to... well... cancel..."),
+            //        "", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+
+            //    if (msgBoxResult == DialogResult.OK)
+            //    {
+            //        chkControlsCautions.Checked = true;
+            //        controlsCautions = true;
+            //    } else
+            //    {
+            //        chkControlsCautions.Checked = false;
+            //        controlsCautions = false;
+            //    }
+            //}
             if (chkControlsCautions.Checked)
             {
-                var msgBoxResult = MessageBox.Show(string.Format("{0}\n\n{1}\n\n{2}", 
-                        "Only one admin in the session should have this set, otherwise multiple people will be sending commands to iRacing to throw cautions.",
-                        "Also you have to be admin, or else this does nothing",
-                        "Click OK to contine, or Cancel to... well... cancel..."),
-                    "", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
-
-                if (msgBoxResult == DialogResult.OK)
-                {
-                    chkControlsCautions.Checked = true;
-                    controlsCautions = true;
-                } else
-                {
-                    chkControlsCautions.Checked = false;
-                    controlsCautions = false;
-                }
+                controlsCautions = true;
+            } else
+            {
+                controlsCautions = false;
             }
         }
 
@@ -145,6 +153,11 @@ namespace iRacing_Caution_Clock
             lblCautionClockCutoffUpdate.Visible = true;
             lblCautionClockCutoffUpdate.Text = String.Format("Cutoff is now {0} laps", cautionClockCutoffLap);
         }
+
+        private void btnManualCaution_Click(object sender, EventArgs e)
+        {
+            wrapper.Chat.SendMacro(Convert.ToInt32(Properties.Settings.Default.CautionShortcutKey - 1));
+        }
         #endregion
 
         #region SDK Wrapper Stuff
@@ -152,6 +165,8 @@ namespace iRacing_Caution_Clock
         {
             if (!closing)
             {
+                CheckCautionClock();
+
                 #region Flag stuff
                 if (isRaceSession)  // only do this stuff during the race session
                 {
@@ -159,7 +174,7 @@ namespace iRacing_Caution_Clock
 
                     if (currentFlag != newFlag)  // flag changed in the last update
                     {
-                        if (!newFlag.Contains("StartHidden") && (!newFlag.Contains("Serviceable")))  // don't want to show this flag to users, better to just tell them it's still green
+                        if (!newFlag.Contains("StartHidden") && (!newFlag.Contains("Servicible")) && (!newFlag.Contains("Black")))  // don't want to show this flag to users, better to just tell them it's still green
                         {
                             currentFlag = newFlag;  // set current flag variable to the new flag
 
@@ -244,18 +259,22 @@ namespace iRacing_Caution_Clock
                             var raceSession = session;  // the session we're dealing with is the race session, just using this to shorten the variable to less than 50 characters
                             int lapsComplete = Convert.ToInt32(raceSession.ResultsLapsComplete);  // get the laps complete
 
-                            if (lapsComplete > 0) // if ResultsLapsComplete is -1, we haven't entered the race yet
+                            if (lapsComplete >= 0) // if ResultsLapsComplete is -1, we haven't entered the race yet
                             {
                                 isRaceSession = true;
                                 lapsComplete += 1; // laps are 0 indexed, need to add 1 to get it to display correctly
                                 lblCurrentLap.Text = string.Format("Lap {0} of {1}", lapsComplete.ToString(), raceSession.SessionLaps);  // set label on form to show what lap we're on
 
-                                if ((Convert.ToInt32(session.SessionLaps)) - (Convert.ToInt32(lapsComplete)) <= cautionClockCutoffLap)  // check if we're less than 20 to go in the race
+                                try
                                 {
-                                    cautionClockActive = false;  // turn off caution clock
+                                    if ((Convert.ToInt32(session.SessionLaps)) - (Convert.ToInt32(lapsComplete)) <= cautionClockCutoffLap)  // check if we're less than 20 to go in the race
+                                    {
+                                        cautionClockActive = false;  // turn off caution clock
+                                    }
+                                } catch
+                                {
+                                    MessageBox.Show("It looks like the session you're in is a timed race.");
                                 }
-
-                                CheckCautionClock();
                             }
                         }
                     }
@@ -273,6 +292,7 @@ namespace iRacing_Caution_Clock
                                     userIsAdmin = true;  // if so, user is admin, so we know they can control cautions
                                     lblUserIsAdmin.Text = "Admin: True";
                                     btnManualCaution.Enabled = true;
+                                    chkControlsCautions.Checked = true;
                                 }
                                 else
                                 {
@@ -307,9 +327,8 @@ namespace iRacing_Caution_Clock
                     if (sessionTime >= cautionClockTime)  // check if it's time to throw the caution
                     {
                         wrapper.Chat.SendMacro(Convert.ToInt32(Properties.Settings.Default.CautionShortcutKey - 1));  // throw caution
-                        Console.WriteLine("~~~~~~~~~~~~~~~\nThrowing Caution!\n~~~~~~~~~~~~");
+                        // Console.WriteLine("~~~~~~~~~~~~~~~\nThrowing Caution!\n~~~~~~~~~~~~");
                     }
-                    Console.Write("");
                 }
             } else // if not
             {
@@ -373,15 +392,5 @@ namespace iRacing_Caution_Clock
             lblCurrentTimerLength.Text = string.Format("Timer now set to {0} minutes, which is {1} seconds", numUDTimeBetween.Value, cautionClockTimeLength);
         }
         #endregion
-
-        private void btnManualCaution_Click(object sender, EventArgs e)
-        {
-            wrapper.Chat.SendMacro(Convert.ToInt32(Properties.Settings.Default.CautionShortcutKey - 1));
-        }
-
-        private void btnSetGreen_Click(object sender, EventArgs e)
-        {
-            currentFlag = "Green";
-        }
     }
 }

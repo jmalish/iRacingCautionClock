@@ -311,9 +311,9 @@
             this.lblCautionShortcutKey.AutoSize = true;
             this.lblCautionShortcutKey.Location = new System.Drawing.Point(12, 73);
             this.lblCautionShortcutKey.Name = "lblCautionShortcutKey";
-            this.lblCautionShortcutKey.Size = new System.Drawing.Size(89, 13);
+            this.lblCautionShortcutKey.Size = new System.Drawing.Size(83, 13);
             this.lblCautionShortcutKey.TabIndex = 3;
-            this.lblCautionShortcutKey.Text = "Caution Shortcut:";
+            this.lblCautionShortcutKey.Text = "Caution Hotkey:";
             // 
             // numUDTimeBetween
             // 
