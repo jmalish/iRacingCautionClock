@@ -21,6 +21,7 @@ namespace iRacing_Caution_Clock
         private bool cautionClockActive = false;  // if the caution clock is running
         private string currentTrack;  // the track that we're at
         private bool isRaceSession = false; // whether we're in a race session (as opposed to practice or qual) -
+        private int currentLap;
 
         // veriables that the user can edit
         private int cautionClockTime = 0;  // what time to throw the caution clock, uses the sessionTime
@@ -84,7 +85,7 @@ namespace iRacing_Caution_Clock
         {
             Properties.Settings.Default.CautionShortcutKey = numericUpDown1.Value;  // update settings
             Properties.Settings.Default.Save();  // save the new key to settings
-            lblCautionShortcutUpdated.Visible = true;
+            lblCautionShortcutUpdated.Visible = false;
             lblCautionShortcutUpdated.Text = String.Format("Setting changed to {0}", Properties.Settings.Default.CautionShortcutKey);
         }
 
@@ -120,24 +121,6 @@ namespace iRacing_Caution_Clock
 
         private void chkControlsCautions_CheckedChanged(object sender, EventArgs e)
         {
-            //if (chkControlsCautions.Checked)
-            //{
-            //    var msgBoxResult = MessageBox.Show(string.Format("{0}\n\n{1}\n\n{2}", 
-            //            "Only one admin in the session should have this set, otherwise multiple people will be sending commands to iRacing to throw cautions.",
-            //            "Also you have to be admin, or else this does nothing",
-            //            "Click OK to contine, or Cancel to... well... cancel..."),
-            //        "", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
-
-            //    if (msgBoxResult == DialogResult.OK)
-            //    {
-            //        chkControlsCautions.Checked = true;
-            //        controlsCautions = true;
-            //    } else
-            //    {
-            //        chkControlsCautions.Checked = false;
-            //        controlsCautions = false;
-            //    }
-            //}
             if (chkControlsCautions.Checked)
             {
                 controlsCautions = true;
@@ -158,6 +141,12 @@ namespace iRacing_Caution_Clock
         {
             wrapper.Chat.SendMacro(Convert.ToInt32(Properties.Settings.Default.CautionShortcutKey - 1));
         }
+
+        private void numUDTimeBetween_ValueChanged(object sender, EventArgs e)
+        {
+            cautionClockTimeLength = Convert.ToInt32(numUDTimeBetween.Value) * 60;
+            lblCurrentTimerLength.Text = string.Format("Timer now set to {0} minutes, which is {1} seconds", numUDTimeBetween.Value, cautionClockTimeLength);
+        }
         #endregion
 
         #region SDK Wrapper Stuff
@@ -165,6 +154,7 @@ namespace iRacing_Caution_Clock
         {
             if (!closing)
             {
+                currentLap = telemArgs.TelemetryInfo.Lap.Value;
                 CheckCautionClock();
 
                 #region Flag stuff
@@ -199,17 +189,21 @@ namespace iRacing_Caution_Clock
                 #region Time stuff
                 string currentTime = telemArgs.TelemetryInfo.SessionTime.ToString().Split('.')[0];  // get the session time (how long it's been since this session started)
                                                                                                     // splitting at decimal because we don't need to know the exact milisecond
-                sessionTime = Convert.ToInt32(currentTime);  // convert it to int so we can use it as a number
 
-                if (cautionClockActive)
+                if (currentLap > cautionClockCutoffLap)  // if we're past the lap cutoff, no need to run this section
                 {
-                    string time = sessionTime.ToString().Split('.')[0];  // session time minus milliseconds
+                    sessionTime = Convert.ToInt32(currentTime);  // convert it to int so we can use it as a number
 
-                    double expireTime = cautionClockTime - Convert.ToDouble(time);  // calculate how much longer we have until caution clock expires
+                    if (cautionClockActive)
+                    {
+                        string time = sessionTime.ToString().Split('.')[0];  // session time minus milliseconds
 
-                    TimeSpan timeTilExpire = TimeSpan.FromSeconds(expireTime);  // convert it into a timespan object
-                    lblCautionClockExpires.Text = String.Format("Clock expires in: {0}:{1}", timeTilExpire.Minutes, timeTilExpire.Seconds.ToString("00"));  // update label
-                    lblLargeCounter.Text = String.Format("{0}:{1}", timeTilExpire.Minutes, timeTilExpire.Seconds.ToString("00"));  // update label
+                        double expireTime = cautionClockTime - Convert.ToDouble(time);  // calculate how much longer we have until caution clock expires
+
+                        TimeSpan timeTilExpire = TimeSpan.FromSeconds(expireTime);  // convert it into a timespan object
+                        lblCautionClockExpires.Text = String.Format("Clock expires in: {0}:{1}", timeTilExpire.Minutes, timeTilExpire.Seconds.ToString("00"));  // update label
+                        lblLargeCounter.Text = String.Format("{0}:{1}", timeTilExpire.Minutes, timeTilExpire.Seconds.ToString("00"));  // update label
+                    }
                 }
                 #endregion
 
@@ -291,15 +285,13 @@ namespace iRacing_Caution_Clock
                                 {
                                     userIsAdmin = true;  // if so, user is admin, so we know they can control cautions
                                     lblUserIsAdmin.Text = "Admin: True";
-                                    btnManualCaution.Enabled = true;
-                                    chkControlsCautions.Checked = true;
+                                    chkControlsCautions.Enabled = true;
                                 }
                                 else
                                 {
                                     if (!userIsAdmin) // this shouldn't even be reached if user is admin, but just in case
                                     {
                                         lblUserIsAdmin.Text = "Admin: False";
-                                        btnManualCaution.Enabled = false;
                                     }
                                 }
                             }
@@ -381,15 +373,6 @@ namespace iRacing_Caution_Clock
         public class WeekendInfo
         {
             public string TrackDisplayName { get; set; }
-        }
-        #endregion
-
-
-        #region DEBUG STUFF | REMOVE BEFORE RELEASE
-        private void numUDTimeBetween_ValueChanged(object sender, EventArgs e)
-        {
-            cautionClockTimeLength = Convert.ToInt32(numUDTimeBetween.Value) * 60;
-            lblCurrentTimerLength.Text = string.Format("Timer now set to {0} minutes, which is {1} seconds", numUDTimeBetween.Value, cautionClockTimeLength);
         }
         #endregion
     }

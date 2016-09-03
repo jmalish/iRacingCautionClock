@@ -37,6 +37,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPgQuickInfo = new System.Windows.Forms.TabPage();
             this.btnManualCaution = new System.Windows.Forms.Button();
+            this.chkControlsCautions = new System.Windows.Forms.CheckBox();
             this.lblUserIsAdmin = new System.Windows.Forms.Label();
             this.tabPgLargeCountdown = new System.Windows.Forms.TabPage();
             this.chkStreamerFriendlyCounter = new System.Windows.Forms.CheckBox();
@@ -52,7 +53,6 @@
             this.lblCautionClockLength = new System.Windows.Forms.Label();
             this.lblCautionShortcutKey = new System.Windows.Forms.Label();
             this.numUDTimeBetween = new System.Windows.Forms.NumericUpDown();
-            this.chkControlsCautions = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPgQuickInfo.SuspendLayout();
             this.tabPgLargeCountdown.SuspendLayout();
@@ -147,6 +147,17 @@
             this.btnManualCaution.Text = "Manual Caution / Test button";
             this.btnManualCaution.UseVisualStyleBackColor = true;
             this.btnManualCaution.Click += new System.EventHandler(this.btnManualCaution_Click);
+            // 
+            // chkControlsCautions
+            // 
+            this.chkControlsCautions.AutoSize = true;
+            this.chkControlsCautions.Location = new System.Drawing.Point(286, 146);
+            this.chkControlsCautions.Name = "chkControlsCautions";
+            this.chkControlsCautions.Size = new System.Drawing.Size(103, 17);
+            this.chkControlsCautions.TabIndex = 5;
+            this.chkControlsCautions.Text = "Control Cautions";
+            this.chkControlsCautions.UseVisualStyleBackColor = true;
+            this.chkControlsCautions.CheckedChanged += new System.EventHandler(this.chkControlsCautions_CheckedChanged);
             // 
             // lblUserIsAdmin
             // 
@@ -327,17 +338,6 @@
             0,
             0});
             this.numUDTimeBetween.ValueChanged += new System.EventHandler(this.numUDTimeBetween_ValueChanged);
-            // 
-            // chkControlsCautions
-            // 
-            this.chkControlsCautions.AutoSize = true;
-            this.chkControlsCautions.Location = new System.Drawing.Point(286, 150);
-            this.chkControlsCautions.Name = "chkControlsCautions";
-            this.chkControlsCautions.Size = new System.Drawing.Size(103, 17);
-            this.chkControlsCautions.TabIndex = 5;
-            this.chkControlsCautions.Text = "Control Cautions";
-            this.chkControlsCautions.UseVisualStyleBackColor = true;
-            this.chkControlsCautions.CheckedChanged += new System.EventHandler(this.chkControlsCautions_CheckedChanged);
             // 
             // mainForm
             // 
