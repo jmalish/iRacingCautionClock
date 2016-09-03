@@ -42,6 +42,7 @@ namespace iRacing_Caution_Clock
             chkStreamerFriendlyCounter.Checked = Properties.Settings.Default.LargeCounterStreamerFriendly;  // set large counter to users settings
             numericUpDown1.Value = Properties.Settings.Default.CautionShortcutKey;  // set shortcut key to users settings
             lblLargeCounter.ForeColor = Properties.Settings.Default.LargeCounterNumberColor; // set color for large counter text
+            lblCountdownTitle.ForeColor = Properties.Settings.Default.LargeCounterNumberColor;
             if (Properties.Settings.Default.LargeCounterStreamerFriendly)  // set background of large counter to users settings
             {
                 tabControl1.TabPages[1].BackColor = Color.LawnGreen;
@@ -51,6 +52,9 @@ namespace iRacing_Caution_Clock
             }
             chkControlsCautions.Checked = false;
             chkControlsCautions.Enabled = false;
+            chkPlayAudioOnCaution.Checked = Properties.Settings.Default.PlayAudioFileOnCaution;
+            lblCountdownTitle.Visible = false;
+            lblLargeCounter.Visible = false;
 
             #region wrapper stuff
             wrapper = new iRacingSdkWrapper.SdkWrapper();  // create wrapper instance
@@ -72,6 +76,7 @@ namespace iRacing_Caution_Clock
             if (clrDialogue.ShowDialog() == DialogResult.OK)  // if the user clicks OK
             {
                 lblLargeCounter.ForeColor = clrDialogue.Color;  // set the labels color to the new chosen color
+                lblCountdownTitle.ForeColor = clrDialogue.Color;
                 Properties.Settings.Default.LargeCounterNumberColor = clrDialogue.Color;  // update user settings
                 Properties.Settings.Default.Save(); // and save
             }
@@ -163,6 +168,12 @@ namespace iRacing_Caution_Clock
                 MessageBox.Show("Oops... Something went wrong with the audio player.\n\nError:\n" + exc.Message, "Error");
             }
         }
+
+        private void chkPlayAudioOnCaution_CheckedChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.PlayAudioFileOnCaution = chkPlayAudioOnCaution.Checked;
+            Properties.Settings.Default.Save();
+        }
         #endregion
 
         #region SDK Wrapper Stuff
@@ -231,6 +242,8 @@ namespace iRacing_Caution_Clock
 
                         TimeSpan timeTilExpire = TimeSpan.FromSeconds(expireTime);  // convert it into a timespan object
                         lblCautionClockExpires.Text = String.Format("Clock expires in: {0}:{1}", timeTilExpire.Minutes, timeTilExpire.Seconds.ToString("00"));  // update label
+                        lblLargeCounter.Visible = true;
+                        lblCountdownTitle.Visible = true;
                         lblLargeCounter.Text = String.Format("{0}:{1}", timeTilExpire.Minutes, timeTilExpire.Seconds.ToString("00"));  // update label
                     }
                 }
@@ -356,7 +369,8 @@ namespace iRacing_Caution_Clock
                 // update all relevant labels
                 lblCautionClockStatus.Text = "Caution Clock: Not Active";
                 lblCautionClockExpires.Text = "Clock expires in: -";
-                lblLargeCounter.Text = "";
+                lblLargeCounter.Visible = false;
+                lblCountdownTitle.Visible = false;
             }
 
             return;

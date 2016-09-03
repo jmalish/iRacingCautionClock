@@ -57,6 +57,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_CE379C93BCA64664ADE24C028B726BA2"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_E4132F3CEB144C0DBB252F86534EC807"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -310,6 +316,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CE379C93BCA64664ADE24C028B726BA2"
+            {
+            "SourcePath" = "8:..\\iRacing_Caution_Clock\\putitout.wav"
+            "TargetName" = "8:putitout.wav"
+            "Tag" = "8:"
+            "Folder" = "8:_F5FBC001431548E0907BA66B89B0058D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E4132F3CEB144C0DBB252F86534EC807"
             {
             "SourcePath" = "8:..\\iRacing_Caution_Clock\\iracing_caution_clock_logo.ico"
@@ -398,7 +424,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:iRacingCautionClockSetup"
         "ProductCode" = "8:{97D6CF62-1CE5-4412-AE6A-1851D8F7C24B}"
-        "PackageCode" = "8:{A2383089-1295-4E41-945D-551D51FDAD2E}"
+        "PackageCode" = "8:{663064BB-B9E8-44AD-9BF9-762E4F524AEF}"
         "UpgradeCode" = "8:{CCC9C28F-4BAF-4963-B593-F4BCB56E3422}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

@@ -58,5 +58,17 @@ namespace iRacing_Caution_Clock.Properties {
                 this["LargeCounterNumberColor"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool PlayAudioFileOnCaution {
+            get {
+                return ((bool)(this["PlayAudioFileOnCaution"]));
+            }
+            set {
+                this["PlayAudioFileOnCaution"] = value;
+            }
+        }
     }
 }
