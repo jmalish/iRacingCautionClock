@@ -21,7 +21,8 @@ namespace iRacing_Caution_Clock
         private bool cautionClockActive = false;  // if the caution clock is running
         private string currentTrack;  // the track that we're at
         private bool isRaceSession = false; // whether we're in a race session (as opposed to practice or qual) -
-        private int currentLap;
+        private int currentLap;  // what lap the race is on
+        private bool cautionThrown = false; // whether the caution has been thrown yet, keeps from spamming the chat
 
         // veriables that the user can edit
         private int cautionClockTime = 0;  // what time to throw the caution clock, uses the sessionTime
@@ -147,6 +148,21 @@ namespace iRacing_Caution_Clock
             cautionClockTimeLength = Convert.ToInt32(numUDTimeBetween.Value) * 60;
             lblCurrentTimerLength.Text = string.Format("Timer now set to {0} minutes, which is {1} seconds", numUDTimeBetween.Value, cautionClockTimeLength);
         }
+
+        private void btnTestAudio_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+                player.SoundLocation = "putitout.wav";
+                player.Load();
+                player.Play();
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Oops... Something went wrong with the audio player.\n\nError:\n" + exc.Message, "Error");
+            }
+        }
         #endregion
 
         #region SDK Wrapper Stuff
@@ -171,9 +187,22 @@ namespace iRacing_Caution_Clock
                             if (newFlag.Contains("Caution")) // caution is out, starts out as "CautionWaving" and then turns to "Caution" after a short time
                             {
                                 cautionClockActive = false; // turn off caution clock
+
+                                if (chkPlayAudioOnCaution.Checked)
+                                {
+                                    try
+                                    {
+                                        System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+                                        player.SoundLocation = "putitout.wav";
+                                        player.Load();
+                                        player.Play();
+                                    }
+                                    catch { }
+                                }
                             }
                             else if (newFlag == "Green")
                             {
+                                cautionThrown = false;
                                 cautionClockActive = true; // turn on the caution clock
                                 cautionClockTime = sessionTime + cautionClockTimeLength; // set time for caution clock to expire
                             }
@@ -310,7 +339,7 @@ namespace iRacing_Caution_Clock
         #region FUNctions
         private void CheckCautionClock()  // function that pretty much contains the caution clock
         {
-            if (cautionClockActive)  // first make sure caution clock is even active
+            if (cautionClockActive && !cautionThrown)  // first make sure caution clock is even active
             {
                 lblCautionClockStatus.Text = "Caution Clock: ACTIVE"; // update label
 
@@ -319,7 +348,7 @@ namespace iRacing_Caution_Clock
                     if (sessionTime >= cautionClockTime)  // check if it's time to throw the caution
                     {
                         wrapper.Chat.SendMacro(Convert.ToInt32(Properties.Settings.Default.CautionShortcutKey - 1));  // throw caution
-                        // Console.WriteLine("~~~~~~~~~~~~~~~\nThrowing Caution!\n~~~~~~~~~~~~");
+                        cautionThrown = true;
                     }
                 }
             } else // if not

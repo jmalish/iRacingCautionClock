@@ -44,6 +44,8 @@
             this.btnChangeLblColor = new System.Windows.Forms.Button();
             this.lblLargeCounter = new System.Windows.Forms.Label();
             this.tabPgOptions = new System.Windows.Forms.TabPage();
+            this.chkPlayAudioOnCaution = new System.Windows.Forms.CheckBox();
+            this.btnTestAudio = new System.Windows.Forms.Button();
             this.lblCautionShortcutUpdated = new System.Windows.Forms.Label();
             this.lblCautionClockCutoffUpdate = new System.Windows.Forms.Label();
             this.numUDLapCutoff = new System.Windows.Forms.NumericUpDown();
@@ -53,6 +55,7 @@
             this.lblCautionClockLength = new System.Windows.Forms.Label();
             this.lblCautionShortcutKey = new System.Windows.Forms.Label();
             this.numUDTimeBetween = new System.Windows.Forms.NumericUpDown();
+            this.lblPlayAudioInfo = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPgQuickInfo.SuspendLayout();
             this.tabPgLargeCountdown.SuspendLayout();
@@ -218,6 +221,9 @@
             // 
             // tabPgOptions
             // 
+            this.tabPgOptions.Controls.Add(this.lblPlayAudioInfo);
+            this.tabPgOptions.Controls.Add(this.chkPlayAudioOnCaution);
+            this.tabPgOptions.Controls.Add(this.btnTestAudio);
             this.tabPgOptions.Controls.Add(this.lblCautionShortcutUpdated);
             this.tabPgOptions.Controls.Add(this.lblCautionClockCutoffUpdate);
             this.tabPgOptions.Controls.Add(this.numUDLapCutoff);
@@ -233,6 +239,26 @@
             this.tabPgOptions.TabIndex = 2;
             this.tabPgOptions.Text = "Options";
             this.tabPgOptions.UseVisualStyleBackColor = true;
+            // 
+            // chkPlayAudioOnCaution
+            // 
+            this.chkPlayAudioOnCaution.AutoSize = true;
+            this.chkPlayAudioOnCaution.Location = new System.Drawing.Point(15, 101);
+            this.chkPlayAudioOnCaution.Name = "chkPlayAudioOnCaution";
+            this.chkPlayAudioOnCaution.Size = new System.Drawing.Size(149, 17);
+            this.chkPlayAudioOnCaution.TabIndex = 11;
+            this.chkPlayAudioOnCaution.Text = "Play Audio File on Caution";
+            this.chkPlayAudioOnCaution.UseVisualStyleBackColor = true;
+            // 
+            // btnTestAudio
+            // 
+            this.btnTestAudio.Location = new System.Drawing.Point(170, 97);
+            this.btnTestAudio.Name = "btnTestAudio";
+            this.btnTestAudio.Size = new System.Drawing.Size(75, 23);
+            this.btnTestAudio.TabIndex = 10;
+            this.btnTestAudio.Text = "Test Audio";
+            this.btnTestAudio.UseVisualStyleBackColor = true;
+            this.btnTestAudio.Click += new System.EventHandler(this.btnTestAudio_Click);
             // 
             // lblCautionShortcutUpdated
             // 
@@ -339,6 +365,15 @@
             0});
             this.numUDTimeBetween.ValueChanged += new System.EventHandler(this.numUDTimeBetween_ValueChanged);
             // 
+            // lblPlayAudioInfo
+            // 
+            this.lblPlayAudioInfo.AutoSize = true;
+            this.lblPlayAudioInfo.Location = new System.Drawing.Point(246, 95);
+            this.lblPlayAudioInfo.Name = "lblPlayAudioInfo";
+            this.lblPlayAudioInfo.Size = new System.Drawing.Size(137, 26);
+            this.lblPlayAudioInfo.TabIndex = 12;
+            this.lblPlayAudioInfo.Text = "To change volume, use the\r\n volume mixer in Windows";
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -393,6 +428,9 @@
         private System.Windows.Forms.Label lblCautionClockCutoffUpdate;
         private System.Windows.Forms.Label lblCautionShortcutUpdated;
         private System.Windows.Forms.CheckBox chkControlsCautions;
+        private System.Windows.Forms.Button btnTestAudio;
+        private System.Windows.Forms.CheckBox chkPlayAudioOnCaution;
+        private System.Windows.Forms.Label lblPlayAudioInfo;
     }
 }
 
