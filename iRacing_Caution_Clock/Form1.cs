@@ -23,6 +23,7 @@ namespace iRacing_Caution_Clock
         private bool isRaceSession = false; // whether we're in a race session (as opposed to practice or qual) -
         private int currentLap;  // what lap the race is on
         private bool cautionThrown = false; // whether the caution has been thrown yet, keeps from spamming the chat
+        private int raceLengthLaps;  // how many laps the race is
 
         // veriables that the user can edit
         private int cautionClockTime = 0;  // what time to throw the caution clock, uses the sessionTime
@@ -233,7 +234,7 @@ namespace iRacing_Caution_Clock
                 string currentTime = telemArgs.TelemetryInfo.SessionTime.ToString().Split('.')[0];  // get the session time (how long it's been since this session started)
                                                                                                     // splitting at decimal because we don't need to know the exact milisecond
 
-                if (currentLap > cautionClockCutoffLap)  // if we're past the lap cutoff, no need to run this section
+                if (currentLap > (raceLengthLaps - cautionClockCutoffLap))  // if we're past the lap cutoff, no need to run this section
                 {
                     sessionTime = Convert.ToInt32(currentTime);  // convert it to int so we can use it as a number
 
@@ -249,6 +250,10 @@ namespace iRacing_Caution_Clock
                         lblCountdownTitle.Visible = true;
                         lblLargeCounter.Text = String.Format("{0}:{1}", timeTilExpire.Minutes.ToString("00"), timeTilExpire.Seconds.ToString("00"));  // update label
                     }
+                } else  // if we are past that point, just hide the counter
+                {
+                    lblLargeCounter.Visible = false;
+                    lblCountdownTitle.Visible = false;
                 }
                 #endregion
 
@@ -302,11 +307,12 @@ namespace iRacing_Caution_Clock
                             {
                                 isRaceSession = true;
                                 lapsComplete += 1; // laps are 0 indexed, need to add 1 to get it to display correctly
-                                lblCurrentLap.Text = string.Format("Lap {0} of {1}", lapsComplete.ToString(), raceSession.SessionLaps);  // set label on form to show what lap we're on
+                                raceLengthLaps = Convert.ToInt32(raceSession.SessionLaps);
+                                lblCurrentLap.Text = string.Format("Lap {0} of {1}", lapsComplete.ToString(), raceLengthLaps);  // set label on form to show what lap we're on
 
                                 try
                                 {
-                                    if ((Convert.ToInt32(session.SessionLaps)) - (Convert.ToInt32(lapsComplete)) <= cautionClockCutoffLap)  // check if we're less than 20 to go in the race
+                                    if ((Convert.ToInt32(raceLengthLaps)) - (Convert.ToInt32(lapsComplete)) <= cautionClockCutoffLap)  // check if we're less than 20 to go in the race
                                     {
                                         cautionClockActive = false;  // turn off caution clock
                                     }
