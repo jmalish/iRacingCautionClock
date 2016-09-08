@@ -53,8 +53,8 @@ namespace iRacing_Caution_Clock
             chkControlsCautions.Checked = false;
             chkControlsCautions.Enabled = false;
             chkPlayAudioOnCaution.Checked = Properties.Settings.Default.PlayAudioFileOnCaution;
-            lblCountdownTitle.Visible = false;
-            lblLargeCounter.Visible = false;
+            //lblCountdownTitle.Visible = false;
+            //lblLargeCounter.Visible = false;
 
             #region wrapper stuff
             wrapper = new iRacingSdkWrapper.SdkWrapper();  // create wrapper instance
@@ -82,10 +82,12 @@ namespace iRacing_Caution_Clock
             }
         } // user has clicked button to change number color
 
-        private void mainForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void mainForm_FormClosing(object sender, FormClosingEventArgs e)  // user has closed form
         {
+            closing = true;
             wrapper.Stop();  // stop the wrapper since the form is being closed, otherwise we have a wild wrapper running free TODO: make a joke about debris cautions here
-        }  // user has closed form
+            Application.Exit();
+        }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)  // when user changes the key for caution, we need to update it so they don't have to kee making the change every restart
         {
@@ -195,7 +197,7 @@ namespace iRacing_Caution_Clock
                         {
                             currentFlag = newFlag;  // set current flag variable to the new flag
 
-                            if (newFlag.Contains("Caution")) // caution is out, starts out as "CautionWaving" and then turns to "Caution" after a short time
+                            if (newFlag.Contains("CautionWaving")) // caution is out, starts out as "CautionWaving" and then turns to "Caution" after a short time
                             {
                                 cautionClockActive = false; // turn off caution clock
 
@@ -216,6 +218,7 @@ namespace iRacing_Caution_Clock
                                 cautionThrown = false;
                                 cautionClockActive = true; // turn on the caution clock
                                 cautionClockTime = sessionTime + cautionClockTimeLength; // set time for caution clock to expire
+                                Console.WriteLine("Green flag!");
                             }
                         }
                     }
@@ -244,7 +247,7 @@ namespace iRacing_Caution_Clock
                         lblCautionClockExpires.Text = String.Format("Clock expires in: {0}:{1}", timeTilExpire.Minutes, timeTilExpire.Seconds.ToString("00"));  // update label
                         lblLargeCounter.Visible = true;
                         lblCountdownTitle.Visible = true;
-                        lblLargeCounter.Text = String.Format("{0}:{1}", timeTilExpire.Minutes, timeTilExpire.Seconds.ToString("00"));  // update label
+                        lblLargeCounter.Text = String.Format("{0}:{1}", timeTilExpire.Minutes.ToString("00"), timeTilExpire.Seconds.ToString("00"));  // update label
                     }
                 }
                 #endregion
@@ -352,7 +355,7 @@ namespace iRacing_Caution_Clock
         #region FUNctions
         private void CheckCautionClock()  // function that pretty much contains the caution clock
         {
-            if (cautionClockActive && !cautionThrown)  // first make sure caution clock is even active
+            if (cautionClockActive)  // first make sure caution clock is even active
             {
                 lblCautionClockStatus.Text = "Caution Clock: ACTIVE"; // update label
 
@@ -360,7 +363,10 @@ namespace iRacing_Caution_Clock
                 {
                     if (sessionTime >= cautionClockTime)  // check if it's time to throw the caution
                     {
-                        wrapper.Chat.SendMacro(Convert.ToInt32(Properties.Settings.Default.CautionShortcutKey - 1));  // throw caution
+                        if (!cautionThrown || currentFlag.Contains("CautionWaving"))
+                        {
+                            wrapper.Chat.SendMacro(Convert.ToInt32(Properties.Settings.Default.CautionShortcutKey - 1));  // throw caution
+                        }
                         cautionThrown = true;
                     }
                 }
