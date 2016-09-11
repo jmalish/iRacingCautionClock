@@ -422,9 +422,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:iRacingCautionClockSetup"
+        "ProductName" = "8:iRacing Caution Clock"
         "ProductCode" = "8:{97D6CF62-1CE5-4412-AE6A-1851D8F7C24B}"
-        "PackageCode" = "8:{663064BB-B9E8-44AD-9BF9-762E4F524AEF}"
+        "PackageCode" = "8:{B90DA668-02A9-48B5-A79F-215321A16FCC}"
         "UpgradeCode" = "8:{CCC9C28F-4BAF-4963-B593-F4BCB56E3422}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
