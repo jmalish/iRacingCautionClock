@@ -111,6 +111,7 @@ namespace iRacing_Caution_Clock
         {
             closing = true;
             wrapper.Stop();  // stop the wrapper since the form is being closed, otherwise we have a wild wrapper running free TODO: make a joke about debris cautions here
+            
             Application.Exit();
         }
 
@@ -211,10 +212,12 @@ namespace iRacing_Caution_Clock
                     CheckCautionClock();
 
                     #region Flag stuff
+                    string newFlag = telemArgs.TelemetryInfo.SessionFlags.Value.ToString().Split(' ')[0];  // get the actual current flag according to the session, splits because it normally shows two states
+
+                    lblCurrentFlag.Text = "Current Flag: " + currentFlag;
+
                     if (isRaceSession)  // only do this stuff during the race session
                     {
-                        string newFlag = telemArgs.TelemetryInfo.SessionFlags.Value.ToString().Split(' ')[0];  // get the actual current flag according to the session, splits because it normally shows two states
-
                         if (currentFlag != newFlag)  // flag changed in the last update
                         {
                             if (!newFlag.Contains("StartHidden") && (!newFlag.Contains("Servicible")) && (!newFlag.Contains("Black")))  // don't want to show this flag to users, better to just tell them it's still green
@@ -248,8 +251,6 @@ namespace iRacing_Caution_Clock
                         }
 
                         // currentFlag = telemArgs.TelemetryInfo.SessionFlags.Value.ToString().Split('|')[0]; // gets the current flag state and trims off the unneccessary stuff
-
-                        lblCurrentFlag.Text = "Current Flag: " + currentFlag;
                     }
                     #endregion
 
@@ -257,7 +258,7 @@ namespace iRacing_Caution_Clock
                     string currentTime = telemArgs.TelemetryInfo.SessionTime.ToString().Split('.')[0];  // get the session time (how long it's been since this session started) splitting at decimal because we don't need to know the exact time to milliseconds
                     int realCutOffLap = raceLengthLaps - cautionClockCutoffLap;
 
-                    if (currentLap > realCutOffLap)  // if we're past the lap cutoff, no need to run this section
+                    if (currentLap < realCutOffLap)
                     {
                         sessionTime = Convert.ToInt32(currentTime);  // convert it to int so we can use it as a number
 
@@ -334,7 +335,7 @@ namespace iRacing_Caution_Clock
                                 int lapsComplete = Convert.ToInt32(raceSession.ResultsLapsComplete);  // get the laps complete
 
                                 raceLengthLaps = Convert.ToInt32(raceSession.SessionLaps);
-                                if (lapsComplete >= 0) // if ResultsLapsComplete is -1, we haven't entered the race yet
+                                if (lapsComplete >= -1) // if ResultsLapsComplete is -1, we haven't entered the race yet
                                 {
                                     isRaceSession = true;
                                     lapsComplete += 1; // laps are 0 indexed, need to add 1 to get it to display correctly
