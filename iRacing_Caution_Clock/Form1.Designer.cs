@@ -40,10 +40,12 @@
             this.chkControlsCautions = new System.Windows.Forms.CheckBox();
             this.lblUserIsAdmin = new System.Windows.Forms.Label();
             this.tabPgLargeCountdown = new System.Windows.Forms.TabPage();
+            this.lblCountdownTitle = new System.Windows.Forms.Label();
             this.chkStreamerFriendlyCounter = new System.Windows.Forms.CheckBox();
             this.btnChangeLblColor = new System.Windows.Forms.Button();
             this.lblLargeCounter = new System.Windows.Forms.Label();
             this.tabPgOptions = new System.Windows.Forms.TabPage();
+            this.lblPlayAudioInfo = new System.Windows.Forms.Label();
             this.chkPlayAudioOnCaution = new System.Windows.Forms.CheckBox();
             this.btnTestAudio = new System.Windows.Forms.Button();
             this.lblCautionShortcutUpdated = new System.Windows.Forms.Label();
@@ -55,8 +57,7 @@
             this.lblCautionClockLength = new System.Windows.Forms.Label();
             this.lblCautionShortcutKey = new System.Windows.Forms.Label();
             this.numUDTimeBetween = new System.Windows.Forms.NumericUpDown();
-            this.lblPlayAudioInfo = new System.Windows.Forms.Label();
-            this.lblCountdownTitle = new System.Windows.Forms.Label();
+            this.lblVersion = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPgQuickInfo.SuspendLayout();
             this.tabPgLargeCountdown.SuspendLayout();
@@ -137,7 +138,7 @@
             this.tabPgQuickInfo.Location = new System.Drawing.Point(4, 22);
             this.tabPgQuickInfo.Name = "tabPgQuickInfo";
             this.tabPgQuickInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPgQuickInfo.Size = new System.Drawing.Size(401, 188);
+            this.tabPgQuickInfo.Size = new System.Drawing.Size(401, 210);
             this.tabPgQuickInfo.TabIndex = 0;
             this.tabPgQuickInfo.Text = "Quick Info";
             this.tabPgQuickInfo.UseVisualStyleBackColor = true;
@@ -186,6 +187,17 @@
             this.tabPgLargeCountdown.TabIndex = 1;
             this.tabPgLargeCountdown.Text = "Large Countdown Timer";
             // 
+            // lblCountdownTitle
+            // 
+            this.lblCountdownTitle.AutoSize = true;
+            this.lblCountdownTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblCountdownTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCountdownTitle.Location = new System.Drawing.Point(23, 36);
+            this.lblCountdownTitle.Name = "lblCountdownTitle";
+            this.lblCountdownTitle.Size = new System.Drawing.Size(350, 55);
+            this.lblCountdownTitle.TabIndex = 3;
+            this.lblCountdownTitle.Text = "Caution Clock:";
+            // 
             // chkStreamerFriendlyCounter
             // 
             this.chkStreamerFriendlyCounter.AutoSize = true;
@@ -223,6 +235,7 @@
             // 
             // tabPgOptions
             // 
+            this.tabPgOptions.Controls.Add(this.lblVersion);
             this.tabPgOptions.Controls.Add(this.lblPlayAudioInfo);
             this.tabPgOptions.Controls.Add(this.chkPlayAudioOnCaution);
             this.tabPgOptions.Controls.Add(this.btnTestAudio);
@@ -237,10 +250,19 @@
             this.tabPgOptions.Controls.Add(this.numUDTimeBetween);
             this.tabPgOptions.Location = new System.Drawing.Point(4, 22);
             this.tabPgOptions.Name = "tabPgOptions";
-            this.tabPgOptions.Size = new System.Drawing.Size(401, 188);
+            this.tabPgOptions.Size = new System.Drawing.Size(401, 210);
             this.tabPgOptions.TabIndex = 2;
             this.tabPgOptions.Text = "Options";
             this.tabPgOptions.UseVisualStyleBackColor = true;
+            // 
+            // lblPlayAudioInfo
+            // 
+            this.lblPlayAudioInfo.AutoSize = true;
+            this.lblPlayAudioInfo.Location = new System.Drawing.Point(246, 95);
+            this.lblPlayAudioInfo.Name = "lblPlayAudioInfo";
+            this.lblPlayAudioInfo.Size = new System.Drawing.Size(137, 26);
+            this.lblPlayAudioInfo.TabIndex = 12;
+            this.lblPlayAudioInfo.Text = "To change volume, use the\r\n volume mixer in Windows";
             // 
             // chkPlayAudioOnCaution
             // 
@@ -286,6 +308,11 @@
             // numUDLapCutoff
             // 
             this.numUDLapCutoff.Location = new System.Drawing.Point(214, 47);
+            this.numUDLapCutoff.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numUDLapCutoff.Name = "numUDLapCutoff";
             this.numUDLapCutoff.Size = new System.Drawing.Size(51, 20);
             this.numUDLapCutoff.TabIndex = 7;
@@ -368,25 +395,14 @@
             0});
             this.numUDTimeBetween.ValueChanged += new System.EventHandler(this.numUDTimeBetween_ValueChanged);
             // 
-            // lblPlayAudioInfo
+            // lblVersion
             // 
-            this.lblPlayAudioInfo.AutoSize = true;
-            this.lblPlayAudioInfo.Location = new System.Drawing.Point(246, 95);
-            this.lblPlayAudioInfo.Name = "lblPlayAudioInfo";
-            this.lblPlayAudioInfo.Size = new System.Drawing.Size(137, 26);
-            this.lblPlayAudioInfo.TabIndex = 12;
-            this.lblPlayAudioInfo.Text = "To change volume, use the\r\n volume mixer in Windows";
-            // 
-            // lblCountdownTitle
-            // 
-            this.lblCountdownTitle.AutoSize = true;
-            this.lblCountdownTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblCountdownTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCountdownTitle.Location = new System.Drawing.Point(23, 36);
-            this.lblCountdownTitle.Name = "lblCountdownTitle";
-            this.lblCountdownTitle.Size = new System.Drawing.Size(350, 55);
-            this.lblCountdownTitle.TabIndex = 3;
-            this.lblCountdownTitle.Text = "Caution Clock:";
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.Location = new System.Drawing.Point(330, 192);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(63, 13);
+            this.lblVersion.TabIndex = 13;
+            this.lblVersion.Text = "Version: 1.1";
             // 
             // mainForm
             // 
@@ -446,6 +462,7 @@
         private System.Windows.Forms.CheckBox chkPlayAudioOnCaution;
         private System.Windows.Forms.Label lblPlayAudioInfo;
         private System.Windows.Forms.Label lblCountdownTitle;
+        private System.Windows.Forms.Label lblVersion;
     }
 }
 

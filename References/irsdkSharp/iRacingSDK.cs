@@ -85,7 +85,7 @@ namespace iRSDKSharp
                 var wh = new WaitHandle[1];
                 wh[0] = are;
 
-                WaitHandle.WaitAny(wh);
+                WaitHandle.WaitAny(wh);  // gets stuck here for some reason
 
                 Header = new CiRSDKHeader(FileMapView);
                 GetVarHeaders();
