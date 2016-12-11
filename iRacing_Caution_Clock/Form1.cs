@@ -50,10 +50,14 @@ namespace iRacing_Caution_Clock
 
             InitializeComponent();  // initialize the component, you know, that component
 
-            chkStreamerFriendlyCounter.Checked = Properties.Settings.Default.LargeCounterStreamerFriendly;  // set large counter to users settings
             numericUpDown1.Value = Properties.Settings.Default.CautionShortcutKey;  // set shortcut key to users settings
             lblLargeCounter.ForeColor = Properties.Settings.Default.LargeCounterNumberColor; // set color for large counter text
             lblCountdownTitle.ForeColor = Properties.Settings.Default.LargeCounterNumberColor;
+            tabPgLargeCountdown.BackColor = Properties.Settings.Default.tabPgLargeCountdownBackColor;
+
+            num10MinHotkey.Value = Properties.Settings.Default.TenMinWarningHotkey;
+            num5MinHotkey.Value = Properties.Settings.Default.FiveMinWarningHotkey;
+            num1MinHotkey.Value = Properties.Settings.Default.OneMinWarningHotkey;
             if (Properties.Settings.Default.LargeCounterStreamerFriendly)  // set background of large counter to users settings
             {
                 tabControl1.TabPages[1].BackColor = Color.LawnGreen;
@@ -61,8 +65,8 @@ namespace iRacing_Caution_Clock
             {
                 tabControl1.TabPages[1].BackColor = Color.Transparent;
             }
-            chkControlsCautions.Checked = false;
-            chkControlsCautions.Enabled = false;
+            // chkControlsCautions.Checked = false;  // disabled because it's kind of just annoying
+            // chkControlsCautions.Enabled = false;
             chkPlayAudioOnCaution.Checked = Properties.Settings.Default.PlayAudioFileOnCaution;
             //lblCountdownTitle.Visible = false;
             //lblLargeCounter.Visible = false;
@@ -119,23 +123,7 @@ namespace iRacing_Caution_Clock
         {
             Properties.Settings.Default.CautionShortcutKey = numericUpDown1.Value;  // update settings
             Properties.Settings.Default.Save();  // save the new key to settings
-            lblCautionShortcutUpdated.Visible = false;
-            lblCautionShortcutUpdated.Text = String.Format("Setting changed to {0}", Properties.Settings.Default.CautionShortcutKey);
         }
-
-        private void chkStreamerFriendlyCounter_CheckedChanged(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.LargeCounterStreamerFriendly = chkStreamerFriendlyCounter.Checked;  // user has changed whether or not to have green screen backing
-            Properties.Settings.Default.Save();  // save settings
-
-            if (chkStreamerFriendlyCounter.Checked) // if the value is now true
-            {
-                tabControl1.TabPages[1].BackColor = Color.LawnGreen;  // set background to bright green
-            } else // if the value is false
-            {
-                tabControl1.TabPages[1].BackColor = Color.Transparent;  // set background to transparent
-            }
-        }  // user has changed how to display large counter
 
         private void chkControlsCautions_CheckedChanged(object sender, EventArgs e)
         {
@@ -198,6 +186,79 @@ namespace iRacing_Caution_Clock
             {
                 WriteToLogFile("chkPlayAudioOnCaution_CheckedChanged", exc.Message.ToString());
             }
+        }
+
+        private void chkStayOnTop_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkStayOnTop.Checked)
+            {
+                TopMost = true;
+            } else
+            {
+                TopMost = false;
+            }
+        }
+
+        private void chkEnableMinWarnings_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkEnableMinWarnings.Checked)
+            {
+                lbl10MinHotkey.Enabled = true;
+                num10MinHotkey.Enabled = true;
+                lbl5MinHotkey.Enabled = true;
+                num5MinHotkey.Enabled = true;
+                lbl1MinHotkey.Enabled = true;
+                num1MinHotkey.Enabled = true;
+            }
+            else
+            {
+                lbl10MinHotkey.Enabled = false;
+                num10MinHotkey.Enabled = false;
+                lbl5MinHotkey.Enabled = false;
+                num5MinHotkey.Enabled = false;
+                lbl1MinHotkey.Enabled = false;
+                num1MinHotkey.Enabled = false;
+            }
+        }
+
+        private void btnChangeBgColor_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ColorDialog clrDialogue = new ColorDialog();  // create a color dialogue
+                clrDialogue.AllowFullOpen = false;  // disable it from being able to go full screen
+                clrDialogue.ShowHelp = true;  // turn on the help dialogue
+                clrDialogue.Color = lblLargeCounter.ForeColor;  // get the current color of the label
+
+                if (clrDialogue.ShowDialog() == DialogResult.OK)  // if the user clicks OK
+                {
+                    tabPgLargeCountdown.BackColor = clrDialogue.Color;
+                    Properties.Settings.Default.tabPgLargeCountdownBackColor = clrDialogue.Color;  // update user settings
+                    Properties.Settings.Default.Save(); // and save
+                }
+            }
+            catch (Exception exc)
+            {
+                WriteToLogFile("btnChangeBgColor_Click", exc.Message.ToString());
+            }
+        }
+
+        private void num10MinHotkey_ValueChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.TenMinWarningHotkey = num10MinHotkey.Value;
+            Properties.Settings.Default.Save();
+        }
+
+        private void num5MinHotkey_ValueChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.FiveMinWarningHotkey = num5MinHotkey.Value;
+            Properties.Settings.Default.Save();
+        }
+
+        private void num1MinHotkey_ValueChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.OneMinWarningHotkey = num1MinHotkey.Value;
+            Properties.Settings.Default.Save();
         }
         #endregion
 
@@ -397,14 +458,57 @@ namespace iRacing_Caution_Clock
         #region FUNctions
         private void CheckCautionClock()  // function that pretty much contains the caution clock
         {
+            // setup warning triggers
+            bool tenMinWarningGiven = false;
+            bool fiveMinWarningGiven = false;
+            bool oneMinWarningGiven = false;
+
+            if (numUDTimeBetween.Value < 1) // in case the user has told the timer to have a short timer, 
+            {                               // we don't want the warnings given for times longer than the requested time
+                fiveMinWarningGiven = true;
+                tenMinWarningGiven = true;
+            }
+            else if (numUDTimeBetween.Value < 5)
+            {
+                fiveMinWarningGiven = true;
+                tenMinWarningGiven = true;
+            }
+            else if (numUDTimeBetween.Value < 10)
+            {
+                tenMinWarningGiven = true;
+            }
+
             try
             {
-                if (cautionClockActive)  // first make sure caution clock is even active
+                if (cautionClockActive)  // first make sure caution clock is active
                 {
                     lblCautionClockStatus.Text = "Caution Clock: ACTIVE"; // update label
 
                     if (userIsAdmin && controlsCautions)  // make sure user is admin and wants to control cautions
                     {
+                        #region minute warnings
+                        if (chkEnableMinWarnings.Checked)
+                        {
+                            if (!tenMinWarningGiven && (sessionTime >= (cautionClockTime - 600))) // 10 minutes
+                            {
+                                wrapper.Chat.SendMacro(Convert.ToInt32(Properties.Settings.Default.TenMinWarningHotkey - 1));
+                                tenMinWarningGiven = true;
+                            }
+
+                            if (!fiveMinWarningGiven && (sessionTime >= (cautionClockTime - 300))) // 5 minutes
+                            {
+                                wrapper.Chat.SendMacro(Convert.ToInt32(Properties.Settings.Default.FiveMinWarningHotkey - 1));
+                                fiveMinWarningGiven = true;
+                            }
+
+                            if (!oneMinWarningGiven && (sessionTime >= (cautionClockTime - 60))) // 1 minute
+                            {
+                                wrapper.Chat.SendMacro(Convert.ToInt32(Properties.Settings.Default.OneMinWarningHotkey - 1));
+                                oneMinWarningGiven = true;
+                            }
+                        }
+                        #endregion
+
                         if (sessionTime >= cautionClockTime)  // check if it's time to throw the caution
                         {
                             if (!cautionThrown || currentFlag.Contains("CautionWaving"))
@@ -412,16 +516,24 @@ namespace iRacing_Caution_Clock
                                 wrapper.Chat.SendMacro(Convert.ToInt32(Properties.Settings.Default.CautionShortcutKey - 1));  // throw caution
                             }
                             cautionThrown = true;
+
+                            tenMinWarningGiven = false;
+                            fiveMinWarningGiven = false;
+                            oneMinWarningGiven = false;
                         }
                     }
                 }
-                else // if not
+                else // if the clock is not active
                 {
                     // update all relevant labels
                     lblCautionClockStatus.Text = "Caution Clock: Not Active";
                     lblCautionClockExpires.Text = "Clock expires in: -";
                     lblLargeCounter.Visible = false;
                     lblCountdownTitle.Visible = false;
+                    // reset warning triggers
+                    tenMinWarningGiven = false;
+                    fiveMinWarningGiven = false;
+                    oneMinWarningGiven = false;
                 }
             } catch (Exception exc)
             {
@@ -484,5 +596,16 @@ namespace iRacing_Caution_Clock
             public string TrackDisplayName { get; set; }
         }
         #endregion
+
+        private void btnTestHotkeys_Click(object sender, EventArgs e) // test hotkeys
+        {
+            if (chkEnableMinWarnings.Checked)
+            {
+                wrapper.Chat.SendMacro(Convert.ToInt32(Properties.Settings.Default.TenMinWarningHotkey - 1));  // 10
+                wrapper.Chat.SendMacro(Convert.ToInt32(Properties.Settings.Default.FiveMinWarningHotkey - 1));  // 5
+                wrapper.Chat.SendMacro(Convert.ToInt32(Properties.Settings.Default.OneMinWarningHotkey - 1));  // 1
+            }
+            wrapper.Chat.SendMacro(Convert.ToInt32(Properties.Settings.Default.CautionShortcutKey - 1));  // caution
+        }
     }
 }

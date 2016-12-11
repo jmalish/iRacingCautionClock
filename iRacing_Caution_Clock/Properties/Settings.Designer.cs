@@ -70,5 +70,53 @@ namespace iRacing_Caution_Clock.Properties {
                 this["PlayAudioFileOnCaution"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("White")]
+        public global::System.Drawing.Color tabPgLargeCountdownBackColor {
+            get {
+                return ((global::System.Drawing.Color)(this["tabPgLargeCountdownBackColor"]));
+            }
+            set {
+                this["tabPgLargeCountdownBackColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public decimal TenMinWarningHotkey {
+            get {
+                return ((decimal)(this["TenMinWarningHotkey"]));
+            }
+            set {
+                this["TenMinWarningHotkey"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        public decimal FiveMinWarningHotkey {
+            get {
+                return ((decimal)(this["FiveMinWarningHotkey"]));
+            }
+            set {
+                this["FiveMinWarningHotkey"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("4")]
+        public decimal OneMinWarningHotkey {
+            get {
+                return ((decimal)(this["OneMinWarningHotkey"]));
+            }
+            set {
+                this["OneMinWarningHotkey"] = value;
+            }
+        }
     }
 }
