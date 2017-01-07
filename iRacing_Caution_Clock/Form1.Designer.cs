@@ -36,16 +36,27 @@
             this.lblCautionClockExpires = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPgQuickInfo = new System.Windows.Forms.TabPage();
+            this.btnTestHotkeys = new System.Windows.Forms.Button();
             this.btnManualCaution = new System.Windows.Forms.Button();
             this.chkControlsCautions = new System.Windows.Forms.CheckBox();
             this.lblUserIsAdmin = new System.Windows.Forms.Label();
             this.tabPgLargeCountdown = new System.Windows.Forms.TabPage();
+            this.chkMinimal = new System.Windows.Forms.CheckBox();
             this.btnChangeBgColor = new System.Windows.Forms.Button();
             this.chkStayOnTop = new System.Windows.Forms.CheckBox();
             this.lblCountdownTitle = new System.Windows.Forms.Label();
             this.btnChangeLblColor = new System.Windows.Forms.Button();
             this.lblLargeCounter = new System.Windows.Forms.Label();
             this.tabPgOptions = new System.Windows.Forms.TabPage();
+            this.lblDivider2 = new System.Windows.Forms.Label();
+            this.lblDivider1 = new System.Windows.Forms.Label();
+            this.chkEnableMinWarnings = new System.Windows.Forms.CheckBox();
+            this.num1MinHotkey = new System.Windows.Forms.NumericUpDown();
+            this.lbl1MinHotkey = new System.Windows.Forms.Label();
+            this.num5MinHotkey = new System.Windows.Forms.NumericUpDown();
+            this.lbl5MinHotkey = new System.Windows.Forms.Label();
+            this.num10MinHotkey = new System.Windows.Forms.NumericUpDown();
+            this.lbl10MinHotkey = new System.Windows.Forms.Label();
             this.lblVersion = new System.Windows.Forms.Label();
             this.lblPlayAudioInfo = new System.Windows.Forms.Label();
             this.chkPlayAudioOnCaution = new System.Windows.Forms.CheckBox();
@@ -58,26 +69,16 @@
             this.lblCautionClockLength = new System.Windows.Forms.Label();
             this.lblCautionShortcutKey = new System.Windows.Forms.Label();
             this.numUDTimeBetween = new System.Windows.Forms.NumericUpDown();
-            this.num10MinHotkey = new System.Windows.Forms.NumericUpDown();
-            this.lbl10MinHotkey = new System.Windows.Forms.Label();
-            this.num5MinHotkey = new System.Windows.Forms.NumericUpDown();
-            this.lbl5MinHotkey = new System.Windows.Forms.Label();
-            this.chkEnableMinWarnings = new System.Windows.Forms.CheckBox();
-            this.lbl1MinHotkey = new System.Windows.Forms.Label();
-            this.num1MinHotkey = new System.Windows.Forms.NumericUpDown();
-            this.lblDivider1 = new System.Windows.Forms.Label();
-            this.lblDivider2 = new System.Windows.Forms.Label();
-            this.btnTestHotkeys = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPgQuickInfo.SuspendLayout();
             this.tabPgLargeCountdown.SuspendLayout();
             this.tabPgOptions.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.num1MinHotkey)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num5MinHotkey)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num10MinHotkey)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUDLapCutoff)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUDTimeBetween)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num10MinHotkey)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num5MinHotkey)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num1MinHotkey)).BeginInit();
             this.SuspendLayout();
             // 
             // lblConnectedToiRacing
@@ -157,6 +158,16 @@
             this.tabPgQuickInfo.Text = "Quick Info";
             this.tabPgQuickInfo.UseVisualStyleBackColor = true;
             // 
+            // btnTestHotkeys
+            // 
+            this.btnTestHotkeys.Location = new System.Drawing.Point(286, 46);
+            this.btnTestHotkeys.Name = "btnTestHotkeys";
+            this.btnTestHotkeys.Size = new System.Drawing.Size(103, 25);
+            this.btnTestHotkeys.TabIndex = 6;
+            this.btnTestHotkeys.Text = "Test Countdown";
+            this.btnTestHotkeys.UseVisualStyleBackColor = true;
+            this.btnTestHotkeys.Click += new System.EventHandler(this.btnTestHotkeys_Click);
+            // 
             // btnManualCaution
             // 
             this.btnManualCaution.Location = new System.Drawing.Point(286, 15);
@@ -189,7 +200,8 @@
             // 
             // tabPgLargeCountdown
             // 
-            this.tabPgLargeCountdown.BackColor = System.Drawing.Color.LawnGreen;
+            this.tabPgLargeCountdown.BackColor = System.Drawing.Color.White;
+            this.tabPgLargeCountdown.Controls.Add(this.chkMinimal);
             this.tabPgLargeCountdown.Controls.Add(this.btnChangeBgColor);
             this.tabPgLargeCountdown.Controls.Add(this.chkStayOnTop);
             this.tabPgLargeCountdown.Controls.Add(this.lblCountdownTitle);
@@ -202,9 +214,20 @@
             this.tabPgLargeCountdown.TabIndex = 1;
             this.tabPgLargeCountdown.Text = "Large Countdown Timer";
             // 
+            // chkMinimal
+            // 
+            this.chkMinimal.AutoSize = true;
+            this.chkMinimal.Location = new System.Drawing.Point(97, 13);
+            this.chkMinimal.Name = "chkMinimal";
+            this.chkMinimal.Size = new System.Drawing.Size(61, 17);
+            this.chkMinimal.TabIndex = 6;
+            this.chkMinimal.Text = "Minimal";
+            this.chkMinimal.UseVisualStyleBackColor = true;
+            this.chkMinimal.CheckedChanged += new System.EventHandler(this.chkMinimal_CheckedChanged);
+            // 
             // btnChangeBgColor
             // 
-            this.btnChangeBgColor.Location = new System.Drawing.Point(168, 6);
+            this.btnChangeBgColor.Location = new System.Drawing.Point(166, 9);
             this.btnChangeBgColor.Name = "btnChangeBgColor";
             this.btnChangeBgColor.Size = new System.Drawing.Size(121, 23);
             this.btnChangeBgColor.TabIndex = 5;
@@ -228,7 +251,7 @@
             this.lblCountdownTitle.AutoSize = true;
             this.lblCountdownTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblCountdownTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCountdownTitle.Location = new System.Drawing.Point(21, 50);
+            this.lblCountdownTitle.Location = new System.Drawing.Point(21, 38);
             this.lblCountdownTitle.Name = "lblCountdownTitle";
             this.lblCountdownTitle.Size = new System.Drawing.Size(350, 55);
             this.lblCountdownTitle.TabIndex = 3;
@@ -236,7 +259,7 @@
             // 
             // btnChangeLblColor
             // 
-            this.btnChangeLblColor.Location = new System.Drawing.Point(295, 6);
+            this.btnChangeLblColor.Location = new System.Drawing.Point(293, 9);
             this.btnChangeLblColor.Name = "btnChangeLblColor";
             this.btnChangeLblColor.Size = new System.Drawing.Size(100, 23);
             this.btnChangeLblColor.TabIndex = 1;
@@ -249,7 +272,7 @@
             this.lblLargeCounter.AutoSize = true;
             this.lblLargeCounter.BackColor = System.Drawing.Color.Transparent;
             this.lblLargeCounter.Font = new System.Drawing.Font("Arial", 100F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLargeCounter.Location = new System.Drawing.Point(-4, 78);
+            this.lblLargeCounter.Location = new System.Drawing.Point(-4, 66);
             this.lblLargeCounter.Name = "lblLargeCounter";
             this.lblLargeCounter.Size = new System.Drawing.Size(409, 155);
             this.lblLargeCounter.TabIndex = 0;
@@ -285,14 +308,145 @@
             this.tabPgOptions.Text = "Options";
             this.tabPgOptions.UseVisualStyleBackColor = true;
             // 
+            // lblDivider2
+            // 
+            this.lblDivider2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblDivider2.Location = new System.Drawing.Point(32, 179);
+            this.lblDivider2.Name = "lblDivider2";
+            this.lblDivider2.Size = new System.Drawing.Size(326, 2);
+            this.lblDivider2.TabIndex = 19;
+            this.lblDivider2.Text = "label2";
+            // 
+            // lblDivider1
+            // 
+            this.lblDivider1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblDivider1.Location = new System.Drawing.Point(32, 93);
+            this.lblDivider1.Name = "lblDivider1";
+            this.lblDivider1.Size = new System.Drawing.Size(326, 2);
+            this.lblDivider1.TabIndex = 19;
+            this.lblDivider1.Text = "label2";
+            // 
+            // chkEnableMinWarnings
+            // 
+            this.chkEnableMinWarnings.AutoSize = true;
+            this.chkEnableMinWarnings.Location = new System.Drawing.Point(202, 122);
+            this.chkEnableMinWarnings.Name = "chkEnableMinWarnings";
+            this.chkEnableMinWarnings.Size = new System.Drawing.Size(158, 30);
+            this.chkEnableMinWarnings.TabIndex = 3;
+            this.chkEnableMinWarnings.Text = "Enable Warning Hotkeys\r\nAffects 10, 5, and 1 minutes";
+            this.chkEnableMinWarnings.UseVisualStyleBackColor = true;
+            this.chkEnableMinWarnings.CheckedChanged += new System.EventHandler(this.chkEnableMinWarnings_CheckedChanged);
+            // 
+            // num1MinHotkey
+            // 
+            this.num1MinHotkey.Enabled = false;
+            this.num1MinHotkey.Location = new System.Drawing.Point(152, 153);
+            this.num1MinHotkey.Maximum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.num1MinHotkey.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.num1MinHotkey.Name = "num1MinHotkey";
+            this.num1MinHotkey.Size = new System.Drawing.Size(34, 20);
+            this.num1MinHotkey.TabIndex = 6;
+            this.num1MinHotkey.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.num1MinHotkey.ValueChanged += new System.EventHandler(this.num1MinHotkey_ValueChanged);
+            // 
+            // lbl1MinHotkey
+            // 
+            this.lbl1MinHotkey.AutoSize = true;
+            this.lbl1MinHotkey.Enabled = false;
+            this.lbl1MinHotkey.Location = new System.Drawing.Point(14, 155);
+            this.lbl1MinHotkey.Name = "lbl1MinHotkey";
+            this.lbl1MinHotkey.Size = new System.Drawing.Size(131, 13);
+            this.lbl1MinHotkey.TabIndex = 17;
+            this.lbl1MinHotkey.Text = "1 Minute Warning Hotkey:";
+            // 
+            // num5MinHotkey
+            // 
+            this.num5MinHotkey.Enabled = false;
+            this.num5MinHotkey.Location = new System.Drawing.Point(152, 127);
+            this.num5MinHotkey.Maximum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.num5MinHotkey.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.num5MinHotkey.Name = "num5MinHotkey";
+            this.num5MinHotkey.Size = new System.Drawing.Size(34, 20);
+            this.num5MinHotkey.TabIndex = 5;
+            this.num5MinHotkey.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.num5MinHotkey.ValueChanged += new System.EventHandler(this.num5MinHotkey_ValueChanged);
+            // 
+            // lbl5MinHotkey
+            // 
+            this.lbl5MinHotkey.AutoSize = true;
+            this.lbl5MinHotkey.Enabled = false;
+            this.lbl5MinHotkey.Location = new System.Drawing.Point(14, 131);
+            this.lbl5MinHotkey.Name = "lbl5MinHotkey";
+            this.lbl5MinHotkey.Size = new System.Drawing.Size(131, 13);
+            this.lbl5MinHotkey.TabIndex = 17;
+            this.lbl5MinHotkey.Text = "5 Minute Warning Hotkey:";
+            // 
+            // num10MinHotkey
+            // 
+            this.num10MinHotkey.Enabled = false;
+            this.num10MinHotkey.Location = new System.Drawing.Point(152, 101);
+            this.num10MinHotkey.Maximum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.num10MinHotkey.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.num10MinHotkey.Name = "num10MinHotkey";
+            this.num10MinHotkey.Size = new System.Drawing.Size(34, 20);
+            this.num10MinHotkey.TabIndex = 4;
+            this.num10MinHotkey.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.num10MinHotkey.ValueChanged += new System.EventHandler(this.num10MinHotkey_ValueChanged);
+            // 
+            // lbl10MinHotkey
+            // 
+            this.lbl10MinHotkey.AutoSize = true;
+            this.lbl10MinHotkey.Enabled = false;
+            this.lbl10MinHotkey.Location = new System.Drawing.Point(8, 103);
+            this.lbl10MinHotkey.Name = "lbl10MinHotkey";
+            this.lbl10MinHotkey.Size = new System.Drawing.Size(137, 13);
+            this.lbl10MinHotkey.TabIndex = 15;
+            this.lbl10MinHotkey.Text = "10 Minute Warning Hotkey:";
+            // 
             // lblVersion
             // 
             this.lblVersion.AutoSize = true;
-            this.lblVersion.Location = new System.Drawing.Point(328, 217);
+            this.lblVersion.Location = new System.Drawing.Point(318, 217);
             this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(63, 13);
+            this.lblVersion.Size = new System.Drawing.Size(72, 13);
             this.lblVersion.TabIndex = 13;
-            this.lblVersion.Text = "Version: 1.2";
+            this.lblVersion.Text = "Version: 1.2.2";
             // 
             // lblPlayAudioInfo
             // 
@@ -309,7 +463,7 @@
             this.chkPlayAudioOnCaution.Location = new System.Drawing.Point(22, 192);
             this.chkPlayAudioOnCaution.Name = "chkPlayAudioOnCaution";
             this.chkPlayAudioOnCaution.Size = new System.Drawing.Size(149, 17);
-            this.chkPlayAudioOnCaution.TabIndex = 11;
+            this.chkPlayAudioOnCaution.TabIndex = 7;
             this.chkPlayAudioOnCaution.Text = "Play Audio File on Caution";
             this.chkPlayAudioOnCaution.UseVisualStyleBackColor = true;
             this.chkPlayAudioOnCaution.CheckedChanged += new System.EventHandler(this.chkPlayAudioOnCaution_CheckedChanged);
@@ -319,7 +473,7 @@
             this.btnTestAudio.Location = new System.Drawing.Point(177, 188);
             this.btnTestAudio.Name = "btnTestAudio";
             this.btnTestAudio.Size = new System.Drawing.Size(75, 23);
-            this.btnTestAudio.TabIndex = 10;
+            this.btnTestAudio.TabIndex = 8;
             this.btnTestAudio.Text = "Test Audio";
             this.btnTestAudio.UseVisualStyleBackColor = true;
             this.btnTestAudio.Click += new System.EventHandler(this.btnTestAudio_Click);
@@ -344,7 +498,7 @@
             0});
             this.numUDLapCutoff.Name = "numUDLapCutoff";
             this.numUDLapCutoff.Size = new System.Drawing.Size(51, 20);
-            this.numUDLapCutoff.TabIndex = 7;
+            this.numUDLapCutoff.TabIndex = 1;
             this.numUDLapCutoff.Value = new decimal(new int[] {
             20,
             0,
@@ -424,147 +578,6 @@
             0});
             this.numUDTimeBetween.ValueChanged += new System.EventHandler(this.numUDTimeBetween_ValueChanged);
             // 
-            // num10MinHotkey
-            // 
-            this.num10MinHotkey.Enabled = false;
-            this.num10MinHotkey.Location = new System.Drawing.Point(152, 101);
-            this.num10MinHotkey.Maximum = new decimal(new int[] {
-            15,
-            0,
-            0,
-            0});
-            this.num10MinHotkey.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.num10MinHotkey.Name = "num10MinHotkey";
-            this.num10MinHotkey.Size = new System.Drawing.Size(34, 20);
-            this.num10MinHotkey.TabIndex = 14;
-            this.num10MinHotkey.Value = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            this.num10MinHotkey.ValueChanged += new System.EventHandler(this.num10MinHotkey_ValueChanged);
-            // 
-            // lbl10MinHotkey
-            // 
-            this.lbl10MinHotkey.AutoSize = true;
-            this.lbl10MinHotkey.Enabled = false;
-            this.lbl10MinHotkey.Location = new System.Drawing.Point(8, 103);
-            this.lbl10MinHotkey.Name = "lbl10MinHotkey";
-            this.lbl10MinHotkey.Size = new System.Drawing.Size(137, 13);
-            this.lbl10MinHotkey.TabIndex = 15;
-            this.lbl10MinHotkey.Text = "10 Minute Warning Hotkey:";
-            // 
-            // num5MinHotkey
-            // 
-            this.num5MinHotkey.Enabled = false;
-            this.num5MinHotkey.Location = new System.Drawing.Point(152, 127);
-            this.num5MinHotkey.Maximum = new decimal(new int[] {
-            15,
-            0,
-            0,
-            0});
-            this.num5MinHotkey.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.num5MinHotkey.Name = "num5MinHotkey";
-            this.num5MinHotkey.Size = new System.Drawing.Size(34, 20);
-            this.num5MinHotkey.TabIndex = 16;
-            this.num5MinHotkey.Value = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.num5MinHotkey.ValueChanged += new System.EventHandler(this.num5MinHotkey_ValueChanged);
-            // 
-            // lbl5MinHotkey
-            // 
-            this.lbl5MinHotkey.AutoSize = true;
-            this.lbl5MinHotkey.Enabled = false;
-            this.lbl5MinHotkey.Location = new System.Drawing.Point(14, 131);
-            this.lbl5MinHotkey.Name = "lbl5MinHotkey";
-            this.lbl5MinHotkey.Size = new System.Drawing.Size(131, 13);
-            this.lbl5MinHotkey.TabIndex = 17;
-            this.lbl5MinHotkey.Text = "5 Minute Warning Hotkey:";
-            // 
-            // chkEnableMinWarnings
-            // 
-            this.chkEnableMinWarnings.AutoSize = true;
-            this.chkEnableMinWarnings.Location = new System.Drawing.Point(202, 122);
-            this.chkEnableMinWarnings.Name = "chkEnableMinWarnings";
-            this.chkEnableMinWarnings.Size = new System.Drawing.Size(158, 30);
-            this.chkEnableMinWarnings.TabIndex = 18;
-            this.chkEnableMinWarnings.Text = "Enable Warning Hotkeys\r\nAffects 10, 5, and 1 minutes";
-            this.chkEnableMinWarnings.UseVisualStyleBackColor = true;
-            this.chkEnableMinWarnings.CheckedChanged += new System.EventHandler(this.chkEnableMinWarnings_CheckedChanged);
-            // 
-            // lbl1MinHotkey
-            // 
-            this.lbl1MinHotkey.AutoSize = true;
-            this.lbl1MinHotkey.Enabled = false;
-            this.lbl1MinHotkey.Location = new System.Drawing.Point(14, 155);
-            this.lbl1MinHotkey.Name = "lbl1MinHotkey";
-            this.lbl1MinHotkey.Size = new System.Drawing.Size(131, 13);
-            this.lbl1MinHotkey.TabIndex = 17;
-            this.lbl1MinHotkey.Text = "1 Minute Warning Hotkey:";
-            // 
-            // num1MinHotkey
-            // 
-            this.num1MinHotkey.Enabled = false;
-            this.num1MinHotkey.Location = new System.Drawing.Point(152, 153);
-            this.num1MinHotkey.Maximum = new decimal(new int[] {
-            15,
-            0,
-            0,
-            0});
-            this.num1MinHotkey.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.num1MinHotkey.Name = "num1MinHotkey";
-            this.num1MinHotkey.Size = new System.Drawing.Size(34, 20);
-            this.num1MinHotkey.TabIndex = 16;
-            this.num1MinHotkey.Value = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
-            this.num1MinHotkey.ValueChanged += new System.EventHandler(this.num1MinHotkey_ValueChanged);
-            // 
-            // lblDivider1
-            // 
-            this.lblDivider1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblDivider1.Location = new System.Drawing.Point(32, 93);
-            this.lblDivider1.Name = "lblDivider1";
-            this.lblDivider1.Size = new System.Drawing.Size(326, 2);
-            this.lblDivider1.TabIndex = 19;
-            this.lblDivider1.Text = "label2";
-            // 
-            // lblDivider2
-            // 
-            this.lblDivider2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblDivider2.Location = new System.Drawing.Point(32, 179);
-            this.lblDivider2.Name = "lblDivider2";
-            this.lblDivider2.Size = new System.Drawing.Size(326, 2);
-            this.lblDivider2.TabIndex = 19;
-            this.lblDivider2.Text = "label2";
-            // 
-            // btnTestHotkeys
-            // 
-            this.btnTestHotkeys.Location = new System.Drawing.Point(286, 46);
-            this.btnTestHotkeys.Name = "btnTestHotkeys";
-            this.btnTestHotkeys.Size = new System.Drawing.Size(103, 25);
-            this.btnTestHotkeys.TabIndex = 6;
-            this.btnTestHotkeys.Text = "Test Hotkeys";
-            this.btnTestHotkeys.UseVisualStyleBackColor = true;
-            this.btnTestHotkeys.Click += new System.EventHandler(this.btnTestHotkeys_Click);
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -575,7 +588,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(425, 300);
-            this.MinimumSize = new System.Drawing.Size(425, 300);
             this.Name = "mainForm";
             this.Text = "iRacing Caution Clock";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainForm_FormClosing);
@@ -586,12 +598,12 @@
             this.tabPgLargeCountdown.PerformLayout();
             this.tabPgOptions.ResumeLayout(false);
             this.tabPgOptions.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.num1MinHotkey)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num5MinHotkey)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num10MinHotkey)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUDLapCutoff)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUDTimeBetween)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num10MinHotkey)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num5MinHotkey)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num1MinHotkey)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -637,6 +649,7 @@
         private System.Windows.Forms.NumericUpDown num10MinHotkey;
         private System.Windows.Forms.Label lbl10MinHotkey;
         private System.Windows.Forms.Button btnTestHotkeys;
+        private System.Windows.Forms.CheckBox chkMinimal;
     }
 }
 

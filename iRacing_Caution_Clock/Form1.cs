@@ -25,6 +25,9 @@ namespace iRacing_Caution_Clock
         private bool cautionThrown = false; // whether the caution has been thrown yet, keeps from spamming the chat
         private int raceLengthLaps;  // how many laps the race is
         private string logFile = "log.txt";
+        bool tenMinWarningGiven = false;    // warning triggers for caution clock minutes
+        bool fiveMinWarningGiven = false;   //
+        bool oneMinWarningGiven = false;    //
 
         // veriables that the user can edit
         private int cautionClockTime = 0;  // what time to throw the caution clock, uses the sessionTime
@@ -50,14 +53,17 @@ namespace iRacing_Caution_Clock
 
             InitializeComponent();  // initialize the component, you know, that component
 
-            numericUpDown1.Value = Properties.Settings.Default.CautionShortcutKey;  // set shortcut key to users settings
-            lblLargeCounter.ForeColor = Properties.Settings.Default.LargeCounterNumberColor; // set color for large counter text
-            lblCountdownTitle.ForeColor = Properties.Settings.Default.LargeCounterNumberColor;
-            tabPgLargeCountdown.BackColor = Properties.Settings.Default.tabPgLargeCountdownBackColor;
+            numericUpDown1.Value =          Properties.Settings.Default.CautionShortcutKey;  // set shortcut key to users settings
+            lblLargeCounter.ForeColor =     Properties.Settings.Default.LargeCounterNumberColor; // set color for large counter text
+            lblCountdownTitle.ForeColor =   Properties.Settings.Default.LargeCounterNumberColor;
 
-            num10MinHotkey.Value = Properties.Settings.Default.TenMinWarningHotkey;
-            num5MinHotkey.Value = Properties.Settings.Default.FiveMinWarningHotkey;
-            num1MinHotkey.Value = Properties.Settings.Default.OneMinWarningHotkey;
+            num10MinHotkey.Value =  Properties.Settings.Default.TenMinWarningHotkey;
+            num5MinHotkey.Value =   Properties.Settings.Default.FiveMinWarningHotkey;
+            num1MinHotkey.Value =   Properties.Settings.Default.OneMinWarningHotkey;
+
+            chkEnableMinWarnings.Checked =  Properties.Settings.Default.EnableMinuteWarnings;
+            chkControlsCautions.Checked =   Properties.Settings.Default.ControlCautionClock;
+
             if (Properties.Settings.Default.LargeCounterStreamerFriendly)  // set background of large counter to users settings
             {
                 tabControl1.TabPages[1].BackColor = Color.LawnGreen;
@@ -80,6 +86,9 @@ namespace iRacing_Caution_Clock
                 wrapper.SessionInfoUpdated += OnSessionInfoUpdated;  // listen to session events
 
                 wrapper.Start();  // start wrapper
+
+
+                tabPgLargeCountdown.BackColor = Properties.Settings.Default.tabPgLargeCountdownBackColor; // had to move this to the bottom because form kept trying to overwrite color, not sure why
             } catch (Exception exc)
             {
                 WriteToLogFile("wrapper stuff", exc.Message.ToString());
@@ -134,6 +143,9 @@ namespace iRacing_Caution_Clock
             {
                 controlsCautions = false;
             }
+
+            Properties.Settings.Default.ControlCautionClock = chkControlsCautions.Checked;
+            Properties.Settings.Default.Save();
         }
 
         private void numUDLapCutoff_ValueChanged(object sender, EventArgs e)  // lets the user change the caution clock cut off lap
@@ -219,6 +231,9 @@ namespace iRacing_Caution_Clock
                 lbl1MinHotkey.Enabled = false;
                 num1MinHotkey.Enabled = false;
             }
+
+            Properties.Settings.Default.EnableMinuteWarnings = chkEnableMinWarnings.Checked;
+            Properties.Settings.Default.Save();
         }
 
         private void btnChangeBgColor_Click(object sender, EventArgs e)
@@ -259,6 +274,40 @@ namespace iRacing_Caution_Clock
         {
             Properties.Settings.Default.OneMinWarningHotkey = num1MinHotkey.Value;
             Properties.Settings.Default.Save();
+        }
+
+        private void btnTestHotkeys_Click(object sender, EventArgs e) // test hotkeys
+        {
+            if (chkEnableMinWarnings.Checked)
+            {
+                wrapper.Chat.SendMacro(Convert.ToInt32(Properties.Settings.Default.TenMinWarningHotkey - 1));  // 10
+                System.Threading.Thread.Sleep(1000);
+                wrapper.Chat.SendMacro(Convert.ToInt32(Properties.Settings.Default.FiveMinWarningHotkey - 1));  // 5
+                System.Threading.Thread.Sleep(1000);
+                wrapper.Chat.SendMacro(Convert.ToInt32(Properties.Settings.Default.OneMinWarningHotkey - 1));  // 1
+            }
+            else
+            {
+                MessageBox.Show("Countdown timer hotkeys are not enabled.");
+            }
+        }
+
+        private void chkMinimal_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkMinimal.Checked)
+            {
+                FormBorderStyle = FormBorderStyle.None;
+                Height = 225;
+                tabControl1.Appearance = TabAppearance.Buttons;
+                tabControl1.ItemSize = new Size(1, 1);
+            }
+            else
+            {
+                FormBorderStyle = FormBorderStyle.Fixed3D;
+                Height = 300;
+                tabControl1.Appearance = TabAppearance.Normal;
+                tabControl1.ItemSize = new Size(61, 18);
+            }
         }
         #endregion
 
@@ -458,26 +507,6 @@ namespace iRacing_Caution_Clock
         #region FUNctions
         private void CheckCautionClock()  // function that pretty much contains the caution clock
         {
-            // setup warning triggers
-            bool tenMinWarningGiven = false;
-            bool fiveMinWarningGiven = false;
-            bool oneMinWarningGiven = false;
-
-            if (numUDTimeBetween.Value < 1) // in case the user has told the timer to have a short timer, 
-            {                               // we don't want the warnings given for times longer than the requested time
-                fiveMinWarningGiven = true;
-                tenMinWarningGiven = true;
-            }
-            else if (numUDTimeBetween.Value < 5)
-            {
-                fiveMinWarningGiven = true;
-                tenMinWarningGiven = true;
-            }
-            else if (numUDTimeBetween.Value < 10)
-            {
-                tenMinWarningGiven = true;
-            }
-
             try
             {
                 if (cautionClockActive)  // first make sure caution clock is active
@@ -487,7 +516,7 @@ namespace iRacing_Caution_Clock
                     if (userIsAdmin && controlsCautions)  // make sure user is admin and wants to control cautions
                     {
                         #region minute warnings
-                        if (chkEnableMinWarnings.Checked)
+                        if (chkEnableMinWarnings.Checked && (!cautionThrown))
                         {
                             if (!tenMinWarningGiven && (sessionTime >= (cautionClockTime - 600))) // 10 minutes
                             {
@@ -596,16 +625,5 @@ namespace iRacing_Caution_Clock
             public string TrackDisplayName { get; set; }
         }
         #endregion
-
-        private void btnTestHotkeys_Click(object sender, EventArgs e) // test hotkeys
-        {
-            if (chkEnableMinWarnings.Checked)
-            {
-                wrapper.Chat.SendMacro(Convert.ToInt32(Properties.Settings.Default.TenMinWarningHotkey - 1));  // 10
-                wrapper.Chat.SendMacro(Convert.ToInt32(Properties.Settings.Default.FiveMinWarningHotkey - 1));  // 5
-                wrapper.Chat.SendMacro(Convert.ToInt32(Properties.Settings.Default.OneMinWarningHotkey - 1));  // 1
-            }
-            wrapper.Chat.SendMacro(Convert.ToInt32(Properties.Settings.Default.CautionShortcutKey - 1));  // caution
-        }
     }
 }

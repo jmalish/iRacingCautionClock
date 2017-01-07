@@ -118,5 +118,29 @@ namespace iRacing_Caution_Clock.Properties {
                 this["OneMinWarningHotkey"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool EnableMinuteWarnings {
+            get {
+                return ((bool)(this["EnableMinuteWarnings"]));
+            }
+            set {
+                this["EnableMinuteWarnings"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ControlCautionClock {
+            get {
+                return ((bool)(this["ControlCautionClock"]));
+            }
+            set {
+                this["ControlCautionClock"] = value;
+            }
+        }
     }
 }
